@@ -8,13 +8,15 @@
 
 ## External data storage: <br/>
 * __In vitro screen analysis__: <br/>
-/Volumes/pipkinlab/Lab Members/Former members/Megan Frederick/MAF Screen Data <br/>
 /Volumes/pipkinlab/Lab Members/Former members/Megan Frederick/MAF Screen Analysis
 * __In vivo screen analysis__: <br/>
 https://www.dropbox.com/home/Pipkin%20Lab/Projects_PipkinLab_DB_original/Chromatin-Regulator_Screens/Chromatin%20Regulator%20Screen
 * __Raw data__: <br/>
 _In vitro_: <br/>
-_In vivo_: /Volumes/pipkinNGS/exp035; /Volumes/pipkinNGS/exp056 
+/Volumes/pipkinlab/Lab Members/Former members/Megan Frederick/MAF Screen Data <br/>
+_In vivo_: <br/>
+/Volumes/pipkinNGS/exp035 <br/>
+/Volumes/pipkinNGS/exp056 
 
 ## Data Analysis Steps
 ### 0. Data compilation <br/> 
