@@ -17,7 +17,7 @@ _In vitro_: <br/>
 _In vivo_: /Volumes/pipkinNGS/exp035; /Volumes/pipkinNGS/exp056 
 
 ## Data Analysis Steps
-## 0. Data compilation <br/> 
+### 0. Data compilation <br/> 
 * __0.1__ Identify Amtrine+ / Amtrine+GFP+ columns (transduced population) in original spreadsheet <br/>
 * __0.2__ Extract GeoMean / Percentage data for each marker for Amtrine+ / Amtrine+GFP+ <br/> 
 * __0.3__ Write output files for each individual marker including: __plate and well position__ and __Flow readout (MFI or percentage)__ <br/> 
