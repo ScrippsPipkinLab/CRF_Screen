@@ -6,6 +6,16 @@
 > Huitian Diao (Yolanda): Data analysis <br/>
 > Matthew Pipkin: Advisor
 
+#### External data storage: <br/>
+> In vitro screen analysis: <br/>
+/Volumes/pipkinlab/Lab Members/Former members/Megan Frederick/MAF Screen Data
+/Volumes/pipkinlab/Lab Members/Former members/Megan Frederick/MAF Screen Analysis
+> In vivo screen analysis: <br/>
+https://www.dropbox.com/home/Pipkin%20Lab/Projects_PipkinLab_DB_original/Chromatin-Regulator_Screens/Chromatin%20Regulator%20Screen)
+> Raw data: <br/>
+In vitro: <br/>
+In vivo: /Volumes/pipkinNGS/exp035; /Volumes/pipkinNGS/exp056 
+
 ## Data Analysis Steps
 ## 0. Data compilation <br/> 
 * __0.1__ Identify Amtrine+ / Amtrine+GFP+ columns (transduced population) in original spreadsheet <br/>
