@@ -1,0 +1,336 @@
+NAME	DESCRIPTION	GENE_SYMBOL	GENE_TITLE	SCORE	
+FOSB	null	FOSB	FBJ murine osteosarcoma viral oncogene homolog B	2.9330404	
+TAF1	null	TAF1	TAF1 RNA polymerase II, TATA box binding protein (TBP)-associated factor, 250kDa	2.215004	
+SMYD2	null	SMYD2	SET and MYND domain containing 2	1.6746707	
+SMARCA4	null	SMARCA4	SWI/SNF related, matrix associated, actin dependent regulator of chromatin, subfamily a, member 4	1.5201023	
+SMARCE1	null	SMARCE1	SWI/SNF related, matrix associated, actin dependent regulator of chromatin, subfamily e, member 1	1.4848365	
+SUV420H2	null	SUV420H2	suppressor of variegation 4-20 homolog 2 (Drosophila)	1.3377111	
+MS4A1	null	MS4A1	membrane-spanning 4-domains, subfamily A, member 1	1.3116546	
+SIRT5	null	SIRT5	sirtuin (silent mating type information regulation 2 homolog) 5 (S. cerevisiae)	1.2486234	
+CHD7	null	CHD7	chromodomain helicase DNA binding protein 7	1.1747637	
+ID2	null	ID2	inhibitor of DNA binding 2, dominant negative helix-loop-helix protein	1.0854644	
+SIRT4	null	SIRT4	sirtuin (silent mating type information regulation 2 homolog) 4 (S. cerevisiae)	1.0296509	
+HDAC1	null	HDAC1	histone deacetylase 1	1.0128185	
+FBXL19	null	FBXL19	F-box and leucine-rich repeat protein 19	0.92890674	
+DMAP1	null	DMAP1	DNA methyltransferase 1 associated protein 1	0.92590415	
+TBX21	null	TBX21	T-box 21	0.83599555	
+FBXW9	null	FBXW9	F-box and WD-40 domain protein 9	0.798909	
+WDR5	null	WDR5	WD repeat domain 5	0.7959753	
+BOP1	null	BOP1	block of proliferation 1	0.7712862	
+HAT1	null	HAT1	histone acetyltransferase 1	0.76375574	
+RPA3	null	RPA3	replication protein A3, 14kDa	0.74979615	
+CD19	null	CD19	CD19 molecule	0.73231876	
+UBE2I	null	UBE2I	ubiquitin-conjugating enzyme E2I (UBC9 homolog, yeast)	0.6082352	
+HDAC10	null	HDAC10	histone deacetylase 10	0.6043158	
+UBE2A	null	UBE2A	ubiquitin-conjugating enzyme E2A (RAD6 homolog)	0.6033258	
+H2AFZ	null	H2AFZ	H2A histone family, member Z	0.58590615	
+TAF3	null	TAF3	TAF3 RNA polymerase II, TATA box binding protein (TBP)-associated factor, 140kDa	0.58395356	
+SMARCC1	null	SMARCC1	SWI/SNF related, matrix associated, actin dependent regulator of chromatin, subfamily c, member 1	0.5138252	
+DNMT1	null	DNMT1	DNA (cytosine-5-)-methyltransferase 1	0.4794672	
+SIN3B	null	SIN3B	SIN3 homolog B, transcription regulator (yeast)	0.47889745	
+ZMYND8	null	null	null	0.460619	
+SMYD5	null	SMYD5	SMYD family member 5	0.45559037	
+FKBP1A	null	FKBP1A	FK506 binding protein 1A, 12kDa	0.4496307	
+CHD5	null	CHD5	chromodomain helicase DNA binding protein 5	0.42979616	
+SETD7	null	SETD7	SET domain containing (lysine methyltransferase) 7	0.42801946	
+ERCC5	null	ERCC5	me))	0.34552428	
+SSRP1	null	SSRP1	structure specific recognition protein 1	0.34337652	
+AFF1	null	AFF1	AF4/FMR2 family, member 1	0.30932805	
+ID3	null	ID3	inhibitor of DNA binding 3, dominant negative helix-loop-helix protein	0.30302748	
+SIRT1	null	SIRT1	sirtuin (silent mating type information regulation 2 homolog) 1 (S. cerevisiae)	0.2994606	
+PRDM16	null	PRDM16	PR domain containing 16	0.27172014	
+PRDM14	null	PRDM14	PR domain containing 14	0.26946718	
+FBXO44	null	FBXO44	F-box protein 44	0.25789917	
+ELP3	null	ELP3	elongation protein 3 homolog (S. cerevisiae)	0.24916537	
+SCMH1	null	SCMH1	sex comb on midleg homolog 1 (Drosophila)	0.24492303	
+SETD3	null	SETD3	SET domain containing 3	0.24376471	
+SMARCD2	null	SMARCD2	SWI/SNF related, matrix associated, actin dependent regulator of chromatin, subfamily d, member 2	0.23848633	
+SMARCD3	null	SMARCD3	SWI/SNF related, matrix associated, actin dependent regulator of chromatin, subfamily d, member 3	0.21014568	
+EAF1	null	EAF1	ELL associated factor 1	0.18659124	
+HDAC5	null	HDAC5	histone deacetylase 5	0.1718534	
+SMARCB1	null	SMARCB1	SWI/SNF related, matrix associated, actin dependent regulator of chromatin, subfamily b, member 1	0.16960514	
+EPC2	null	EPC2	enhancer of polycomb homolog 2 (Drosophila)	0.12584968	
+SCML4	null	SCML4	sex comb on midleg-like 4 (Drosophila)	0.10172349	
+HLTF	null	null	null	0.066727065	
+SIN3A	null	SIN3A	SIN3 homolog A, transcription regulator (yeast)	0.061155222	
+SETD8	null	SETD8	SET domain containing (lysine methyltransferase) 8	0.039758973	
+CECR2	null	CECR2	cat eye syndrome chromosome region, candidate 2	0.008687074	
+SETD5	null	SETD5	SET domain containing 5	-0.0049316557	
+HES1	null	HES1	hairy and enhancer of split 1, (Drosophila)	-0.07841537	
+TCEA1	null	TCEA1	transcription elongation factor A (SII), 1	-0.09341837	
+EP400	null	EP400	E1A binding protein p400	-0.09959916	
+SETMAR	null	SETMAR	SET domain and mariner transposase fusion gene	-0.10774684	
+SUV39H2	null	SUV39H2	suppressor of variegation 3-9 homolog 2 (Drosophila)	-0.12568106	
+BAZ1A	null	BAZ1A	bromodomain adjacent to zinc finger domain, 1A	-0.13077447	
+CHD6	null	CHD6	chromodomain helicase DNA binding protein 6	-0.1900505	
+PCGF2	null	PCGF2	polycomb group ring finger 2	-0.19770184	
+JMJD4	null	JMJD4	jumonji domain containing 4	-0.2334708	
+GTF2F1	null	GTF2F1	general transcription factor IIF, polypeptide 1, 74kDa	-0.24201939	
+PHC2	null	PHC2	polyhomeotic homolog 2 (Drosophila)	-0.2694519	
+SMARCD1	null	SMARCD1	SWI/SNF related, matrix associated, actin dependent regulator of chromatin, subfamily d, member 1	-0.2823744	
+MECP2	null	MECP2	methyl CpG binding protein 2 (Rett syndrome)	-0.30136517	
+CXXC1	null	CXXC1	CXXC finger 1 (PHD domain)	-0.35753268	
+HDAC9	null	HDAC9	histone deacetylase 9	-0.3637317	
+SIRT7	null	SIRT7	sirtuin (silent mating type information regulation 2 homolog) 7 (S. cerevisiae)	-0.36910343	
+WHSC1L1	null	WHSC1L1	Wolf-Hirschhorn syndrome candidate 1-like 1	-0.39410678	
+BRD1	null	BRD1	bromodomain containing 1	-0.4022161	
+RNF2	null	RNF2	ring finger protein 2	-0.43424654	
+ASXL3	null	null	null	-0.4361392	
+SMARCA1	null	SMARCA1	SWI/SNF related, matrix associated, actin dependent regulator of chromatin, subfamily a, member 1	-0.44484362	
+ING3	null	ING3	inhibitor of growth family, member 3	-0.45994985	
+GTF2B	null	GTF2B	general transcription factor IIB	-0.486581	
+ARID1B	null	ARID1B	AT rich interactive domain 1B (SWI1-like)	-0.49371004	
+SMARCA5	null	SMARCA5	SWI/SNF related, matrix associated, actin dependent regulator of chromatin, subfamily a, member 5	-0.49886343	
+GTF2H1	null	GTF2H1	general transcription factor IIH, polypeptide 1, 62kDa	-0.5018687	
+CHAF1B	null	CHAF1B	chromatin assembly factor 1, subunit B (p60)	-0.52059287	
+AURKB	null	AURKB	aurora kinase B	-0.52313644	
+TET3	null	null	null	-0.5380481	
+ATAD2	null	ATAD2	ATPase family, AAA domain containing 2	-0.5634455	
+ATAD2B	null	null	null	-0.59214926	
+SMYD3	null	SMYD3	SET and MYND domain containing 3	-0.5939401	
+BAZ2A	null	BAZ2A	bromodomain adjacent to zinc finger domain, 2A	-0.5949094	
+HDAC6	null	HDAC6	histone deacetylase 6	-0.61151624	
+ASXL2	null	ASXL2	additional sex combs like 2 (Drosophila)	-0.61286026	
+SFMBT1	null	SFMBT1	Scm-like with four mbt domains 1	-0.6143993	
+SP110	null	SP110	SP110 nuclear body protein	-0.6154468	
+SMYD1	null	SMYD1	SET and MYND domain containing 1	-0.62729275	
+CTSL	null	CTSL	cathepsin L	-0.7178266	
+PADI2	null	PADI2	peptidyl arginine deiminase, type II	-0.7241726	
+SETD2	null	SETD2	SET domain containing 2	-0.7243445	
+SETD4	null	SETD4	SET domain containing 4	-0.7541152	
+PARP2	null	PARP2	poly (ADP-ribose) polymerase family, member 2	-0.76829726	
+SUZ12	null	SUZ12	suppressor of zeste 12 homolog (Drosophila)	-0.78545654	
+BRD9	null	BRD9	bromodomain containing 9	-0.7871913	
+CHD8	null	CHD8	chromodomain helicase DNA binding protein 8	-0.7990428	
+EHMT2	null	EHMT2	euchromatic histone-lysine N-methyltransferase 2	-0.80252224	
+CHD3	null	CHD3	chromodomain helicase DNA binding protein 3	-0.80820596	
+USP22	null	USP22	ubiquitin specific peptidase 22	-0.8211708	
+AFF4	null	AFF4	AF4/FMR2 family, member 4	-0.824479	
+SETDB2	null	SETDB2	SET domain, bifurcated 2	-0.8473264	
+SP140	null	SP140	SP140 nuclear body protein	-0.85989016	
+HDAC2	null	HDAC2	histone deacetylase 2	-0.86866343	
+HDAC3	null	HDAC3	histone deacetylase 3	-0.8718009	
+BRD3	null	BRD3	bromodomain containing 3	-0.89427274	
+SIRT6	null	SIRT6	sirtuin (silent mating type information regulation 2 homolog) 6 (S. cerevisiae)	-0.92034054	
+SMYD4	null	SMYD4	SET and MYND domain containing 4	-0.92373425	
+INO80	null	null	null	-0.9265741	
+CBX4	null	CBX4	chromobox homolog 4 (Pc class homolog, Drosophila)	-0.92982155	
+ZMYND11	null	ZMYND11	zinc finger, MYND domain containing 11	-0.9389834	
+EZH1	null	EZH1	enhancer of zeste homolog 1 (Drosophila)	-0.95337003	
+WHSC1	null	WHSC1	Wolf-Hirschhorn syndrome candidate 1	-0.9564888	
+ELP4	null	ELP4	elongation protein 4 homolog (S. cerevisiae)	-0.9575804	
+BRDT	null	BRDT	bromodomain, testis-specific	-0.9599538	
+BMI1	null	BMI1	B lymphoma Mo-MLV insertion region (mouse)	-0.9744562	
+NSD1	null	NSD1	nuclear receptor binding SET domain protein 1	-0.9837067	
+TET2	null	null	null	-0.98734355	
+EZH2	null	EZH2	enhancer of zeste homolog 2 (Drosophila)	-1.0019245	
+SP100	null	SP100	SP100 nuclear antigen	-1.0200154	
+UHRF1	null	UHRF1	ubiquitin-like, containing PHD and RING finger domains, 1	-1.0214716	
+DNMT3L	null	DNMT3L	DNA (cytosine-5-)-methyltransferase 3-like	-1.0411928	
+KDM4B	null	null	null	-1.0420648	
+EED	null	EED	embryonic ectoderm development	-1.0446461	
+MLL3	null	MLL3	myeloid/lymphoid or mixed-lineage leukemia 3	-1.0619172	
+ING4	null	ING4	inhibitor of growth family, member 4	-1.072984	
+TET1	null	null	null	-1.1035101	
+KAT2A	null	null	null	-1.1154772	
+PHF10	null	PHF10	PHD finger protein 10	-1.1515148	
+PRMT8	null	PRMT8	protein arginine methyltransferase 8	-1.156656	
+CHD1	null	CHD1	chromodomain helicase DNA binding protein 1	-1.1578223	
+JARID2	null	JARID2	jumonji, AT rich interactive domain 2	-1.161946	
+CHD2	null	CHD2	chromodomain helicase DNA binding protein 2	-1.1647036	
+ATM	null	ATM	ataxia telangiectasia mutated (includes complementation groups A, C and D)	-1.1856655	
+SUV39H1	null	SUV39H1	suppressor of variegation 3-9 homolog 1 (Drosophila)	-1.1919738	
+NCOR2	null	NCOR2	nuclear receptor co-repressor 2	-1.1981331	
+MBD2	null	MBD2	methyl-CpG binding domain protein 2	-1.2000768	
+CDK9	null	CDK9	cyclin-dependent kinase 9 (CDC2-related kinase)	-1.2041732	
+FBXO17	null	FBXO17	F-box protein 17	-1.2253762	
+ORC1	null	null	null	-1.2362784	
+BRPF1	null	BRPF1	bromodomain and PHD finger containing, 1	-1.2482255	
+ATR	null	ATR	ataxia telangiectasia and Rad3 related	-1.259724	
+HDAC7	null	null	null	-1.2733425	
+SMARCC2	null	SMARCC2	SWI/SNF related, matrix associated, actin dependent regulator of chromatin, subfamily c, member 2	-1.2923653	
+ASH1L	null	ASH1L	ash1 (absent, small, or homeotic)-like (Drosophila)	-1.3002362	
+SETDB1	null	SETDB1	SET domain, bifurcated 1	-1.3228135	
+SUPT16H	null	SUPT16H	suppressor of Ty 16 homolog (S. cerevisiae)	-1.3260236	
+CBX8	null	CBX8	chromobox homolog 8 (Pc class homolog, Drosophila)	-1.326537	
+GADD45B	null	GADD45B	growth arrest and DNA-damage-inducible, beta	-1.3431777	
+SIRT3	null	SIRT3	sirtuin (silent mating type information regulation 2 homolog) 3 (S. cerevisiae)	-1.3501755	
+KLF2	null	KLF2	Kruppel-like factor 2 (lung)	-1.3951927	
+FKBP5	null	FKBP5	FK506 binding protein 5	-1.4094168	
+PHC3	null	PHC3	polyhomeotic homolog 3 (Drosophila)	-1.4140728	
+EHMT1	null	EHMT1	euchromatic histone-lysine N-methyltransferase 1	-1.4243877	
+HDAC8	null	HDAC8	histone deacetylase 8	-1.4331158	
+PBRM1	null	null	null	-1.4569806	
+SETD1A	null	SETD1A	SET domain containing 1A	-1.4704093	
+KDM3B	null	null	null	-1.4831473	
+ARID2	null	ARID2	AT rich interactive domain 2 (ARID, RFX-like)	-1.486449	
+ACTL6B	null	ACTL6B	actin-like 6B	-1.5078846	
+EP300	null	EP300	E1A binding protein p300	-1.5157267	
+CBX1	null	CBX1	chromobox homolog 1 (HP1 beta homolog Drosophila )	-1.5191624	
+CCNT1	null	CCNT1	cyclin T1	-1.5290644	
+PRMT3	null	PRMT3	protein arginine methyltransferase 3	-1.5376544	
+BCL6	null	BCL6	B-cell CLL/lymphoma 6 (zinc finger protein 51)	-1.5858164	
+MTA3	null	MTA3	metastasis associated 1 family, member 3	-1.5944805	
+BRD2	null	BRD2	bromodomain containing 2	-1.6289899	
+ATRX	null	ATRX	alpha thalassemia/mental retardation syndrome X-linked (RAD54 homolog, S. cerevisiae)	-1.6377529	
+PRDM11	null	PRDM11	PR domain containing 11	-1.6510655	
+CREBBP	null	CREBBP	CREB binding protein (Rubinstein-Taybi syndrome)	-1.6637937	
+DPY30	null	null	null	-1.6651536	
+CD14	null	CD14	CD14 molecule	-1.6867981	
+DNMT3A	null	DNMT3A	DNA (cytosine-5-)-methyltransferase 3 alpha	-1.6910167	
+CHAF1A	null	CHAF1A	chromatin assembly factor 1, subunit A (p150)	-1.7170395	
+HCFC1	null	HCFC1	host cell factor C1 (VP16-accessory protein)	-1.7285095	
+GADD45A	null	GADD45A	growth arrest and DNA-damage-inducible, alpha	-1.7296388	
+DUB2A	null	null	null	-1.7339885	
+PRDM13	null	PRDM13	PR domain containing 13	-1.7350147	
+PRKAA1	null	PRKAA1	protein kinase, AMP-activated, alpha 1 catalytic subunit	-1.7521774	
+TRIM28	null	TRIM28	tripartite motif-containing 28	-1.7526548	
+MYST2	null	MYST2	MYST histone acetyltransferase 2	-1.7793688	
+BRPF3	null	BRPF3	bromodomain and PHD finger containing, 3	-1.7814226	
+KDM6A	null	null	null	-1.803047	
+KDM2A	null	null	null	-1.8116473	
+MECOM	null	null	null	-1.8315159	
+BRD8	null	BRD8	bromodomain containing 8	-1.8374009	
+L3MBTL3	null	L3MBTL3	l(3)mbt-like 3 (Drosophila)	-1.8509905	
+BRD4	null	BRD4	bromodomain containing 4	-1.8541362	
+ASH2L	null	ASH2L	ash2 (absent, small, or homeotic)-like (Drosophila)	-1.877272	
+JMJD8	null	null	null	-1.8830823	
+TRIM66	null	TRIM66	tripartite motif-containing 66	-1.886702	
+ING5	null	ING5	inhibitor of growth family, member 5	-1.8886912	
+DNMT3B	null	DNMT3B	DNA (cytosine-5-)-methyltransferase 3 beta	-1.8900334	
+UBE2E1	null	UBE2E1	ubiquitin-conjugating enzyme E2E 1 (UBC4/5 homolog, yeast)	-1.8996696	
+KDM5B	null	null	null	-1.9010065	
+UBE2B	null	UBE2B	ubiquitin-conjugating enzyme E2B (RAD6 homolog)	-1.9312488	
+JMJD1C	null	JMJD1C	jumonji domain containing 1C	-1.9557792	
+PAXIP1	null	PAXIP1	PAX interacting (with transcription-activation domain) protein 1	-1.961302	
+TDG	null	TDG	thymine-DNA glycosylase	-1.9667131	
+PRKAA2	null	PRKAA2	protein kinase, AMP-activated, alpha 2 catalytic subunit	-1.9699684	
+CBX3	null	CBX3	chromobox homolog 3 (HP1 gamma homolog, Drosophila)	-1.9853683	
+RING1	null	RING1	ring finger protein 1	-1.9975444	
+PHF8	null	PHF8	PHD finger protein 8	-2.0052752	
+USP27X	null	USP27X	ubiquitin specific peptidase 27, X-linked	-2.0179696	
+BAZ1B	null	BAZ1B	bromodomain adjacent to zinc finger domain, 1B	-2.0230403	
+ASXL1	null	ASXL1	additional sex combs like 1 (Drosophila)	-2.0310888	
+ING2	null	ING2	inhibitor of growth family, member 2	-2.0884898	
+MBD1	null	MBD1	methyl-CpG binding domain protein 1	-2.1107311	
+HDAC4	null	HDAC4	histone deacetylase 4	-2.1333447	
+TRIM33	null	TRIM33	tripartite motif-containing 33	-2.1611948	
+JHDM1D	null	null	null	-2.1731362	
+KLF12	null	KLF12	Kruppel-like factor 12	-2.1765227	
+SATB1	null	SATB1	special AT-rich sequence binding protein 1 (binds to nuclear matrix/scaffold-associating DNA's)	-2.1819355	
+BAZ2B	null	BAZ2B	bromodomain adjacent to zinc finger domain, 2B	-2.185695	
+CLOCK	null	CLOCK	clock homolog (mouse)	-2.1991754	
+PHC1	null	PHC1	polyhomeotic homolog 1 (Drosophila)	-2.2027922	
+MEN1	null	MEN1	multiple endocrine neoplasia I	-2.2146938	
+MSL3	null	null	null	-2.21748	
+ARID1A	null	ARID1A	AT rich interactive domain 1A (SWI- like)	-2.2242715	
+PRDM10	null	PRDM10	PR domain containing 10	-2.2680593	
+PCGF1	null	PCGF1	polycomb group ring finger 1	-2.274736	
+PRMT2	null	PRMT2	protein arginine methyltransferase 2	-2.29228	
+PRDM12	null	PRDM12	PR domain containing 12	-2.296776	
+PRDM6	null	PRDM6	PR domain containing 6	-2.3169713	
+RBBP4	null	RBBP4	retinoblastoma binding protein 4	-2.3232963	
+POLR2B	null	POLR2B	polymerase (RNA) II (DNA directed) polypeptide B, 140kDa	-2.3329127	
+SUV420H1	null	SUV420H1	suppressor of variegation 4-20 homolog 1 (Drosophila)	-2.3490374	
+HDAC11	null	HDAC11	histone deacetylase 11	-2.3528788	
+PADI1	null	PADI1	peptidyl arginine deiminase, type I	-2.3531134	
+EPC1	null	EPC1	enhancer of polycomb homolog 1 (Drosophila)	-2.3656976	
+WDR82	null	WDR82	WD repeat domain 82	-2.3843203	
+WBP7	null	null	null	-2.4415855	
+RNF217	null	null	null	-2.445769	
+CHD1L	null	CHD1L	chromodomain helicase DNA binding protein 1-like	-2.4517062	
+PRMT1	null	PRMT1	protein arginine methyltransferase 1	-2.458271	
+CBX5	null	CBX5	chromobox homolog 5 (HP1 alpha homolog, Drosophila)	-2.4811833	
+PHF17	null	PHF17	PHD finger protein 17	-2.494976	
+PRMT5	null	PRMT5	protein arginine methyltransferase 5	-2.4987912	
+MYST3	null	MYST3	MYST histone acetyltransferase (monocytic leukemia) 3	-2.5019717	
+BRWD3	null	BRWD3	bromodomain and WD repeat domain containing 3	-2.5084226	
+KAT2B	null	null	null	-2.5182803	
+SCML2	null	SCML2	sex comb on midleg-like 2 (Drosophila)	-2.5226624	
+KDM5D	null	null	null	-2.5310912	
+BRD7	null	BRD7	bromodomain containing 7	-2.5340855	
+PARP1	null	PARP1	poly (ADP-ribose) polymerase family, member 1	-2.5375154	
+KDM4D	null	null	null	-2.5465293	
+CHD9	null	CHD9	chromodomain helicase DNA binding protein 9	-2.5537422	
+DOT1L	null	DOT1L	DOT1-like, histone H3 methyltransferase (S. cerevisiae)	-2.5541081	
+PCGF6	null	PCGF6	polycomb group ring finger 6	-2.5549831	
+KDM6B	null	null	null	-2.5760484	
+PHF20L1	null	PHF20L1	PHD finger protein 20-like 1	-2.6009903	
+PHF2	null	PHF2	PHD finger protein 2	-2.6362603	
+PCMT1	null	PCMT1	protein-L-isoaspartate (D-aspartate) O-methyltransferase	-2.6551268	
+USP51	null	USP51	ubiquitin specific peptidase 51	-2.6667414	
+HIRA	null	HIRA	HIR histone cell cycle regulation defective homolog A (S. cerevisiae)	-2.6799812	
+NCOR1	null	NCOR1	nuclear receptor co-repressor 1	-2.6956286	
+KDM5A	null	null	null	-2.7446492	
+NAP1L3	null	NAP1L3	nucleosome assembly protein 1-like 3	-2.7898333	
+PHIP	null	PHIP	pleckstrin homology domain interacting protein	-2.793057	
+MBD3	null	MBD3	methyl-CpG binding domain protein 3	-2.8412519	
+PRDM8	null	PRDM8	PR domain containing 8	-2.844362	
+SMARCA2	null	SMARCA2	SWI/SNF related, matrix associated, actin dependent regulator of chromatin, subfamily a, member 2	-2.8828979	
+PRDM2	null	PRDM2	PR domain containing 2, with ZNF domain	-2.937292	
+PRDM1	null	PRDM1	PR domain containing 1, with ZNF domain	-2.955252	
+TRIM24	null	TRIM24	tripartite motif-containing 24	-2.9718509	
+RNF40	null	RNF40	ring finger protein 40	-2.972837	
+PRKCD	null	PRKCD	protein kinase C, delta	-2.9844422	
+GTF3C4	null	GTF3C4	general transcription factor IIIC, polypeptide 4, 90kDa	-2.987396	
+PAF1	null	PAF1	Paf1, RNA polymerase II associated factor, homolog (S. cerevisiae)	-2.9878533	
+HELLS	null	HELLS	helicase, lymphoid-specific	-2.9914374	
+MYST4	null	MYST4	MYST histone acetyltransferase (monocytic leukemia) 4	-3.0021167	
+PSIP1	null	PSIP1	PC4 and SFRS1 interacting protein 1	-3.0167089	
+FKBP2	null	FKBP2	FK506 binding protein 2, 13kDa	-3.0251515	
+MTF2	null	MTF2	metal response element binding transcription factor 2	-3.025741	
+NCOA1	null	NCOA1	nuclear receptor coactivator 1	-3.0267003	
+KDM1B	null	null	null	-3.0355976	
+KDM5C	null	null	null	-3.0501	
+CBX2	null	CBX2	chromobox homolog 2 (Pc class homolog, Drosophila)	-3.0649667	
+MLL5	null	MLL5	myeloid/lymphoid or mixed-lineage leukemia 5 (trithorax homolog, Drosophila)	-3.0660365	
+BRWD1	null	BRWD1	bromodomain and WD repeat domain containing 1	-3.0703707	
+CHD4	null	CHD4	chromodomain helicase DNA binding protein 4	-3.108237	
+NFATC3	null	NFATC3	nuclear factor of activated T-cells, cytoplasmic, calcineurin-dependent 3	-3.1314101	
+MTA2	null	MTA2	metastasis associated 1 family, member 2	-3.2038364	
+PRDM15	null	PRDM15	PR domain containing 15	-3.207415	
+PADI6	null	PADI6	peptidyl arginine deiminase, type VI	-3.2374127	
+MYST1	null	MYST1	MYST histone acetyltransferase 1	-3.2690842	
+NCOA3	null	NCOA3	nuclear receptor coactivator 3	-3.2769108	
+PHF19	null	PHF19	PHD finger protein 19	-3.2938402	
+HES6	null	HES6	hairy and enhancer of split 6 (Drosophila)	-3.2976806	
+CARM1	null	CARM1	coactivator-associated arginine methyltransferase 1	-3.351701	
+KDM4A	null	null	null	-3.3946457	
+MBD4	null	MBD4	methyl-CpG binding domain protein 4	-3.4039311	
+SFMBT2	null	SFMBT2	Scm-like with four mbt domains 2	-3.5116458	
+RBBP7	null	RBBP7	retinoblastoma binding protein 7	-3.5454152	
+L3MBTL2	null	L3MBTL2	l(3)mbt-like 2 (Drosophila)	-3.586783	
+PHF20	null	PHF20	PHD finger protein 20	-3.6495974	
+KDM1A	null	null	null	-3.6501539	
+MORF4L1	null	MORF4L1	mortality factor 4 like 1	-3.668468	
+PRDM4	null	PRDM4	PR domain containing 4	-3.7371469	
+BPTF	null	null	null	-3.7609267	
+MTA1	null	MTA1	metastasis associated 1	-3.7862573	
+NAP1L1	null	NAP1L1	nucleosome assembly protein 1-like 1	-3.800327	
+PADI4	null	PADI4	peptidyl arginine deiminase, type IV	-3.8098106	
+KAT5	null	null	null	-3.8337402	
+L3MBTL4	null	L3MBTL4	l(3)mbt-like 4 (Drosophila)	-3.8382156	
+RBBP5	null	RBBP5	retinoblastoma binding protein 5	-3.8412886	
+KDM3A	null	null	null	-3.8420196	
+PRDM5	null	PRDM5	PR domain containing 5	-3.8872948	
+IWS1	null	IWS1	IWS1 homolog (S. cerevisiae)	-3.9105542	
+KDM4C	null	null	null	-3.9355316	
+JMJD6	null	null	null	-4.1037903	
+PRMT7	null	PRMT7	protein arginine methyltransferase 7	-4.131084	
+PPARGC1A	null	PPARGC1A	peroxisome proliferative activated receptor, gamma, coactivator 1, alpha	-4.1785684	
+JMJD5	null	JMJD5	jumonji domain containing 5	-4.178694	
+RNF20	null	RNF20	ring finger protein 20	-4.2376127	
+MLL1	null	null	null	-4.277481	
+NAP1L2	null	NAP1L2	nucleosome assembly protein 1-like 2	-4.314944	
+PCGF5	null	PCGF5	polycomb group ring finger 5	-4.3736672	
+L3MBTL1	null	null	null	-4.379947	
+PRDM9	null	PRDM9	PR domain containing 9	-4.7242994	
+PHF1	null	PHF1	PHD finger protein 1	-4.7347445	
+PRMT6	null	PRMT6	protein arginine methyltransferase 6	-4.771118	
+KDM2B	null	null	null	-5.00486	
+RUNX3	null	RUNX3	runt-related transcription factor 3	-5.4688787	
+CBX7	null	CBX7	chromobox homolog 7	-6.566438	
+CBX6	null	CBX6	chromobox homolog 6	-6.603489	
+CD4	null	CD4	CD4 molecule	-6.8114433	
+MLL2	null	MLL2	myeloid/lymphoid or mixed-lineage leukemia 2	-7.2516217	
+SGK1	null	null	null	-8.633601	

@@ -1,0 +1,68 @@
+# Build blast DB
+makeblastdb -in chromatin-reg_shrna_lib.txt -dbtype 'nucl' -out /gpfs/group/flits/nbild/rawdata/exp56/chromatin-reg_shrna_db
+
+# Convert fastq to fasta
+seqtk seq -a BC_9.R_2014_12_18_12_20_30_user_SN2-12-Exp56_45pM.fastq > BC_9.R_2014_12_18_12_20_30_user_SN2-12-Exp56_45pM.fasta
+seqtk seq -a BC_8.R_2014_12_18_12_20_30_user_SN2-12-Exp56_45pM.fastq > BC_8.R_2014_12_18_12_20_30_user_SN2-12-Exp56_45pM.fasta
+seqtk seq -a BC_7.R_2014_12_18_12_20_30_user_SN2-12-Exp56_45pM.fastq > BC_7.R_2014_12_18_12_20_30_user_SN2-12-Exp56_45pM.fasta
+seqtk seq -a BC_6.R_2014_12_18_12_20_30_user_SN2-12-Exp56_45pM.fastq > BC_6.R_2014_12_18_12_20_30_user_SN2-12-Exp56_45pM.fasta
+seqtk seq -a BC_3.R_2014_12_18_12_20_30_user_SN2-12-Exp56_45pM.fastq > BC_3.R_2014_12_18_12_20_30_user_SN2-12-Exp56_45pM.fasta
+seqtk seq -a BC_1.R_2014_12_18_12_20_30_user_SN2-12-Exp56_45pM.fastq > BC_1.R_2014_12_18_12_20_30_user_SN2-12-Exp56_45pM.fasta
+seqtk seq -a BC_20.R_2014_12_18_12_20_30_user_SN2-12-Exp56_45pM.fastq > BC_20.R_2014_12_18_12_20_30_user_SN2-12-Exp56_45pM.fasta
+seqtk seq -a BC_18.R_2014_12_18_12_20_30_user_SN2-12-Exp56_45pM.fastq > BC_18.R_2014_12_18_12_20_30_user_SN2-12-Exp56_45pM.fasta
+seqtk seq -a BC_17.R_2014_12_18_12_20_30_user_SN2-12-Exp56_45pM.fastq > BC_17.R_2014_12_18_12_20_30_user_SN2-12-Exp56_45pM.fasta
+seqtk seq -a BC_15.R_2014_12_18_12_20_30_user_SN2-12-Exp56_45pM.fastq > BC_15.R_2014_12_18_12_20_30_user_SN2-12-Exp56_45pM.fasta
+seqtk seq -a BC_14.R_2014_12_18_12_20_30_user_SN2-12-Exp56_45pM.fastq > BC_14.R_2014_12_18_12_20_30_user_SN2-12-Exp56_45pM.fasta
+seqtk seq -a BC_13.R_2014_12_18_12_20_30_user_SN2-12-Exp56_45pM.fastq > BC_13.R_2014_12_18_12_20_30_user_SN2-12-Exp56_45pM.fasta
+seqtk seq -a BC_12.R_2014_12_18_12_20_30_user_SN2-12-Exp56_45pM.fastq > BC_12.R_2014_12_18_12_20_30_user_SN2-12-Exp56_45pM.fasta
+seqtk seq -a BC_11.R_2014_12_18_12_20_30_user_SN2-12-Exp56_45pM.fastq > BC_11.R_2014_12_18_12_20_30_user_SN2-12-Exp56_45pM.fasta
+seqtk seq -a BC_10.R_2014_12_18_12_20_30_user_SN2-12-Exp56_45pM.fastq > BC_10.R_2014_12_18_12_20_30_user_SN2-12-Exp56_45pM.fasta
+
+# Run blast
+blastn -db /gpfs/group/flits/nbild/rawdata/exp56/blast_db/chromatin-reg_shrna_db -query /gpfs/group/flits/nbild/rawdata/exp56/BC_10.R_2014_12_18_12_20_30_user_SN2-12-Exp56_45pM.fasta -out /gpfs/group/flits/nbild/rawdata/exp56/BC_10.R_2014_12_18_12_20_30_user_SN2-12-Exp56_45pM.out -outfmt "6 qacc sacc evalue qstart qend sstart send"
+blastn -db /gpfs/group/flits/nbild/rawdata/exp56/blast_db/chromatin-reg_shrna_db -query /gpfs/group/flits/nbild/rawdata/exp56/BC_11.R_2014_12_18_12_20_30_user_SN2-12-Exp56_45pM.fasta -out /gpfs/group/flits/nbild/rawdata/exp56/BC_11.R_2014_12_18_12_20_30_user_SN2-12-Exp56_45pM.out -outfmt "6 qacc sacc evalue qstart qend sstart send"
+blastn -db /gpfs/group/flits/nbild/rawdata/exp56/blast_db/chromatin-reg_shrna_db -query /gpfs/group/flits/nbild/rawdata/exp56/BC_12.R_2014_12_18_12_20_30_user_SN2-12-Exp56_45pM.fasta -out /gpfs/group/flits/nbild/rawdata/exp56/BC_12.R_2014_12_18_12_20_30_user_SN2-12-Exp56_45pM.out -outfmt "6 qacc sacc evalue qstart qend sstart send"
+blastn -db /gpfs/group/flits/nbild/rawdata/exp56/blast_db/chromatin-reg_shrna_db -query /gpfs/group/flits/nbild/rawdata/exp56/BC_13.R_2014_12_18_12_20_30_user_SN2-12-Exp56_45pM.fasta -out /gpfs/group/flits/nbild/rawdata/exp56/BC_13.R_2014_12_18_12_20_30_user_SN2-12-Exp56_45pM.out -outfmt "6 qacc sacc evalue qstart qend sstart send"
+blastn -db /gpfs/group/flits/nbild/rawdata/exp56/blast_db/chromatin-reg_shrna_db -query /gpfs/group/flits/nbild/rawdata/exp56/BC_14.R_2014_12_18_12_20_30_user_SN2-12-Exp56_45pM.fasta -out /gpfs/group/flits/nbild/rawdata/exp56/BC_14.R_2014_12_18_12_20_30_user_SN2-12-Exp56_45pM.out -outfmt "6 qacc sacc evalue qstart qend sstart send"
+blastn -db /gpfs/group/flits/nbild/rawdata/exp56/blast_db/chromatin-reg_shrna_db -query /gpfs/group/flits/nbild/rawdata/exp56/BC_15.R_2014_12_18_12_20_30_user_SN2-12-Exp56_45pM.fasta -out /gpfs/group/flits/nbild/rawdata/exp56/BC_15.R_2014_12_18_12_20_30_user_SN2-12-Exp56_45pM.out -outfmt "6 qacc sacc evalue qstart qend sstart send"
+blastn -db /gpfs/group/flits/nbild/rawdata/exp56/blast_db/chromatin-reg_shrna_db -query /gpfs/group/flits/nbild/rawdata/exp56/BC_17.R_2014_12_18_12_20_30_user_SN2-12-Exp56_45pM.fasta -out /gpfs/group/flits/nbild/rawdata/exp56/BC_17.R_2014_12_18_12_20_30_user_SN2-12-Exp56_45pM.out -outfmt "6 qacc sacc evalue qstart qend sstart send"
+blastn -db /gpfs/group/flits/nbild/rawdata/exp56/blast_db/chromatin-reg_shrna_db -query /gpfs/group/flits/nbild/rawdata/exp56/BC_18.R_2014_12_18_12_20_30_user_SN2-12-Exp56_45pM.fasta -out /gpfs/group/flits/nbild/rawdata/exp56/BC_18.R_2014_12_18_12_20_30_user_SN2-12-Exp56_45pM.out -outfmt "6 qacc sacc evalue qstart qend sstart send"
+blastn -db /gpfs/group/flits/nbild/rawdata/exp56/blast_db/chromatin-reg_shrna_db -query /gpfs/group/flits/nbild/rawdata/exp56/BC_1.R_2014_12_18_12_20_30_user_SN2-12-Exp56_45pM.fasta -out /gpfs/group/flits/nbild/rawdata/exp56/BC_1.R_2014_12_18_12_20_30_user_SN2-12-Exp56_45pM.out -outfmt "6 qacc sacc evalue qstart qend sstart send"
+blastn -db /gpfs/group/flits/nbild/rawdata/exp56/blast_db/chromatin-reg_shrna_db -query /gpfs/group/flits/nbild/rawdata/exp56/BC_20.R_2014_12_18_12_20_30_user_SN2-12-Exp56_45pM.fasta -out /gpfs/group/flits/nbild/rawdata/exp56/BC_20.R_2014_12_18_12_20_30_user_SN2-12-Exp56_45pM.out -outfmt "6 qacc sacc evalue qstart qend sstart send"
+blastn -db /gpfs/group/flits/nbild/rawdata/exp56/blast_db/chromatin-reg_shrna_db -query /gpfs/group/flits/nbild/rawdata/exp56/BC_3.R_2014_12_18_12_20_30_user_SN2-12-Exp56_45pM.fasta -out /gpfs/group/flits/nbild/rawdata/exp56/BC_3.R_2014_12_18_12_20_30_user_SN2-12-Exp56_45pM.out -outfmt "6 qacc sacc evalue qstart qend sstart send"
+blastn -db /gpfs/group/flits/nbild/rawdata/exp56/blast_db/chromatin-reg_shrna_db -query /gpfs/group/flits/nbild/rawdata/exp56/BC_6.R_2014_12_18_12_20_30_user_SN2-12-Exp56_45pM.fasta -out /gpfs/group/flits/nbild/rawdata/exp56/BC_6.R_2014_12_18_12_20_30_user_SN2-12-Exp56_45pM.out -outfmt "6 qacc sacc evalue qstart qend sstart send"
+blastn -db /gpfs/group/flits/nbild/rawdata/exp56/blast_db/chromatin-reg_shrna_db -query /gpfs/group/flits/nbild/rawdata/exp56/BC_7.R_2014_12_18_12_20_30_user_SN2-12-Exp56_45pM.fasta -out /gpfs/group/flits/nbild/rawdata/exp56/BC_7.R_2014_12_18_12_20_30_user_SN2-12-Exp56_45pM.out -outfmt "6 qacc sacc evalue qstart qend sstart send"
+blastn -db /gpfs/group/flits/nbild/rawdata/exp56/blast_db/chromatin-reg_shrna_db -query /gpfs/group/flits/nbild/rawdata/exp56/BC_8.R_2014_12_18_12_20_30_user_SN2-12-Exp56_45pM.fasta -out /gpfs/group/flits/nbild/rawdata/exp56/BC_8.R_2014_12_18_12_20_30_user_SN2-12-Exp56_45pM.out -outfmt "6 qacc sacc evalue qstart qend sstart send"
+blastn -db /gpfs/group/flits/nbild/rawdata/exp56/blast_db/chromatin-reg_shrna_db -query /gpfs/group/flits/nbild/rawdata/exp56/BC_9.R_2014_12_18_12_20_30_user_SN2-12-Exp56_45pM.fasta -out /gpfs/group/flits/nbild/rawdata/exp56/BC_9.R_2014_12_18_12_20_30_user_SN2-12-Exp56_45pM.out -outfmt "6 qacc sacc evalue qstart qend sstart send"
+
+# Counts
+~/pipelines/scripts/blast_count.pl BC_20.R_2014_12_18_12_20_30_user_SN2-12-Exp56_45pM.out > bc20_counts.txt
+~/pipelines/scripts/blast_count.pl BC_3.R_2014_12_18_12_20_30_user_SN2-12-Exp56_45pM.out > bc3_counts.txt
+~/pipelines/scripts/blast_count.pl BC_14.R_2014_12_18_12_20_30_user_SN2-12-Exp56_45pM.out > bc14_counts.txt
+~/pipelines/scripts/blast_count.pl BC_15.R_2014_12_18_12_20_30_user_SN2-12-Exp56_45pM.out > bc15_counts.txt
+~/pipelines/scripts/blast_count.pl BC_13.R_2014_12_18_12_20_30_user_SN2-12-Exp56_45pM.out > bc13_counts.txt
+~/pipelines/scripts/blast_count.pl BC_17.R_2014_12_18_12_20_30_user_SN2-12-Exp56_45pM.out > bc17_counts.txt
+~/pipelines/scripts/blast_count.pl BC_12.R_2014_12_18_12_20_30_user_SN2-12-Exp56_45pM.out > bc12_counts.txt
+~/pipelines/scripts/blast_count.pl BC_6.R_2014_12_18_12_20_30_user_SN2-12-Exp56_45pM.out > bc6_counts.txt
+~/pipelines/scripts/blast_count.pl BC_18.R_2014_12_18_12_20_30_user_SN2-12-Exp56_45pM.out > bc18_counts.txt
+~/pipelines/scripts/blast_count.pl BC_7.R_2014_12_18_12_20_30_user_SN2-12-Exp56_45pM.out > bc7_counts.txt
+~/pipelines/scripts/blast_count.pl BC_9.R_2014_12_18_12_20_30_user_SN2-12-Exp56_45pM.out > bc9_counts.txt
+~/pipelines/scripts/blast_count.pl BC_1.R_2014_12_18_12_20_30_user_SN2-12-Exp56_45pM.out > bc1_counts.txt
+~/pipelines/scripts/blast_count.pl BC_11.R_2014_12_18_12_20_30_user_SN2-12-Exp56_45pM.out > bc11_counts.txt
+~/pipelines/scripts/blast_count.pl BC_10.R_2014_12_18_12_20_30_user_SN2-12-Exp56_45pM.out > bc10_counts.txt
+~/pipelines/scripts/blast_count.pl BC_8.R_2014_12_18_12_20_30_user_SN2-12-Exp56_45pM.out > bc8_counts.txt
+
+# Quantile Normalization
+R script:
+--------------------------------
+source('http://bioconductor.org/biocLite.R')
+biocLite('preprocessCore')
+library(preprocessCore)
+
+countsTable <- as.matrix(read.table("/gpfs/group/flits/nbild/analysis/exp35-56/2014-12_reps-combined/17x20-all_out.txt.final",header=TRUE,row.names=1))
+norm <- normalize.quantiles(countsTable)
+rownames(norm) <- rownames(countsTable)
+colnames(norm) <- colnames(countsTable)
+write.csv(norm,"/gpfs/group/flits/nbild/analysis/exp35-56/2014-12_reps-combined/17x20-all_out.txt.final.norm")
+--------------------------------
+
