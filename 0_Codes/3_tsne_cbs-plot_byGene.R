@@ -49,7 +49,7 @@ cbs_plot <- function(in.file){
   
   cbs.plot <- ggplot(in.df, aes(x=in.df$t1, y=in.df$t2, color=in.df$zScore, size=in.df$nlog10p)) +
     geom_point(alpha = 0.8, shape = 19) +
-    scale_color_gradient2(midpoint=0, limits = c(-5,5), low="dodgerblue4", mid="white", high="firebrick4", space ="Lab" ) +
+    scale_color_gradient2(midpoint=0, limits = c(-3,3), low="dodgerblue4", mid="white", high="firebrick4", space ="Lab" ) +
     scale_x_continuous(limits = c(-100, 100)) +
     scale_y_continuous(limits = c(-100, 100)) +
     theme(panel.background = element_rect(fill = "white", colour = "white",size = 0.5, linetype = "solid"),
@@ -57,13 +57,13 @@ cbs_plot <- function(in.file){
           panel.grid.minor = element_line(size = 0.15, linetype = 'solid',colour = "grey"),
           text = element_text(size=10))
   # Save without annotation
-  out.name <- gsub(".csv", ".png", in.file)
-  ggsave(out.name, plot = cbs.plot, device = "png", units = "cm", width = 25, height = 25)
+  out.name <- gsub(".csv", ".pdf", in.file)
+  ggsave(out.name, plot = cbs.plot, device = "pdf", units = "cm", width = 25, height = 25)
   # Save with annotation
   cbs.plot <- cbs.plot +
     geom_text_repel(aes(label = in.df$gene_name_anno), size = 6)
-  out.name <- gsub(".csv", "_anno.png", in.file)
-  ggsave(out.name, plot = cbs.plot, device = "png", units = "cm", width = 25, height = 25)
+  out.name <- gsub(".csv", "_anno.pdf", in.file)
+  ggsave(out.name, plot = cbs.plot, device = "pdf", units = "cm", width = 25, height = 25)
 }
 
 ########## Main ##########
@@ -113,7 +113,7 @@ if (FALSE){
 ###----- Plot
 #--- Tsne-per5
 if (FALSE){
-  wk.dir <- "/Users/yolandatiao/Desktop/CRF_Screen/2_0_t-test_by_gene/compiled_Amt/tsne-per5_cbs-plott"
+  wk.dir <- "/Users/yolandatiao/Desktop/CRF_Screen/2_0_t-test_by_gene/compiled_Amt/tsne-per5_cbs-plot"
   setwd(wk.dir)  
   files <- list.files(path = wk.dir, pattern = "tsnf-z-p.csv", full.name=FALSE, recursive=FALSE)
   for (file.x in files){
@@ -131,5 +131,9 @@ if (FALSE){
   }
 }
 
+#--- Save as pdf
+#file.x <- '/Volumes/Yolanda/CRF_Screen/InVitro/2_0_t-test_by_gene/compiled_Amt/tsne-per5_cbs-plot/CD127GeoMean_100U _tsnf-z-p.csv'
+#cbs_plot(file.x)
 
-
+file.x <- '/Volumes/Yolanda/CRF_Screen/InVitro/2_0_t-test_by_gene/compiled_Amt/per5/tsne-per5_cbs-plot/CD25GeoMean_100U _tsnf-z-p.csv'
+cbs_plot(file.x)
