@@ -284,5 +284,59 @@ InputVsRest(P1521Q4, P1521Q3, P1521Q2, P1521Q1, P1521input)
 
 
 
+###--- Average effect by pool (calculate only the last column)
+def avgByGene(inFile):
+    #inFile = "/Volumes/Yolanda/CRF_Screen/InVivo/1_1_Norm/20190401/GateComparisons/P1-7_InputMinusAvg.csv"
+    outFile = inFile.replace(".csv", "_byGene.csv")
+    inTab = ascii.read(inFile)
+    inTabCols = inTab.colnames
+    for x in range(1, len(inTabCols)-1):
+        del inTab[inTabCols[x]]
+    inTabshRNA = list(inTab["shRNA"])
+    inTabGene = [x.split(".")[0] for x in inTabshRNA]
+    inTab["geneName"] = inTabGene
+    inTab_byGeneName = inTab.group_by("geneName")
+    
+    with open(outFile, "w") as fout:
+        wfout = csv.writer(fout, delimiter=",")
+        wfout.writerow(["GeneName", inTab.colnames[1]])
+        for groupX in inTab_byGeneName.groups:
+            nameX = groupX["geneName"][0]
+            groupXAvg = sum(list(groupX.columns[1]))/len(list(groupX.columns[1]))
+            newRow = [nameX, groupXAvg]
+            wfout.writerow(newRow)
+
+os.chdir("/Volumes/Yolanda/CRF_Screen/InVivo/1_1_Norm/20190401/GateComparisons")
+for file in glob.glob("*.csv"):
+    avgByGene(file)
+
+###--- Integrate data
+def mergeTables(fileList):
+    #fileList = ["P15-21_Q4minusQ1_byGene.csv"]
+    outFileName = fileList[0].split("_")[-2] + "_" + fileList[0].split("_")[-1]
+    with open(outFileName, "w") as fout:
+        wfout = csv.writer(fout, delimiter=",")
+        wfout.writerow(["Pool", "Gene", "nbPctgShift"])
+        for file in fileList:
+            with open(file, "r") as fin:
+                pool = file.split("_")[0]
+                rfin = csv.reader(fin, delimiter=",")
+                next(rfin)
+                for row in rfin:
+                    wfout.writerow([pool] + row)
+                    
+mergeTables(["P1-7_InputMinusAvg_byGene.csv",
+            "P8-14_InputMinusAvg_byGene.csv",
+            "P15-21_InputMinusAvg_byGene.csv"])
+
+mergeTables(["P1-7_Q3minusOther_byGene.csv",
+            "P8-14_Q3minusOther_byGene.csv",
+            "P15-21_Q3minusOther_byGene.csv"])
+
+mergeTables(["P1-7_Q4minusQ1_byGene.csv",
+            "P8-14_Q4minusQ1_byGene.csv",
+            "P15-21_Q4minusQ1_byGene.csv"])
+
+
 
 
