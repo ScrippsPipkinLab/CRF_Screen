@@ -110,9 +110,9 @@ def nbPctg(inFile):
     outFileName = inFileName + "_nbPctg.csv"
     inTab = ascii.read(inFile)
     pctgList = inTab.columns[3]
-    pctgList_10000 = [x*10000 for x in pctgList]
-    allNb = fit_nbinom(np.array(pctgList_10000))
-    nbPctgList = [st.nbinom.cdf(x, allNb['size'], allNb['prob'])*100 for x in pctgList_10000]    
+    pctgList_million = [x*1000000 for x in pctgList]
+    allNb = fit_nbinom(np.array(pctgList_million))
+    nbPctgList = [st.nbinom.cdf(x, allNb['size'], allNb['prob'])*100 for x in pctgList_million]    
     inTab['nbPctg'] = nbPctgList
     ascii.write(inTab, outFileName, format="csv", overwrite="True")  
     
@@ -136,8 +136,8 @@ for file in glob.glob("%s/*.csv"%wk_dir):
 ###--- Gate comparisons
 #----- Q1vQ4
 def Q4minusQ1(q4File, q1File):
-    q4File = "/Volumes/Yolanda/CRF_Screen/InVivo/1_1_Norm/20190401/P1-7_Q4_combined_pctg_nbPctg.csv"
-    q1File = "/Volumes/Yolanda/CRF_Screen/InVivo/1_1_Norm/20190401/P1-7_Q1_combined_pctg_nbPctg.csv"
+    #q4File = "/Volumes/Yolanda/CRF_Screen/InVivo/1_1_Norm/20190401/P1-7_Q4_combined_pctg_nbPctg.csv"
+    #q1File = "/Volumes/Yolanda/CRF_Screen/InVivo/1_1_Norm/20190401/P1-7_Q1_combined_pctg_nbPctg.csv"
     group = q4File.split("/")[-1].split("_")[0]
     outName = group + "_Q4minusQ1.csv"
     q4Tab = ascii.read(q4File)
@@ -156,21 +156,131 @@ def Q4minusQ1(q4File, q1File):
     ascii.write(allTab, outName, format="csv", overwrite=True)
     
 
+P17Q4 = "P1-7_Q4_combined_pctg_nbPctg.csv" 
+P17Q1 = "P1-7_Q1_combined_pctg_nbPctg.csv" 
+Q4minusQ1(P17Q4, P17Q1)
+
+P814Q4 = "P8-14_Q4_combined_pctg_nbPctg.csv" 
+P814Q1 = "P8-14_Q1_combined_pctg_nbPctg.csv" 
+Q4minusQ1(P814Q4, P814Q1)
+
+P1521Q4 = "P15-21_Q4_combined_pctg_nbPctg.csv" 
+P1521Q1 = "P15-21_Q1_combined_pctg_nbPctg.csv" 
+Q4minusQ1(P1521Q4, P1521Q1)
 
 
 
+def Q3minusOther(q4File, q3File, q2File, q1File):
+    #q4File = "/Volumes/Yolanda/CRF_Screen/InVivo/1_1_Norm/20190401/P1-7_Q4_combined_pctg_nbPctg.csv"
+    #q1File = "/Volumes/Yolanda/CRF_Screen/InVivo/1_1_Norm/20190401/P1-7_Q1_combined_pctg_nbPctg.csv"
+    group = q4File.split("/")[-1].split("_")[0]
+    outName = group + "_Q3minusOther.csv"
+    q4Tab = ascii.read(q4File)
+    q3Tab = ascii.read(q3File)
+    q2Tab = ascii.read(q2File)
+    q1Tab = ascii.read(q1File)
+    del q4Tab['count']
+    del q4Tab['pctg']
+    del q4Tab['type']
+    del q3Tab['count']
+    del q3Tab['pctg']
+    del q3Tab['type']
+    del q2Tab['count']
+    del q2Tab['pctg']
+    del q2Tab['type']
+    del q1Tab['count']
+    del q1Tab['pctg']
+    del q1Tab['type']
+    q4Tab["nbPctg"].name = "nbPctg_Q4"
+    q3Tab["nbPctg"].name = "nbPctg_Q3"
+    q2Tab["nbPctg"].name = "nbPctg_Q2"
+    q1Tab["nbPctg"].name = "nbPctg_Q1"
+    allTab = join(q4Tab, q3Tab, join_type="inner", keys="shRNA")
+    allTab = join(allTab, q2Tab, join_type="inner", keys="shRNA")
+    allTab = join(allTab, q1Tab, join_type="inner", keys="shRNA")
+    avg124 = [(x+y+z)/3 for index, (x,y,z) in enumerate(zip(list(allTab["nbPctg_Q1"]),list(allTab["nbPctg_Q2"]),list(allTab["nbPctg_Q4"])))]
+    q3minusOther = [x-y for index, (x,y) in enumerate(zip(list(allTab["nbPctg_Q3"]), avg124))]
+    allTab["q3minusOther_nbPctg"] = q3minusOther
+    ascii.write(allTab, outName, format="csv", overwrite=True)
+
+P17Q4 = "P1-7_Q4_combined_pctg_nbPctg.csv" 
+P17Q3 = "P1-7_Q3_combined_pctg_nbPctg.csv" 
+P17Q2 = "P1-7_Q2_combined_pctg_nbPctg.csv" 
+P17Q1 = "P1-7_Q1_combined_pctg_nbPctg.csv" 
+Q3minusOther(P17Q4, P17Q3, P17Q2, P17Q1)
+
+P814Q4 = "P8-14_Q4_combined_pctg_nbPctg.csv" 
+P814Q3 = "P8-14_Q3_combined_pctg_nbPctg.csv" 
+P814Q2 = "P8-14_Q2_combined_pctg_nbPctg.csv" 
+P814Q1 = "P8-14_Q1_combined_pctg_nbPctg.csv" 
+Q3minusOther(P814Q4, P814Q3, P814Q2, P814Q1)
+
+P1521Q4 = "P15-21_Q4_combined_pctg_nbPctg.csv" 
+P1521Q3 = "P15-21_Q3_combined_pctg_nbPctg.csv" 
+P1521Q2 = "P15-21_Q2_combined_pctg_nbPctg.csv" 
+P1521Q1 = "P15-21_Q1_combined_pctg_nbPctg.csv" 
+Q3minusOther(P1521Q4, P1521Q3, P1521Q2, P1521Q1)
 
 
+def InputVsRest(q4File, q3File, q2File, q1File,inputFile):
+    #q4File = "/Volumes/Yolanda/CRF_Screen/InVivo/1_1_Norm/20190401/P1-7_Q4_combined_pctg_nbPctg.csv"
+    #q1File = "/Volumes/Yolanda/CRF_Screen/InVivo/1_1_Norm/20190401/P1-7_Q1_combined_pctg_nbPctg.csv"
+    group = q4File.split("/")[-1].split("_")[0]
+    outName = group + "_InputMinusAvg.csv"
+    q4Tab = ascii.read(q4File)
+    q3Tab = ascii.read(q3File)
+    q2Tab = ascii.read(q2File)
+    q1Tab = ascii.read(q1File)
+    inputTab = ascii.read(inputFile)
+    del q4Tab['count']
+    del q4Tab['pctg']
+    del q4Tab['type']
+    del q3Tab['count']
+    del q3Tab['pctg']
+    del q3Tab['type']
+    del q2Tab['count']
+    del q2Tab['pctg']
+    del q2Tab['type']
+    del q1Tab['count']
+    del q1Tab['pctg']
+    del q1Tab['type']
+    del inputTab['count']
+    del inputTab['pctg']
+    del inputTab['type']
+    q4Tab["nbPctg"].name = "nbPctg_Q4"
+    q3Tab["nbPctg"].name = "nbPctg_Q3"
+    q2Tab["nbPctg"].name = "nbPctg_Q2"
+    q1Tab["nbPctg"].name = "nbPctg_Q1"
+    inputTab["nbPctg"].name = "nbPctg_input"
+    allTab = join(q4Tab, q3Tab, join_type="inner", keys="shRNA")
+    allTab = join(allTab, q2Tab, join_type="inner", keys="shRNA")
+    allTab = join(allTab, q1Tab, join_type="inner", keys="shRNA")
+    allTab = join(allTab, inputTab, join_type="inner", keys="shRNA")
+    avgAll = [(a+b+c+d)/4 for index, (a,b,c,d) in enumerate(zip(list(allTab["nbPctg_Q1"]),list(allTab["nbPctg_Q2"]),list(allTab["nbPctg_Q3"]),list(allTab["nbPctg_Q4"])))]
+    InminusAvg = [x-y for index, (x,y) in enumerate(zip(list(allTab["nbPctg_input"]), avgAll))]
+    allTab["inputMinusAvg_nbPctg"] = InminusAvg
+    ascii.write(allTab, outName, format="csv", overwrite=True)
 
+P17Q4 = "P1-7_Q4_combined_pctg_nbPctg.csv" 
+P17Q3 = "P1-7_Q3_combined_pctg_nbPctg.csv" 
+P17Q2 = "P1-7_Q2_combined_pctg_nbPctg.csv" 
+P17Q1 = "P1-7_Q1_combined_pctg_nbPctg.csv" 
+P17input = "P1-7_Input_combined_pctg_nbPctg.csv" 
+InputVsRest(P17Q4, P17Q3, P17Q2, P17Q1, P17input)
 
+P814Q4 = "P8-14_Q4_combined_pctg_nbPctg.csv" 
+P814Q3 = "P8-14_Q3_combined_pctg_nbPctg.csv" 
+P814Q2 = "P8-14_Q2_combined_pctg_nbPctg.csv" 
+P814Q1 = "P8-14_Q1_combined_pctg_nbPctg.csv" 
+P814input = "P8-14_Input_combined_pctg_nbPctg.csv" 
+InputVsRest(P814Q4, P814Q3, P814Q2, P814Q1, P814input)
 
-
-
-
-
-
-
-
+P1521Q4 = "P15-21_Q4_combined_pctg_nbPctg.csv" 
+P1521Q3 = "P15-21_Q3_combined_pctg_nbPctg.csv" 
+P1521Q2 = "P15-21_Q2_combined_pctg_nbPctg.csv" 
+P1521Q1 = "P15-21_Q1_combined_pctg_nbPctg.csv" 
+P1521input = "P15-21_Input_combined_pctg_nbPctg.csv" 
+InputVsRest(P1521Q4, P1521Q3, P1521Q2, P1521Q1, P1521input)
 
 
 
