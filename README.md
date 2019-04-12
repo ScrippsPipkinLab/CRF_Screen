@@ -27,7 +27,7 @@ https://www.dropbox.com/home/Pipkin%20Lab/Projects_PipkinLab_DB_original/Chromat
 
 >__Script__: [0_dataPrep.py](0_Codes/0_dataPrep.py) <br/> 
 __Source files__: [Screen_markers](InVitro/Megan_originaldata/Screen_markers)  <br/> 
-__Output files__: [1_0_Raw](1_0_Raw); [1_1_shRNAmatched](InVitro/1_1_shRNAmatched) <br/>
+__Output files__: [1_0_Raw](InVitro/1_0_Raw); [1_1_shRNAmatched](InVitro/1_1_shRNAmatched) <br/>
 
 ### 1. Data normalization <br/> 
 * __1.1__ Calculate percentile and Z-score of each sample <br/> 
