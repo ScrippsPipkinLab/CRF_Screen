@@ -172,7 +172,7 @@ def nbRawCount(inFile):
 
 ########## Main ##########
 #----- Directory
-wk_dir = "/Volumes/Yolanda/CRF_Screen/InVivo/1_1_Norm/OldTrials/20190403"
+wk_dir = "/Volumes/Yolanda/CRF_Screen/InVivo/1_1_Norm/20190403_Exp35Exp56_nbPctgToAll"
 os.chdir(wk_dir)
 
 #----- Calculate Z-Score, filter outliers
@@ -218,6 +218,7 @@ for file in glob.glob("*Exp35Exp56.csv"):
     pctgTotal(file)
 
 #----- Calculate percentiles of count percentage in total distribution
+os.chdir("/Volumes/Yolanda/CRF_Screen/InVivo/1_1_Norm/20190403_Exp35Exp56_nbPctgToAll/pctg")
 pctgmillion_list = []
 for file in glob.glob("*Exp35Exp56_pctg.csv"):
     tab = ascii.read(file)
@@ -392,7 +393,7 @@ def avgByGene(inFile):
             newRow = [nameX, groupXAvg]
             wfout.writerow(newRow)
 
-os.chdir("/Volumes/Yolanda/CRF_Screen/InVivo/1_1_Norm/OldTrials/20190403/GateComparisons")
+os.chdir("/Volumes/Yolanda/CRF_Screen/InVivo/1_1_Norm/20190403_Exp35Exp56_nbPctgToAll/GateComparisons")
 for file in glob.glob("*.csv"):
     avgByGene(file)
 
