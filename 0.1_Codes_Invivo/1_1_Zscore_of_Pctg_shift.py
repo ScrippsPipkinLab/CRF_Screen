@@ -26,10 +26,15 @@ import csv
 
 
 ########## Self-defined functions ##########
+def UniformCase(strx):
+    return(strx[0].upper() + strx[1:].lower())    
+    
+    
 def avg_ctrl(inFile):
     #inFile = "Q4minusQ1_byGene.csv"
     outName = inFile.replace(".csv", "_ctrl_avg.csv")
     inTab = ascii.read(inFile)
+    inTab['Gene'] = [UniformCase(x) for x in list(inTab['Gene'])]
     del inTab['Pool']
     
     # Slice table into 'duplicate' and 'unique'
