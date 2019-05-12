@@ -21,7 +21,7 @@ Created on Thu May  2 19:48:57 2019
 import glob
 import os
 from astropy.io import ascii
-import csv
+import statistics as st
 
 
 
@@ -72,19 +72,32 @@ def avg_ctrl(inFile):
     del uniqTab["dup"]
     ascii.write(uniqTab, outName, format="csv", overwrite=True)
     
-
+def ZScore(inFile):
+    #inFile = "Q4minusQ1_byGene_ctrl_avg.csv"
+    outFile = inFile.replace(".csv", "_Z.csv")
+    intab = ascii.read(inFile)
+    shift = list(intab['nbPctgShift'])
+    shift_dev = st.stdev(shift)
+    shift_mean = sum(shift)/len(shift)
+    z_list = [(x-shift_mean)/shift_dev for x in shift]
+    intab['ZScore'] = z_list
+    ascii.write(intab, outFile, format="csv", overwrite=True)
 
 ########## Main ##########
 # Calculate mean of duplicated controls for each file
-os.chdir("/Volumes/Yolanda/CRF_Screen/InVivo/1_1_Norm/20190403_Exp35Exp56_nbPctgToAll/GateComparisons")
+os.chdir("/Volumes/Yolanda/CRF_Screen/InVivo/1_1_Norm/20190512_Exp35Exp56_nbPctl-All/2_GateComparisons_pooled_byGene")
 for file in glob.glob("*byGene.csv"):
     avg_ctrl(file)
 
 
+os.chdir("/Volumes/Yolanda/CRF_Screen/InVivo/1_1_Norm/20190506_Exp35Exp56_cellN/GateComparisons")
+for file in glob.glob("*byGene.csv"):
+    avg_ctrl(file)
+    
 
-
-
-
+os.chdir("/Volumes/Yolanda/CRF_Screen/InVivo/1_1_Norm/20190403_Exp35Exp56_nbPctgToAll/GateComparisons")
+for file in glob.glob("*avg.csv"):
+    ZScore(file)
 
 
 

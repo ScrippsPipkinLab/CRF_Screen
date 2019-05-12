@@ -172,7 +172,7 @@ def nbRawCount(inFile):
 
 ########## Main ##########
 #----- Directory
-wk_dir = "/Volumes/Yolanda/CRF_Screen/InVivo/1_1_Norm/20190403_Exp35Exp56_nbPctgToAll"
+wk_dir = "/Volumes/Yolanda/CRF_Screen/InVivo/1_1_Norm/20190512_Exp35Exp56_nbPctl-All"
 os.chdir(wk_dir)
 
 #----- Calculate Z-Score, filter outliers
@@ -212,15 +212,31 @@ for typex, filex in type_dict.items():
     del newtab["count2"]
     ascii.write(newtab, outname, format="csv", overwrite=True)
 
+#----- Filter out bench contaminants
+# Contaminant: CDK9, Ccnt1
+# Off target shRNA: Cd19
+cont_list = ["CDK9", "Ccnt1", "Cd19"]
+def flt_ct(inFile):
+    outName = inFile.replace(".csv", "flt-ct.csv")
+    with open(inFile, 'r') as fin:
+        with open(outName, 'w') as fout:
+            rfin = csv.reader(fin, delimiter=",")
+            wfout = csv.writer(fout, delimiter=",")
+            for row in rfin:
+                if row[0].split(".")[0] not in cont_list:
+                    wfout.writerow(row)
+for file in glob.glob("*_Exp35Exp56.csv"):
+    flt_ct(file)
+
 
 #----- Calculate percentages of counts in each groups
-for file in glob.glob("*Exp35Exp56.csv"):
+for file in glob.glob("*Exp35Exp56flt-ct.csv"):
     pctgTotal(file)
 
 #----- Calculate percentiles of count percentage in total distribution
-os.chdir("/Volumes/Yolanda/CRF_Screen/InVivo/1_1_Norm/20190403_Exp35Exp56_nbPctgToAll/pctg")
+os.chdir("/Volumes/Yolanda/CRF_Screen/InVivo/1_1_Norm/20190512_Exp35Exp56_nbPctl-All")
 pctgmillion_list = []
-for file in glob.glob("*Exp35Exp56_pctg.csv"):
+for file in glob.glob("*ct_pctg.csv"):
     tab = ascii.read(file)
     pctgmillion_list += [x*1000000 for x in list(tab["pctg"])]
 pctgmillion_list.sort()
@@ -228,7 +244,7 @@ plt.plot(pctgmillion_list)
 plt.show
 all_nb = fit_nbinom(np.array(pctgmillion_list))
 
-for file in glob.glob("*Exp35Exp56_pctg.csv"):
+for file in glob.glob("*Exp35Exp56flt-ct_pctg.csv"):
     nbPctgTotal(file, all_nb)
     
    
@@ -253,16 +269,16 @@ def Q4minusQ1(q4File, q1File):
     ascii.write(allTab, outName, format="csv", overwrite=True)
     
 
-P17Q4 = "P1-7_Q4_Exp35Exp56_pctg_nbPctgTotal.csv" 
-P17Q1 = "P1-7_Q1_Exp35Exp56_pctg_nbPctgTotal.csv" 
+P17Q4 = "P1-7_Q4_Exp35Exp56flt-ct_pctg_nbPctgTotal.csv" 
+P17Q1 = "P1-7_Q1_Exp35Exp56flt-ct_pctg_nbPctgTotal.csv" 
 Q4minusQ1(P17Q4, P17Q1)
 
-P814Q4 = "P8-14_Q4_Exp35Exp56_pctg_nbPctgTotal.csv" 
-P814Q1 = "P8-14_Q1_Exp35Exp56_pctg_nbPctgTotal.csv" 
+P814Q4 = "P8-14_Q4_Exp35Exp56flt-ct_pctg_nbPctgTotal.csv" 
+P814Q1 = "P8-14_Q1_Exp35Exp56flt-ct_pctg_nbPctgTotal.csv" 
 Q4minusQ1(P814Q4, P814Q1)
 
-P1521Q4 = "P15-21_Q4_Exp35Exp56_pctg_nbPctgTotal.csv" 
-P1521Q1 = "P15-21_Q1_Exp35Exp56_pctg_nbPctgTotal.csv" 
+P1521Q4 = "P15-21_Q4_Exp35Exp56flt-ct_pctg_nbPctgTotal.csv" 
+P1521Q1 = "P15-21_Q1_Exp35Exp56flt-ct_pctg_nbPctgTotal.csv" 
 Q4minusQ1(P1521Q4, P1521Q1)
 
 
@@ -296,22 +312,22 @@ def Q3minusOther(q4File, q3File, q2File, q1File):
     allTab["q3minusOther_nbPctg"] = q3minusOther
     ascii.write(allTab, outName, format="csv", overwrite=True)
 
-P17Q4 = "P1-7_Q4_Exp35Exp56_pctg_nbPctgTotal.csv" 
-P17Q3 = "P1-7_Q3_Exp35Exp56_pctg_nbPctgTotal.csv" 
-P17Q2 = "P1-7_Q2_Exp35Exp56_pctg_nbPctgTotal.csv" 
-P17Q1 = "P1-7_Q1_Exp35Exp56_pctg_nbPctgTotal.csv" 
+P17Q4 = "P1-7_Q4_Exp35Exp56flt-ct_pctg_nbPctgTotal.csv" 
+P17Q3 = "P1-7_Q3_Exp35Exp56flt-ct_pctg_nbPctgTotal.csv" 
+P17Q2 = "P1-7_Q2_Exp35Exp56flt-ct_pctg_nbPctgTotal.csv" 
+P17Q1 = "P1-7_Q1_Exp35Exp56flt-ct_pctg_nbPctgTotal.csv" 
 Q3minusOther(P17Q4, P17Q3, P17Q2, P17Q1)
 
-P814Q4 = "P8-14_Q4_Exp35Exp56_pctg_nbPctgTotal.csv" 
-P814Q3 = "P8-14_Q3_Exp35Exp56_pctg_nbPctgTotal.csv" 
-P814Q2 = "P8-14_Q2_Exp35Exp56_pctg_nbPctgTotal.csv" 
-P814Q1 = "P8-14_Q1_Exp35Exp56_pctg_nbPctgTotal.csv" 
+P814Q4 = "P8-14_Q4_Exp35Exp56flt-ct_pctg_nbPctgTotal.csv" 
+P814Q3 = "P8-14_Q3_Exp35Exp56flt-ct_pctg_nbPctgTotal.csv" 
+P814Q2 = "P8-14_Q2_Exp35Exp56flt-ct_pctg_nbPctgTotal.csv" 
+P814Q1 = "P8-14_Q1_Exp35Exp56flt-ct_pctg_nbPctgTotal.csv" 
 Q3minusOther(P814Q4, P814Q3, P814Q2, P814Q1)
 
-P1521Q4 = "P15-21_Q4_Exp35Exp56_pctg_nbPctgTotal.csv" 
-P1521Q3 = "P15-21_Q3_Exp35Exp56_pctg_nbPctgTotal.csv" 
-P1521Q2 = "P15-21_Q2_Exp35Exp56_pctg_nbPctgTotal.csv" 
-P1521Q1 = "P15-21_Q1_Exp35Exp56_pctg_nbPctgTotal.csv" 
+P1521Q4 = "P15-21_Q4_Exp35Exp56flt-ct_pctg_nbPctgTotal.csv" 
+P1521Q3 = "P15-21_Q3_Exp35Exp56flt-ct_pctg_nbPctgTotal.csv" 
+P1521Q2 = "P15-21_Q2_Exp35Exp56flt-ct_pctg_nbPctgTotal.csv" 
+P1521Q1 = "P15-21_Q1_Exp35Exp56flt-ct_pctg_nbPctgTotal.csv" 
 Q3minusOther(P1521Q4, P1521Q3, P1521Q2, P1521Q1)
 
 
@@ -349,25 +365,25 @@ def InputVsRest(q4File, q3File, q2File, q1File,inputFile):
     allTab["inputMinusAvg_nbPctg"] = InminusAvg
     ascii.write(allTab, outName, format="csv", overwrite=True)
 
-P17Q4 = "P1-7_Q4_Exp35Exp56_pctg_nbPctgTotal.csv" 
-P17Q3 = "P1-7_Q3_Exp35Exp56_pctg_nbPctgTotal.csv" 
-P17Q2 = "P1-7_Q2_Exp35Exp56_pctg_nbPctgTotal.csv" 
-P17Q1 = "P1-7_Q1_Exp35Exp56_pctg_nbPctgTotal.csv" 
-P17input = "P1-7_Input_Exp35Exp56_pctg_nbPctgTotal.csv" 
+P17Q4 = "P1-7_Q4_Exp35Exp56flt-ct_pctg_nbPctgTotal.csv" 
+P17Q3 = "P1-7_Q3_Exp35Exp56flt-ct_pctg_nbPctgTotal.csv" 
+P17Q2 = "P1-7_Q2_Exp35Exp56flt-ct_pctg_nbPctgTotal.csv" 
+P17Q1 = "P1-7_Q1_Exp35Exp56flt-ct_pctg_nbPctgTotal.csv" 
+P17input = "P1-7_Input_Exp35Exp56flt-ct_pctg_nbPctgTotal.csv" 
 InputVsRest(P17Q4, P17Q3, P17Q2, P17Q1, P17input)
 
-P814Q4 = "P8-14_Q4_Exp35Exp56_pctg_nbPctgTotal.csv" 
-P814Q3 = "P8-14_Q3_Exp35Exp56_pctg_nbPctgTotal.csv" 
-P814Q2 = "P8-14_Q2_Exp35Exp56_pctg_nbPctgTotal.csv" 
-P814Q1 = "P8-14_Q1_Exp35Exp56_pctg_nbPctgTotal.csv" 
-P814input = "P8-14_Input_Exp35Exp56_pctg_nbPctgTotal.csv" 
+P814Q4 = "P8-14_Q4_Exp35Exp56flt-ct_pctg_nbPctgTotal.csv" 
+P814Q3 = "P8-14_Q3_Exp35Exp56flt-ct_pctg_nbPctgTotal.csv" 
+P814Q2 = "P8-14_Q2_Exp35Exp56flt-ct_pctg_nbPctgTotal.csv" 
+P814Q1 = "P8-14_Q1_Exp35Exp56flt-ct_pctg_nbPctgTotal.csv" 
+P814input = "P8-14_Input_Exp35Exp56flt-ct_pctg_nbPctgTotal.csv" 
 InputVsRest(P814Q4, P814Q3, P814Q2, P814Q1, P814input)
 
-P1521Q4 = "P15-21_Q4_Exp35Exp56_pctg_nbPctgTotal.csv" 
-P1521Q3 = "P15-21_Q3_Exp35Exp56_pctg_nbPctgTotal.csv" 
-P1521Q2 = "P15-21_Q2_Exp35Exp56_pctg_nbPctgTotal.csv" 
-P1521Q1 = "P15-21_Q1_Exp35Exp56_pctg_nbPctgTotal.csv" 
-P1521input = "P15-21_Input_Exp35Exp56_pctg_nbPctgTotal.csv" 
+P1521Q4 = "P15-21_Q4_Exp35Exp56flt-ct_pctg_nbPctgTotal.csv" 
+P1521Q3 = "P15-21_Q3_Exp35Exp56flt-ct_pctg_nbPctgTotal.csv" 
+P1521Q2 = "P15-21_Q2_Exp35Exp56flt-ct_pctg_nbPctgTotal.csv" 
+P1521Q1 = "P15-21_Q1_Exp35Exp56flt-ct_pctg_nbPctgTotal.csv" 
+P1521input = "P15-21_Input_Exp35Exp56flt-ct_pctg_nbPctgTotal.csv" 
 InputVsRest(P1521Q4, P1521Q3, P1521Q2, P1521Q1, P1521input)
 
 
@@ -393,7 +409,7 @@ def avgByGene(inFile):
             newRow = [nameX, groupXAvg]
             wfout.writerow(newRow)
 
-os.chdir("/Volumes/Yolanda/CRF_Screen/InVivo/1_1_Norm/20190403_Exp35Exp56_nbPctgToAll/GateComparisons")
+os.chdir("/Volumes/Yolanda/CRF_Screen/InVivo/1_1_Norm/20190512_Exp35Exp56_nbPctl-All/GateComparisons")
 for file in glob.glob("*.csv"):
     avgByGene(file)
 
