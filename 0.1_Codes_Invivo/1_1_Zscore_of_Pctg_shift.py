@@ -95,7 +95,7 @@ for file in glob.glob("*byGene.csv"):
     avg_ctrl(file)
     
 
-os.chdir("/Volumes/Yolanda/CRF_Screen/InVivo/1_1_Norm/20190403_Exp35Exp56_nbPctgToAll/GateComparisons")
+os.chdir("/Volumes/Yolanda/CRF_Screen/InVivo/1_1_Norm/20190512_Exp35Exp56_nbPctl-All/2_GateComparisons_pooled_byGene")
 for file in glob.glob("*avg.csv"):
     ZScore(file)
 
