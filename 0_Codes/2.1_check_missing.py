@@ -62,6 +62,7 @@ check_missing(in_dir, ref_file, out_name)
 ##### So much for lossing original data by deleting info from source...
 ##### Just lost 2 days of my life try to recover some 5 year old mistake...
 ##### That's why you don't freaking mess with your source data...
+'''
 def findMissing(inFile, refFile):
     # Create reference
     refTab = ascii.read(refFile)
@@ -113,6 +114,7 @@ for file in glob.glob("Amt_*shRNA.csv"):
     ref_file = "%s/%s"%(ref_dir, ref_file)
     if os.path.isfile(ref_file) == False:
         print(file)
+'''
 
 # Not found:
 '''
@@ -124,5 +126,19 @@ Amt_CXCR3Percentage_10U_shRNA.csv
 Amt_Tim3GeoMean_100U_shRNA.csv
 Amt_Tim3GeoMean_10U_shRNA.csv
 '''
+
+################################################################################
+################################################################################
+################################################################################
+# Case closed.  Plate 14 panel 1 Well B02 - B09 were missing from the start... #
+################################################################################
+################################################################################
+################################################################################
+
+
+#####----- 
+
+
+
 
 
