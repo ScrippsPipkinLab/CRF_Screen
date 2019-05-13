@@ -23,11 +23,11 @@ https://www.dropbox.com/home/Pipkin%20Lab/Projects_PipkinLab_DB_original/Chromat
 
 | Fluorephore | Panel 1 | Panel 2|
 | --- | --- | --- |
-| AF700 | CD44 | NA |
+| AF700 | CD44 | n.a. |
 | PerCP-Cy5.5 | CD25 | Lag3 |
 | BV605 | CD62L | PD1 |
-| PE-Cy7 | CXCR3 | NA |
-| APC | CD103 | NA |
+| PE-Cy7 | CXCR3 | n.a. |
+| APC | CD103 | n.a. |
 | PE | CD127 | Tim3 |
 
 ## Data Analysis Steps
