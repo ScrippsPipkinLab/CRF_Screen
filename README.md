@@ -6,7 +6,7 @@
 > Huitian Diao (Yolanda): Data analysis <br/>
 > Matthew Pipkin: Advisor
 
-## External data storage: <br/>
+## External data storage <br/>
 * __In vitro screen analysis__: <br/>
 /Volumes/pipkinlab/Lab Members/Former members/Megan Frederick/MAF Screen Analysis
 * __In vivo screen analysis__: <br/>
@@ -17,6 +17,17 @@ https://www.dropbox.com/home/Pipkin%20Lab/Projects_PipkinLab_DB_original/Chromat
   * In vivo: <br/>
   /Volumes/pipkinNGS/exp035 <br/>
   /Volumes/pipkinNGS/exp056 
+
+## Experiment design </br>
+* __In vitro screen__: <br/>
+| Fluorephore | Panel 1 | Panel 2|
+| --- | --- | --- |
+| AF700 | CD44 | NA |
+| PerCP-Cy5.5 | CD25 | Lag3 |
+| BV605 | CD62L | PD1 |
+| PE-Cy7 | CXCR3 | NA |
+| APC | CD103 | NA |
+| PE | CD127 | Tim3 |
 
 ## Data Analysis Steps
 ### 0. Data compilation <br/> 
