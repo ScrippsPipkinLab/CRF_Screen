@@ -13,8 +13,8 @@ build_df <- function(tsne.file, z.score.file, p.value.file, key.col){
   tsnf.df <- read.csv(tsne.file)
   z.score.df <- read.csv(z.score.file)
   p.value.df <- read.csv(p.value.file)
-  colnames(z.score.df) <- c("gene_name", "CD103Percentage_100U", "CD103Percentage_10U", "CD127GeoMean_100U", "CD127GeoMean_10U", "CD25GeoMean_100U", "CD25GeoMean_10U", "CD44GeoMean_100U", "CD44GeoMean_10U", "CD62LPercentage_100U", "CD62LPercentage_10U", "CXCR3GeoMean_100U", "CXCR3GeoMean_10U", "CXCR3Percentage_100U", "CXCR3Percentage_10U", "Lag3GeoMean_100U", "Lag3GeoMean_10U", "PD1GeoMean_100U", "PD1GeoMean_10U", "Tim3GeoMean_100U", "Tim3GeoMean_10U", "Tim3Percentage_100U", "Tim3Percentage_10U")
-  colnames(p.value.df) <- c("gene_name", "CD103Percentage_100U", "CD103Percentage_10U", "CD127GeoMean_100U", "CD127GeoMean_10U", "CD25GeoMean_100U", "CD25GeoMean_10U", "CD44GeoMean_100U", "CD44GeoMean_10U", "CD62LPercentage_100U", "CD62LPercentage_10U", "CXCR3GeoMean_100U", "CXCR3GeoMean_10U", "CXCR3Percentage_100U", "CXCR3Percentage_10U", "Lag3GeoMean_100U", "Lag3GeoMean_10U", "PD1GeoMean_100U", "PD1GeoMean_10U", "Tim3GeoMean_100U", "Tim3GeoMean_10U", "Tim3Percentage_100U", "Tim3Percentage_10U")
+  #colnames(z.score.df) <- c("gene_name", "CD103Percentage_100U", "CD103Percentage_10U", "CD127GeoMean_100U", "CD127GeoMean_10U", "CD25GeoMean_100U", "CD25GeoMean_10U", "CD44GeoMean_100U", "CD44GeoMean_10U", "CD62LPercentage_100U", "CD62LPercentage_10U", "CXCR3GeoMean_100U", "CXCR3GeoMean_10U", "CXCR3Percentage_100U", "CXCR3Percentage_10U", "Lag3GeoMean_100U", "Lag3GeoMean_10U", "PD1GeoMean_100U", "PD1GeoMean_10U", "Tim3GeoMean_100U", "Tim3GeoMean_10U", "Tim3Percentage_100U", "Tim3Percentage_10U")
+  #colnames(p.value.df) <- c("gene_name", "CD103Percentage_100U", "CD103Percentage_10U", "CD127GeoMean_100U", "CD127GeoMean_10U", "CD25GeoMean_100U", "CD25GeoMean_10U", "CD44GeoMean_100U", "CD44GeoMean_10U", "CD62LPercentage_100U", "CD62LPercentage_10U", "CXCR3GeoMean_100U", "CXCR3GeoMean_10U", "CXCR3Percentage_100U", "CXCR3Percentage_10U", "Lag3GeoMean_100U", "Lag3GeoMean_10U", "PD1GeoMean_100U", "PD1GeoMean_10U", "Tim3GeoMean_100U", "Tim3GeoMean_10U", "Tim3Percentage_100U", "Tim3Percentage_10U")
   
   new.df <- tsnf.df
   new.df$zScore <- unlist(z.score.df[key.col])
@@ -71,14 +71,14 @@ cbs_plot <- function(in.file){
 ########## Main ##########
 
 ###----- Build dataframes
-#--- perplexity = 6
+#--- perplexity = 5
 if (FALSE){
-  wk.dir <- "/Volumes/Yolanda/CRF_Screen/InVitro/2_0_t-test_by_gene/1_Compile_Amt/tsne_bbplot"
+  wk.dir <- "/Volumes/Yolanda/CRF_Screen/InVitro/2_0_t-test_by_gene/2_Amt_compile_cluster/0_bbplot"
   setwd(wk.dir)
   
-  tsne <- "/Volumes/Yolanda/CRF_Screen/InVitro/2_0_t-test_by_gene/1_Compile_Amt/Amt_normbycontrolZP_t-test.by.geneavg_z-score_tsne_per6.csv"
-  z.score <- "/Volumes/Yolanda/CRF_Screen/InVitro/2_0_t-test_by_gene/1_Compile_Amt/Amt_normbycontrolZP_t-test.by.geneavg_z-score.csv"
-  p.value <- "/Volumes/Yolanda/CRF_Screen/InVitro/2_0_t-test_by_gene/1_Compile_Amt/Amt_normbycontrolZP_t-test.by.genet-test_p-value.csv"
+  tsne <- "/Volumes/Yolanda/CRF_Screen/InVitro/2_0_t-test_by_gene/1_Amt_compile/Amt_normbycontrolZP_t-test.by.geneavg_z-score_tsne_per5.csv"
+  z.score <- "/Volumes/Yolanda/CRF_Screen/InVitro/2_0_t-test_by_gene/1_Amt_compile/Amt_normbycontrolZP_t-test.by.geneavg_z-score.csv"
+  p.value <- "/Volumes/Yolanda/CRF_Screen/InVitro/2_0_t-test_by_gene/1_Amt_compile/Amt_normbycontrolZP_t-test.by.genet-test_p-value.csv"
   
   colnames.vec <- c("CD103Percentage_100U", "CD103Percentage_10U", "CD127GeoMean_100U", "CD127GeoMean_10U", "CD25GeoMean_100U", "CD25GeoMean_10U", "CD44GeoMean_100U", "CD44GeoMean_10U", "CD62LPercentage_100U", "CD62LPercentage_10U", "CXCR3GeoMean_100U", "CXCR3GeoMean_10U", "CXCR3Percentage_100U", "CXCR3Percentage_10U", "Lag3GeoMean_100U", "Lag3GeoMean_10U", "PD1GeoMean_100U", "PD1GeoMean_10U", "Tim3GeoMean_100U", "Tim3GeoMean_10U", "Tim3Percentage_100U", "Tim3Percentage_10U")
   
@@ -90,7 +90,7 @@ if (FALSE){
 ###----- Plot
 #--- Tsne-per5
 if (FALSE){
-  wk.dir <- "/Volumes/Yolanda/CRF_Screen/InVitro/2_0_t-test_by_gene/1_Compile_Amt/tsne_plot_source_files"
+  wk.dir <- "/Volumes/Yolanda/CRF_Screen/InVitro/2_0_t-test_by_gene/2_Amt_compile_cluster/0_bbplot_source"
   setwd(wk.dir)  
   files <- list.files(path = wk.dir, pattern = "tsnf-z-p.csv", full.name=FALSE, recursive=FALSE)
   for (file.x in files){

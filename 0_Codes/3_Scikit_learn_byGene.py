@@ -21,7 +21,7 @@ import matplotlib.patches as mpatches
 import csv
 
 ########## Main ##########
-wkdir = "/Volumes/Yolanda/CRF_Screen/InVitro/2_0_t-test_by_gene/1_Compile_Amt"
+wkdir = "/Volumes/Yolanda/CRF_Screen/InVitro/2_0_t-test_by_gene/1_Amt_compile"
 os.chdir(wkdir)
 
 #--- Read tpm file
@@ -63,11 +63,11 @@ def tsne_conversion(zscore_arr, per_n):
         for x in range(0,len(tpm_arr_tsne)):
             wfout.writerow([gene_names[x]] + list(tpm_arr_tsne[x]))
         
-tsne_conversion(zscore_arr, 10)
+#tsne_conversion(zscore_arr, 10)
 tsne_conversion(zscore_arr, 5)
-tsne_conversion(zscore_arr, 15)
-tsne_conversion(zscore_arr, 3)
-tsne_conversion(zscore_arr, 6)
+#tsne_conversion(zscore_arr, 15)
+#tsne_conversion(zscore_arr, 3)
+#tsne_conversion(zscore_arr, 6)
 
 
 

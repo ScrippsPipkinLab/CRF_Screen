@@ -244,7 +244,7 @@ def std_Amt(infile):
                     
 def shRNAmatch(infile):
     outfile = infile.replace(".csv", "_shRNA.csv")
-    ref_file = "/Users/yolandatiao/Desktop/CRF_Screen/position_Ref.csv"
+    ref_file = "/Volumes/Yolanda/CRF_Screen/InVitro/position_Ref.csv"
     ref_tab = ascii.read(ref_file)
     pw_list = list(ref_tab["plate_well"])
     shRNA_list = list(ref_tab["shRNA"])
@@ -276,14 +276,14 @@ def shRNAmatch(infile):
                     wfout.writerow(newrow)
                                 
 ########## Main ##########
-root_dir = "/Users/yolandatiao/Desktop/CRF_Screen/Meghan_originaldata/Screen_markers"
+root_dir = "/Volumes/Yolanda/CRF_Screen/InVitro/Megan_originaldata/Screen_markers"
 
 ###----- Find all the Amtrine+ GFP+ data
 p1_factors = ["CD44", "CD25", "CD62L", "CXCR3", "CD103", "CD127"]
 p2_factors = ["PD1", "Lag3", "Tim3"]
 p1_fps = ["Alexa 700", "PerCP-Cy5-5", "BV605", "PE-Cy7", "APC", "PE"]
 p2_fps = ["BV605", "PerCP-Cy5-5", "PE"]
-'''
+
 #--- Screen3_panel1_100U_CXCR3
 dir_sp = root_dir + "/Screen3_panel1_100U_CXCR3/Screen3_panel1_100U"
 header_sp = ["Well"]
@@ -349,7 +349,7 @@ dir_sp = root_dir + "/Screen3_panel2_100U"
 header_sp = ["Well"]
 header_idx_sp = [0]
 find_AG(dir_sp, header_idx_sp, header_sp, p2_factors, p2_fps)
-'''
+
 
 
 ###----- Find all the Amtrine+ data
@@ -357,7 +357,7 @@ p1_factors = ["CD44", "CD25", "CD62L", "CXCR3", "CD103", "CD127"]
 p2_factors = ["PD1", "Lag3", "Tim3"]
 p1_fps = ["Alexa 700", "PerCP-Cy5-5", "BV605", "PE-Cy7", "APC", "PE"]
 p2_fps = ["BV605", "PerCP-Cy5-5", "PE"]
-'''
+
 #--- Screen3_panel1_100U_CXCR3
 dir_sp = root_dir + "/Screen3_panel1_100U_CXCR3/Screen3_panel1_100U"
 header_sp = ["Well"]
@@ -423,15 +423,14 @@ dir_sp = root_dir + "/Screen3_panel2_100U"
 header_sp = ["Well"]
 header_idx_sp = [0]
 find_A(dir_sp, header_idx_sp, header_sp, p2_factors, p2_fps)
-'''
+
 
 
 ###----- Compile data
-root_dir = "/Users/yolandatiao/Desktop/CRF_Screen/Meghan_originaldata/Screen_markers"
-factor_list = ["CD44", "CD25", "CD62L", "CXCR3", "CD103", "PD1", "Lag3", "Tim3"]
-#factor_list = ["CD127"]
+root_dir = "/Volumes/Yolanda/CRF_Screen/InVitro/Megan_originaldata/Screen_markers"
+factor_list = ["CD44", "CD25", "CD62L", "CXCR3", "CD103", "PD1", "Lag3", "Tim3", "CD127"]
 
-'''
+
 #--- AmetGFP
 for factor in factor_list:
     compileFactor(root_dir, factor, "10U")
@@ -440,20 +439,29 @@ for factor in factor_list:
 for factor in factor_list:
     compileFactor_Amt(root_dir, factor, "10U")
     compileFactor_Amt(root_dir, factor, "100U")
-'''
 
-'''
+
+
 #--- CXCR3 
-root_dir = "/Users/yolandatiao/Desktop/CRF_Screen/Meghan_originaldata/Screen_markers/Screen3_panel1_100U_CXCR3"
+root_dir = "/Volumes/Yolanda/CRF_Screen/InVitro/Megan_originaldata/Screen_markers/Screen3_panel1_100U_CXCR3"
 compileFactor(root_dir, "CXCR3", "100U")
-root_dir = "/Users/yolandatiao/Desktop/CRF_Screen/Meghan_originaldata/Screen_markers/Screen3_panel1_100U_CXCR3"
+root_dir = "/Volumes/Yolanda/CRF_Screen/InVitro/Megan_originaldata/Screen_markers/Screen3_panel1_100U_CXCR3"
 compileFactor_Amt(root_dir, "CXCR3", "100U")
-'''
+
+######################################################################################################
+######################################################################################################
+##                Manually fixed data in /Volumes/Yolanda/CRF_Screen/InVitro/1_0_Raw                ##
+##                To include data in:                                                               ##
+## /Volumes/Yolanda/CRF_Screen/InVitro/Megan_originaldata/Screen_markers/Irregular                  ##
+## /Volumes/Yolanda/CRF_Screen/InVitro/Megan_originaldata/Screen_markers/Screen3_panel1_100U_CXCR3  ##
+##            Check raw files to make sure all files have the correct row numbers!!!!!!!!!!         ##
+######################################################################################################
+######################################################################################################
 
 ###----- Standardaize data
 #--- Amt
 '''
-wk_dir = "/Users/yolandatiao/Desktop/CRF_Screen/1_Raw/Amt"
+wk_dir = "/Volumes/Yolanda/CRF_Screen/InVitro/1_0_Raw"
 os.chdir(wk_dir)
 
 for file in glob.glob("Amt_*"):
@@ -482,16 +490,17 @@ with open("ref.csv", "w") as fout:
     wfout.writerow(["plate_well", "shRNA"])
     for x in plate_well_shRNA_set:
         wfout.writerow(x.split("--"))
+
 '''
 
 ###----- Create shRNA matched data sheets
-'''
-wk_dir = "/Users/yolandatiao/Desktop/CRF_Screen/1_0_Raw"
+
+wk_dir = "/Volumes/Yolanda/CRF_Screen/InVitro/1_0_Raw"
 os.chdir(wk_dir)
 
-for file in glob.glob("*CD127*"):
+for file in glob.glob("*.csv"):
     shRNAmatch(file)
-'''
+
 
 
 

@@ -225,7 +225,14 @@ if(FALSE){
 
 ###----- Calculate percentile and Z-score by pool
 if(FALSE){
-  wk.dir <- "/Volumes/Yolanda/CRF_Screen/InVitro/1_1_shRNAmatched"
+  wk.dir <- "/Volumes/Yolanda/CRF_Screen/InVitro/1_1_shRNAmatched/Amt"
+  setwd(wk.dir)
+  files <- list.files(path=wk.dir, pattern="*.csv", full.names=FALSE, recursive=FALSE)
+  for (file in files){
+    zpByPool(file)
+  }
+  
+  wk.dir <- "/Volumes/Yolanda/CRF_Screen/InVitro/1_1_shRNAmatched/AmtGFP"
   setwd(wk.dir)
   files <- list.files(path=wk.dir, pattern="*.csv", full.names=FALSE, recursive=FALSE)
   for (file in files){
@@ -235,7 +242,13 @@ if(FALSE){
 
 ###----- Calculate percentile and Z-score by control for each pool
 if(FALSE){
-  wk.dir <- "/Volumes/Yolanda/CRF_Screen/InVitro/1_1_shRNAmatched"
+  wk.dir <- "/Volumes/Yolanda/CRF_Screen/InVitro/1_1_shRNAmatched/Amt"
+  setwd(wk.dir)
+  files <- list.files(path=wk.dir, pattern=".csv", full.names=FALSE, recursive=FALSE)
+  for (file in files){
+    zpByPooltoControl(file)
+  }
+  wk.dir <- "/Volumes/Yolanda/CRF_Screen/InVitro/1_1_shRNAmatched/AmtGFP"
   setwd(wk.dir)
   files <- list.files(path=wk.dir, pattern=".csv", full.names=FALSE, recursive=FALSE)
   for (file in files){

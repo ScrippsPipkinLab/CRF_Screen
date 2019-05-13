@@ -113,7 +113,7 @@ compileData <- function(in.dir, out.base.name){
 ###----- Calculate p-value of each gene for different datasets
 #--- Amt
 if (FALSE){
-  wk.dir <- "/Volumes/Yolanda/CRF_Screen/InVitro/1_2_normtocontrol_ZP/Amt"
+  wk.dir <- "/Volumes/Yolanda/CRF_Screen/InVitro/1_2_normtocontrol_ZP/0_Amt"
   setwd(wk.dir)
   files <- list.files(path=wk.dir, pattern="*ZP.csv", full.name=FALSE, recursive=FALSE)
   for (file in files) {
@@ -123,7 +123,7 @@ if (FALSE){
 
 #--- Amt GFP
 if (FALSE){
-  wk.dir <-"/Volumes/Yolanda/CRF_Screen/InVitro/1_2_normtocontrol_ZP/AmtGFP"
+  wk.dir <- "/Volumes/Yolanda/CRF_Screen/InVitro/1_2_normtocontrol_ZP/0_AmtGFP"
   setwd(wk.dir)
   files <- list.files(path=wk.dir, pattern="*ZP.csv", full.name=FALSE, recursive=FALSE)
   for (file in files) {
@@ -133,11 +133,11 @@ if (FALSE){
 
 ###----- Compile data
 if (FALSE){
-  wk.dir <- "/Volumes/Yolanda/CRF_Screen/InVitro/2_0_t-test_by_gene/Sep_Amt"
+  wk.dir <- "/Volumes/Yolanda/CRF_Screen/InVitro/2_0_t-test_by_gene/0_Amt_sep"
   out.base.name <- "Amt_normbycontrolZP_t-test.by.gene"
   compileData(wk.dir, out.base.name)
   
-  wk.dir <- "/Volumes/Yolanda/CRF_Screen/InVitro/2_0_t-test_by_gene/Sep_AmtGFP"
+  wk.dir <- "/Volumes/Yolanda/CRF_Screen/InVitro/2_0_t-test_by_gene/0_AmtGFP_sep"
   out.base.name <- "AmtGFP_normbycontrolZP_t-test.by.gene"
   compileData(wk.dir, out.base.name)
 }

@@ -35,10 +35,10 @@ save_pheatmap_pdf <- function(x, filename, width=7, height=7) {
 
 #################### Extract clusters ####################
 if (FALSE) {
-  wk.dir <- "/Volumes/Yolanda/CRF_Screen/InVitro/2_0_t-test_by_gene/1_Compile_Amt/tsne_cluster_extraction"
+  wk.dir <- "/Volumes/Yolanda/CRF_Screen/InVitro/2_0_t-test_by_gene/2_Amt_compile_cluster/2_cluster_extraction"
   setwd(wk.dir)
   ###----- Read data
-  tsne.file <- "/Volumes/Yolanda/CRF_Screen/InVitro/2_0_t-test_by_gene/1_Compile_Amt/Amt_normbycontrolZP_t-test.by.geneavg_z-score_tsne_per6.csv"
+  tsne.file <- "/Volumes/Yolanda/CRF_Screen/InVitro/2_0_t-test_by_gene/1_Amt_compile/Amt_normbycontrolZP_t-test.by.geneavg_z-score_tsne_per5.csv"
   tsne.all <- read.csv(tsne.file)
   tsne.real <- subset(tsne.all, select=c("t1", "t2"))
   info.real <- tsne.all
@@ -67,25 +67,26 @@ if (FALSE) {
   lc.cent <- info.real %>% group_by(louvain) %>% select(t1, t2) %>% summarize_all(mean)
   
   label.plot <- ggplot(info.real, aes(x = t1, y = t2, colour = louvain, label = gene_name)) + 
+    #geom_text() +
     geom_point(alpha = 0.3) + theme_bw() + 
     geom_label_repel(aes(label = louvain), data = lc.cent) + 
-    geom_text_repel(
-      data = subset(info.real, info.real$gene_name %in% baf.mem),
-      point.padding = NA) +
+    #geom_text_repel(
+    #  data = subset(info.real, info.real$gene_name %in% baf.mem),
+    #  point.padding = NA, force = 2.5) +
     guides(colour = FALSE)
   label.plot
   
-  ggsave("exp36-174_flt_avg-log10tpm_log2fc_CRF_tsne_BAF.pdf", width = 12, height = 10, units = "cm")
+  ggsave("exp36-174_flt_avg-log10tpm_log2fc_CRF_tsne.pdf", width = 12, height = 10, units = "cm")
   
   ###----- Save
   write.csv(info.real, file = "info.real.csv",row.names=FALSE)
 }
 
 #################### Pathway ####################
-wk.dir <- "/Volumes/Yolanda/CRF_Screen/InVitro/2_0_t-test_by_gene/1_Compile_Amt/tsne_cluster_extraction"
+wk.dir <- "/Volumes/Yolanda/CRF_Screen/InVitro/2_0_t-test_by_gene/2_Amt_compile_cluster/2_cluster_extraction"
 setwd(wk.dir)
 info.real <- read.csv("info.real.csv")
-for (x in c(2:12)){
+for (x in c(1:13)){
   i <- paste("group", x, sep="")
   subset.x <- subset(info.real, info.real$louvain == x)
   genes.i <- as.character(unlist(subset.x$gene_name))
