@@ -20,6 +20,7 @@ https://www.dropbox.com/home/Pipkin%20Lab/Projects_PipkinLab_DB_original/Chromat
 
 ## Experiment design </br>
 * __In vitro screen__: <br/>
+
 | Fluorephore | Panel 1 | Panel 2|
 | --- | --- | --- |
 | AF700 | CD44 | NA |
