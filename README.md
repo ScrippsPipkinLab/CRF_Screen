@@ -76,7 +76,7 @@ __Source files__: [2_0_t-test_by_gene/Compiled_* ](InVitro/2_0_t-test_by_gene) <
 __Output files__: [2_0_t-test_by_gene/Compiled_* /tsne-per*_ cbs-plot](InVitro/2_0_t-test_by_gene) (per*: perplexity) <br/>
 
 ## Glitches
-### Missing wells
+### In vitro screen - Missing wells
 1. InVitro/Megan_originaldata/Screen_markers/Screen3_panel1_10U/16 10U p1.csv <br/>
 Fixed shifted cells: **G10 G11** left shifted 2 cells
 2. InVitro/Megan_originaldata/Screen_markers/Screen3_panel1_100U/19 100U p1.cs <br/>
@@ -84,6 +84,12 @@ Fixed shifted cells: **G10 G11** left shifted 2 cells
 3. InVitro/Megan_originaldata/Screen_markers/Screen2_panel1_10U/14 10U p1.csv <br/>
 The missing wells are actually **B2 - B8** instead of **G5 - G11**
 
+### In vivo screen - Miss placed constructs
+1. Conflict references: <br/>
+__Incorrect refrence:__  <br/>
+/InVivo/originalAnlysis/CR in vivo Replicate 2/shRNA Pools.xlsx <br/>
+__Correct refrence:__  <br/>
+/InVivo/originalAnlysis/Chromatin Regulator shRNA Pools/Epigenetic screen exp1 shRNA sequence_MEP.csv
 
 
 
