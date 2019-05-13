@@ -85,17 +85,11 @@ def ZScore(inFile):
 
 ########## Main ##########
 # Calculate mean of duplicated controls for each file
-os.chdir("/Volumes/Yolanda/CRF_Screen/InVivo/1_1_Norm/20190512_Exp35Exp56_nbPctl-All/2_GateComparisons_pooled_byGene")
+os.chdir("/Volumes/Yolanda/CRF_Screen/InVivo/1_1_Norm/20190513_Exp35Exp56_nbPctl-All/4_gate_comparisons_combined")
 for file in glob.glob("*byGene.csv"):
     avg_ctrl(file)
 
-
-os.chdir("/Volumes/Yolanda/CRF_Screen/InVivo/1_1_Norm/20190506_Exp35Exp56_cellN/GateComparisons")
-for file in glob.glob("*byGene.csv"):
-    avg_ctrl(file)
-    
-
-os.chdir("/Volumes/Yolanda/CRF_Screen/InVivo/1_1_Norm/20190512_Exp35Exp56_nbPctl-All/2_GateComparisons_pooled_byGene")
+os.chdir("/Volumes/Yolanda/CRF_Screen/InVivo/1_1_Norm/20190513_Exp35Exp56_nbPctl-All/4_gate_comparisons_combined")
 for file in glob.glob("*avg.csv"):
     ZScore(file)
 

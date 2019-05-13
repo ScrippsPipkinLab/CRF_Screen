@@ -1,17 +1,17 @@
 x,bc_7
 Total reads,12130481
-Target percentage,79.06341883722502
-Control percentage,1.9375488902707154
-Contaminant percentage,18.999032272504284
+Target percentage,78.96666257504546
+Control percentage,1.0375680898391415
+Contaminant percentage,19.9957693351154
 No.1 Target,Psip1.2: 480257
 No.2 Target,Rbbp7.3: 345971
 No.3 Target,Prmt8.4: 262972
-Top 3 target %,11.356748825146838
-No.1 Control,Id3: 59464
-No.2 Control,CDK9.1: 43870
-No.3 Control,Bcl6.3: 23316
-Top 3 control %,53.88582077486661
+Top 3 target %,11.37066402088895
+No.1 Control,CDK9.1: 43870
+No.2 Control,Bcl6.3: 23316
+No.3 Control,Nfatc3.2: 21187
+Top 3 control %,70.21420285709745
 No.1 Contaminant,Baz2b.2: 713060
 No.2 Contaminant,Bop1.3: 489133
 No.3 Contaminant,Smarce1.4: 210459
-Top 3 contaminant %,61.29508989123842
+Top 3 contaminant %,58.23968917987964

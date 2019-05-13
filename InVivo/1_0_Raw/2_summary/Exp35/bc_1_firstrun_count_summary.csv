@@ -1,17 +1,17 @@
 x,bc_1_firstrun
 Total reads,4197742
-Target percentage,86.92358891994792
-Control percentage,5.36123944730286
-Contaminant percentage,7.715171632749225
+Target percentage,86.61470857427635
+Control percentage,4.691069627433034
+Contaminant percentage,8.694221798290606
 No.1 Target,Asxl3.1: 1601821
 No.2 Target,Jhdm1d.1: 171722
 No.3 Target,Bmi1.4: 166061
-Top 3 target %,53.15690407988538
+Top 3 target %,53.34646914541861
 No.1 Control,Ccnt1.2: 49162
 No.2 Control,Ccnt1.4: 40794
 No.3 Control,CDK9.1: 30269
-Top 3 control %,53.42122452244158
+Top 3 control %,61.05302180084197
 No.1 Contaminant,Sirt1.4: 99071
 No.2 Contaminant,Prkaa2.2: 38510
 No.3 Contaminant,Usp22.2: 24197
-Top 3 contaminant %,49.952603415641796
+Top 3 contaminant %,44.32747608648595

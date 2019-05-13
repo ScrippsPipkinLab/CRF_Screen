@@ -117,9 +117,9 @@ ctrl_tab = ascii.read(ctrl_file)
 ctrl_shRNA = list(ctrl_tab.columns[0])
 
 ##### Exp35
-'''
+
 ### Process all files
-wk_dir = "/Volumes/Yolanda/CRF_Screen/InVivo/1_0_Raw/1_count"
+wk_dir = "/Volumes/Yolanda/CRF_Screen/InVivo/1_0_Raw/1_count/Exp35"
 os.chdir(wk_dir)
 for file in glob.glob("*.csv"):
     file_bc_n = int(file.replace("_firstrun", "").replace("_count.csv", "").replace("bc_",""))
@@ -130,11 +130,12 @@ for file in glob.glob("*.csv"):
     elif (file_bc_n >= 11) and (file_bc_n <= 15):
         annoCount(file, p3_shRNA, ctrl_shRNA)
 
+
 ### Moved all output files to seperate folders
 
 ### Merge all summary files
 
-wk_dir = "/Volumes/Yolanda/CRF_Screen/InVivo/1_0_Raw/summary"
+wk_dir = "/Volumes/Yolanda/CRF_Screen/InVivo/1_0_Raw/2_summary"
 os.chdir(wk_dir)
 
 file1 = "bc_1_count_summary.csv"
@@ -148,10 +149,10 @@ for file in glob.glob("*.csv"):
 ascii.write(tab1, "Exp35_reads_summary.csv", format="csv", overwrite=True)
 
 ### Merge two sequencing rounds
-wk_dir = "/Volumes/Yolanda/CRF_Screen/InVivo/1_0_Raw/flt"
+wk_dir = "/Volumes/Yolanda/CRF_Screen/InVivo/1_0_Raw/2_flt"
 os.chdir(wk_dir)
 
-ref_file = "/Volumes/Yolanda/CRF_Screen/InVivo/sample_barcode.csv"
+ref_file = "/Volumes/Yolanda/CRF_Screen/InVivo/sample_barcode_exp35.csv"
 ref_tab = ascii.read(ref_file)
 ref_tab_bc = list(ref_tab.columns[0])
 ref_tab_group = list(ref_tab.columns[1])
@@ -194,7 +195,7 @@ for key, value in ref_dict.items():
     outname = "%s_combined.csv"%key
     ascii.write(tab1, outname, format="csv", overwrite=True)
     
-'''
+
 
 ##### Exp56
 
