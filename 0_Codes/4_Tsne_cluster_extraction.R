@@ -85,7 +85,7 @@ if (FALSE) {
 wk.dir <- "/Volumes/Yolanda/CRF_Screen/InVitro/2_0_t-test_by_gene/1_Compile_Amt/tsne_cluster_extraction"
 setwd(wk.dir)
 info.real <- read.csv("info.real.csv")
-for (x in c(1,13)){
+for (x in c(2:12)){
   i <- paste("group", x, sep="")
   subset.x <- subset(info.real, info.real$louvain == x)
   genes.i <- as.character(unlist(subset.x$gene_name))
@@ -122,6 +122,7 @@ for (x in c(1,13)){
     ggsave(paste(i,"_MF_dotplot.pdf",sep=""), egoMF.dotplot, device = "pdf", width = 30, height = 20, units = "cm")  
   }
 }
+
 
 #################### Cluster heatmap ####################
 ### 
