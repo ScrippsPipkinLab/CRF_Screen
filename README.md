@@ -89,7 +89,7 @@ The missing wells are actually **B2 - B8** instead of **G5 - G11**
 __Incorrect refrence:__  <br/>
 /InVivo/originalAnlysis/CR in vivo Replicate 2/shRNA Pools.xlsx <br/>
 __Correct refrence:__  <br/>
-/InVivo/originalAnlysis/Chromatin Regulator shRNA Pools/Epigenetic screen exp1 shRNA sequence_MEP.csv
+/InVivo/originalAnlysis/Chromatin Regulator shRNA Pools/Epigenetic screen exp1 shRNA sequence_MEP.csv etc.
 
 
 
