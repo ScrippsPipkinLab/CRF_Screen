@@ -65,6 +65,9 @@ def tsne_conversion(zscore_arr, per_n):
         
 tsne_conversion(zscore_arr, 10)
 tsne_conversion(zscore_arr, 5)
+tsne_conversion(zscore_arr, 15)
+tsne_conversion(zscore_arr, 3)
+tsne_conversion(zscore_arr, 6)
 
 
 

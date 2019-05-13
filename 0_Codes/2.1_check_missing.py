@@ -50,6 +50,19 @@ out_name = "1_2_normtoall_ZP_construct_existance_summary.csv"
 check_missing(in_dir, ref_file, out_name)
 
 
+in_dir = "/Volumes/Yolanda/CRF_Screen/InVitro/1_2_normtocontrol_ZP/Amt"
+ref_file = "/Volumes/Yolanda/CRF_Screen/InVitro/position_Ref.csv"
+out_name = "1_2_normtocontrol_ZP_Amt_construct_existance_summary.csv"
+
+check_missing(in_dir, ref_file, out_name)
+
+in_dir = "/Volumes/Yolanda/CRF_Screen/InVitro/1_2_normtocontrol_ZP/AmtGFP"
+ref_file = "/Volumes/Yolanda/CRF_Screen/InVitro/position_Ref.csv"
+out_name = "1_2_normtocontrol_ZP_AmtGFP_construct_existance_summary.csv"
+
+check_missing(in_dir, ref_file, out_name)
+
+
 in_dir = "/Volumes/Yolanda/CRF_Screen/InVitro/1_1_shRNAmatched"
 ref_file = "/Volumes/Yolanda/CRF_Screen/InVitro/position_Ref.csv"
 out_name = "1_1_shRNAmatched_construct_existance_summary.csv"
