@@ -75,6 +75,11 @@ __Aim__: <br/>
 __Source files__: [2_0_t-test_by_gene/Compiled_* ](InVitro/2_0_t-test_by_gene) <br/> 
 __Output files__: [2_0_t-test_by_gene/Compiled_* /tsne-per*_ cbs-plot](InVitro/2_0_t-test_by_gene) (per*: perplexity) <br/>
 
+## Glitches
+### Missing wells
+InVitro/Megan_originaldata/Screen_markers/Screen2_panel1_10U/14 10U p1.csv
+
+
 
 
 
