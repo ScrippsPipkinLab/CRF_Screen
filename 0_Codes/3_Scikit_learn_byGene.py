@@ -21,7 +21,7 @@ import matplotlib.patches as mpatches
 import csv
 
 ########## Main ##########
-wkdir = "/Users/yolandatiao/Desktop/CRF_Screen/2_0_t-test_by_gene/compiled_Amt"
+wkdir = "/Volumes/Yolanda/CRF_Screen/InVitro/2_0_t-test_by_gene/1_Compile_Amt"
 os.chdir(wkdir)
 
 #--- Read tpm file

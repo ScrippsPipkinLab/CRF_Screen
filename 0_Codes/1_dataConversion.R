@@ -136,7 +136,7 @@ zpByPooltoControl <- function(file.x){
 
 compileData <- function(in.dir, out.base.name){
   setwd(in.dir)
-  ref.file <- "/Users/yolandatiao/Desktop/CRF_Screen/position_Ref.csv"
+  ref.file <- "/Volumes/Yolanda/CRF_Screen/InVitro/position_Ref.csv"
   ref.df <- read.csv(ref.file)
 
   files <- list.files(path=in.dir, pattern="Amt_*", full.name=FALSE, recursive=FALSE)
@@ -237,7 +237,7 @@ if(FALSE){
 if(FALSE){
   wk.dir <- "/Volumes/Yolanda/CRF_Screen/InVitro/1_1_shRNAmatched"
   setwd(wk.dir)
-  files <- list.files(path=wk.dir, pattern="*CD127*", full.names=FALSE, recursive=FALSE)
+  files <- list.files(path=wk.dir, pattern=".csv", full.names=FALSE, recursive=FALSE)
   for (file in files){
     zpByPooltoControl(file)
   }
@@ -245,11 +245,11 @@ if(FALSE){
 
 ###----- Compile percentile and z-score
 if (FALSE){
-  wk.dir <- "/Users/yolandatiao/Desktop/CRF_Screen/1_2_normtocontrol_ZP/Amt"
+  wk.dir <- "/Volumes/Yolanda/CRF_Screen/InVitro/1_2_normtocontrol_ZP/Amt"
   base.name <- "Amt_normbycontrolZP"
   compileData(wk.dir, base.name)
   
-  wk.dir <- "/Users/yolandatiao/Desktop/CRF_Screen/1_2_normtocontrol_ZP/AmtGFP"
+  wk.dir <- "/Volumes/Yolanda/CRF_Screen/InVitro/1_2_normtocontrol_ZP/AmtGFP"
   base.name <- "AmtGFP_normbycontrolZP"
   compileData(wk.dir, base.name)
 }
