@@ -77,7 +77,8 @@ __Output files__: [2_0_t-test_by_gene/Compiled_* /tsne-per*_ cbs-plot](InVitro/2
 
 ## Glitches
 ### Missing wells
-InVitro/Megan_originaldata/Screen_markers/Screen2_panel1_10U/14 10U p1.csv
+1. InVitro/Megan_originaldata/Screen_markers/Screen2_panel1_10U/14 10U p1.csv <br/>
+The missing wells are actually **B2 - B8** instead of **G5 - G11**
 
 
 
