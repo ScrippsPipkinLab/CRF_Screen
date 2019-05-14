@@ -2,15 +2,16 @@
 ![Cell](https://i.pinimg.com/originals/7b/70/de/7b70dee0342490ca05c8f2e72b1d9cbc.jpg)
 
 #### Contributors: <br/>
-> Megan Fridrick: Conducted screens <br/>
-> Huitian Diao (Yolanda): Data analysis <br/>
+> Runqiang Chen: Conducted in vivo screen <br/>
+> Megan Fridrick: Conducted in vitro screens <br/>
+> Huitian Diao (Yolanda): Binformatics <br/>
 > Matthew Pipkin: Advisor
 
 ## External data storage <br/>
 * __In vitro screen analysis__: <br/>
 /Volumes/pipkinlab/Lab Members/Former members/Megan Frederick/MAF Screen Analysis
 * __In vivo screen analysis__: <br/>
-https://www.dropbox.com/home/Pipkin%20Lab/Projects_PipkinLab_DB_original/Chromatin-Regulator_Screens/Chromatin%20Regulator%20Screen
+[Drop box](https://www.dropbox.com/sh/8vgdzzyc4w94z5q/AACK0rPymadt8TE3ot2Z0rzBa?dl=0)
 * __Raw data__: <br/>
   * In vitro: <br/>
   /Volumes/pipkinlab/Lab Members/Former members/Megan Frederick/MAF Screen Data <br/>
@@ -30,7 +31,13 @@ https://www.dropbox.com/home/Pipkin%20Lab/Projects_PipkinLab_DB_original/Chromat
 | APC | CD103 | n.a. |
 | PE | CD127 | Tim3 |
 
-## Glitches
+* __In vivo screen__: <br/>
+[Exp35 barcode](InVivo/sample_barcode_exp35.csv)
+[Exp56 barcode](InVivo/sample_barcode_exp56.csv)
+[Target constructs](InVivo/shRNA_control.csv)
+[Control constructs](InVivo/shRNA_ref.csv)
+
+## Fixed Glitches
 ### In vitro screen - Missing wells
 1. InVitro/Megan_originaldata/Screen_markers/Screen3_panel1_10U/16 10U p1.csv <br/>
 Fixed shifted cells: **G10 G11** left shifted 2 cells
