@@ -36,9 +36,15 @@ __Source files__: [1_2_normtocontrol_ZP/Compiled_* ](InVitro/1_2_normtocontrol_Z
 __Output files__: [1_2_normtocontrol_ZP/Compiled_* /per*_ clusterbyshRNA](InVitro/1_2_normtocontrol_ZP) (per*: perplexity) <br/>
 
 ### 4. Gene knockdown effect clustering (by t-sne)
-__Aim__: <br/>
 * __4.1__ Cluster genes by average Z-score for each marker with t-sne clustering (per*: perplexity)
 * __4.2__ Plot genes which significantly up/down regulate markers when knocked down (by marker)
->__Script__: [3_Scikit_learn_byGene.py](0_Codes/3_Scikit_learn_byGene.py); [3_tsne_cbs-plot_byGene.R](0_Codes/3_tsne_cbs-plot_byGene.R) <br/> 
+* __4.3__ Cluster extraction by louvain method; pathway analysis of extracted clusters
+>__Script__: [3_Scikit_learn_byGene.py](0_Codes/3_Scikit_learn_byGene.py); [3_tsne_cbs-plot_byGene.R](0_Codes/3_tsne_cbs-plot_byGene.R); [4_Tsne_cluster_extraction.R](0_Codes/4_Tsne_cluster_extraction.R)<br/> 
 __Source files__: [2_0_t-test_by_gene/1_Amt_compile](InVitro/2_0_t-test_by_gene/1_Amt_compile) <br/> 
-__Output files__: [t-sne coordinates](InVitro/2_0_t-test_by_gene/1_Amt_compile/Amt_normbycontrolZP_t-test.by.geneavg_z-score_tsne_per5.csv); [bubble plot source](nVitro/2_0_t-test_by_gene/2_Amt_compile_cluster/0_bbplot_source); [annotated bubble plots](InVitro/2_0_t-test_by_gene/2_Amt_compile_cluster/1_bbplot_anno); [non-annotated bubble plots](InVitro/2_0_t-test_by_gene/2_Amt_compile_cluster/1_bbplot_plain) <br/>
+__Output files__: <br/>
+[t-SNE coordinates](InVitro/2_0_t-test_by_gene/1_Amt_compile/Amt_normbycontrolZP_t-test.by.geneavg_z-score_tsne_per5.csv) <br/> 
+[Bubble plot source](nVitro/2_0_t-test_by_gene/2_Amt_compile_cluster/0_bbplot_source) <br/>
+[Annotated bubble plots](InVitro/2_0_t-test_by_gene/2_Amt_compile_cluster/1_bbplot_anno) <br/> 
+[Non-annotated bubble plots](InVitro/2_0_t-test_by_gene/2_Amt_compile_cluster/1_bbplot_plain) <br/>
+[Cluster extraction and plots](InVitro/2_0_t-test_by_gene/2_Amt_compile_cluster/2_cluster_extraction) <br/>
+[Extracted cluster pathway analysis](InVitro/2_0_t-test_by_gene/2_Amt_compile_cluster/3_cluster_pathway)
