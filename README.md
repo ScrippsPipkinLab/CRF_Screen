@@ -32,10 +32,10 @@
 | PE | CD127 | Tim3 |
 
 * __In vivo screen__: <br/>
-- [Exp35 barcode](InVivo/sample_barcode_exp35.csv) </br>
-- [Exp56 barcode](InVivo/sample_barcode_exp56.csv) </br>
-- [Target constructs](InVivo/shRNA_control.csv) </br>
-- [Control constructs](InVivo/shRNA_ref.csv) </br>
+[Exp35 barcode](InVivo/sample_barcode_exp35.csv) </br>
+[Exp56 barcode](InVivo/sample_barcode_exp56.csv) </br>
+[Target constructs](InVivo/shRNA_control.csv) </br>
+[Control constructs](InVivo/shRNA_ref.csv) </br>
 
 ## Fixed Glitches
 ### In vitro screen - Missing wells
