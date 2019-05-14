@@ -3,7 +3,7 @@
 
 #### Contributors: <br/>
 > Runqiang Chen: Conducted in vivo screen <br/>
-> Megan Fridrick: Conducted in vitro screens <br/>
+> Megan Fridrick: Conducted in vitro screen <br/>
 > Huitian Diao (Yolanda): Binformatics <br/>
 > Matthew Pipkin: Advisor
 
