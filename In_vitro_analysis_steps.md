@@ -1,4 +1,4 @@
-## Data Analysis Steps
+## In vitro screen data analysis
 ### 0. Data compilation <br/> 
 * __0.1__ Identify Amtrine+ / Amtrine+GFP+ columns (transduced population) in original spreadsheet <br/>
 * __0.2__ Extract GeoMean / Percentage data for each marker for Amtrine+ / Amtrine+GFP+ <br/> 
