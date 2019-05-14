@@ -53,5 +53,5 @@ __Output files__:  <br/>
 __Source files__: [2_0_t-test_by_gene/1_Amt_compile](InVitro/2_0_t-test_by_gene/1_Amt_compile) <br/> 
 __Output files__: <br/>
 [t-SNE coordinates](InVitro/2_0_t-test_by_gene/1_Amt_compile/Amt_normbycontrolZP_t-test.by.geneavg_z-score_tsne_per5.csv) <br/> 
-[Bubble plot source](nVitro/2_0_t-test_by_gene/2_Amt_compile_cluster/0_bbplot_source); [Annotated bubble plots](InVitro/2_0_t-test_by_gene/2_Amt_compile_cluster/1_bbplot_anno); [Non-annotated bubble plots](InVitro/2_0_t-test_by_gene/2_Amt_compile_cluster/1_bbplot_plain) <br/>
-[Cluster extraction and plots](InVitro/2_0_t-test_by_gene/2_Amt_compile_cluster/2_cluster_extraction); [Extracted cluster pathway analysis](InVitro/2_0_t-test_by_gene/2_Amt_compile_cluster/3_cluster_pathway)
+[0. Bubble plot source](nVitro/2_0_t-test_by_gene/2_Amt_compile_cluster/0_bbplot_source); [1. Annotated bubble plots](InVitro/2_0_t-test_by_gene/2_Amt_compile_cluster/1_bbplot_anno); [1. Non-annotated bubble plots](InVitro/2_0_t-test_by_gene/2_Amt_compile_cluster/1_bbplot_plain) <br/>
+[2. Cluster extraction and plots](InVitro/2_0_t-test_by_gene/2_Amt_compile_cluster/2_cluster_extraction); [3. Extracted cluster pathway analysis](InVitro/2_0_t-test_by_gene/2_Amt_compile_cluster/3_cluster_pathway)
