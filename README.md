@@ -7,6 +7,10 @@
 > Huitian Diao (Yolanda): Binformatics <br/>
 > Matthew Pipkin: Advisor
 
+## Data analysis description <br/>
+* [In vitro analysis](In_vitro_analysis_steps.md)
+* [In vivo analysis](In_vivo_analysis_steps.md)
+
 ## External data storage <br/>
 * __In vitro screen analysis__: <br/>
 [Ishtar folder](/Volumes/pipkinlab/Lab Members/Former members/Megan Frederick/MAF Screen Analysis)
