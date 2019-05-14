@@ -16,7 +16,7 @@ __Output files__: [1_0_Raw](InVitro/1_0_Raw); [1_1_shRNAmatched](InVitro/1_1_shR
 * __1.2__ Calculate stats of un-normalized data / normalized data (mean and standard deviation) <br/> 
 >__Script__: [1_dataConversion.R](0_Codes/1_dataConversion.R) <br/> 
 __Source files__: [1_1_shRNAmatched](InVitro/1_1_shRNAmatched) <br/> 
-__Output files__: [1_2_normtoall_ZP](InVitro/1_2_normtoall_ZP); [1_2_normtocontrol_ZP/Sep](InVitro/1_2_normtocontrol_ZP/Sep) <br/>
+__Output files__: [1_2_normtoall_ZP](InVitro/1_2_normtoall_ZP); [1_2_normtocontrol_ZP/Amt](InVitro/1_2_normtocontrol_ZP/0_Amt); [1_2_normtocontrol_ZP/Amt](InVitro/1_2_normtocontrol_ZP/0_AmtGFP) <br/>
 
 ### 2. Per gene shRNA effect for each marker (by t-test)
 * __2.1__ Test consistency of effect of shRNAs targeting the same gene for each marker <br/> 
