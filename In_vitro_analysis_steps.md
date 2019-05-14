@@ -26,7 +26,7 @@ __Output files__: [1_2_normtoall_ZP](InVitro/1_2_normtoall_ZP); [1_2_normtocontr
 * __2.3__ Plot gene average Z-score heatmaps for each marker
 >__Script__: [2_convertedDataAnalysis.R](0_Codes/2_convertedDataAnalysis.R) <br/> 
 __Source files__: [1_2_normtocontrol_ZP/Sep](InVitro/1_2_normtocontrol_ZP/Sep) <br/> 
-__Output files__: [2_0_t-test_by_gene/Sep_* ](InVitro/2_0_t-test_by_gene); [2_0_t-test_by_gene/Compiled_* ](InVitro/2_0_t-test_by_gene) <br/>
+__Output files__: [2_0_t-test_by_gene/0_Amt_sep](InVitro/2_0_t-test_by_gene/0_Amt_sep); [2_0_t-test_by_gene/0_AmtGFP_sep](InVitro/2_0_t-test_by_gene/0_AmtGFP_sep); [2_0_t-test_by_gene/1_Amt_compile](InVitro/2_0_t-test_by_gene/1_Amt_compile); [2_0_t-test_by_gene/1_AmtGFP_compile](InVitro/2_0_t-test_by_gene/1_AmtGFP_compile)<br/>
 
 ### 3. Per gene shRNA effect for all markers (by t-sne)
 * __3.1__ Cluster shRNAs by Z-score for each marker with t-sne clustering
@@ -41,4 +41,4 @@ __Aim__: <br/>
 * __4.2__ Plot genes which significantly up/down regulate markers when knocked down (by marker)
 >__Script__: [3_Scikit_learn_byGene.py](0_Codes/3_Scikit_learn_byGene.py); [3_tsne_cbs-plot_byGene.R](0_Codes/3_tsne_cbs-plot_byGene.R) <br/> 
 __Source files__: [2_0_t-test_by_gene/Compiled_* ](InVitro/2_0_t-test_by_gene) <br/> 
-__Output files__: [2_0_t-test_by_gene/Compiled_* /tsne-per*_ cbs-plot](InVitro/2_0_t-test_by_gene) (per*: perplexity) <br/>
+__Output files__: [t-sne coordinates](InVitro/2_0_t-test_by_gene/1_Amt_compile/Amt_normbycontrolZP_t-test.by.geneavg_z-score_tsne_per5.csv) (per*: perplexity); [bubble plot source](nVitro/2_0_t-test_by_gene/2_Amt_compile_cluster/0_bbplot_source); [annotated bubble plots](InVitro/2_0_t-test_by_gene/2_Amt_compile_cluster/1_bbplot_anno); [non-annotated bubble plots](InVitro/2_0_t-test_by_gene/2_Amt_compile_cluster/1_bbplot_plain) <br/>
