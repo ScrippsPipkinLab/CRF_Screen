@@ -9,9 +9,9 @@
 
 ## External data storage <br/>
 * __In vitro screen analysis__: <br/>
-/Volumes/pipkinlab/Lab Members/Former members/Megan Frederick/MAF Screen Analysis
+[Ishtar folder](/Volumes/pipkinlab/Lab Members/Former members/Megan Frederick/MAF Screen Analysis)
 * __In vivo screen analysis__: <br/>
-[Drop box](https://www.dropbox.com/sh/8vgdzzyc4w94z5q/AACK0rPymadt8TE3ot2Z0rzBa?dl=0)
+[Drop box link](https://www.dropbox.com/sh/8vgdzzyc4w94z5q/AACK0rPymadt8TE3ot2Z0rzBa?dl=0)
 * __Raw data__: <br/>
   * In vitro: <br/>
   /Volumes/pipkinlab/Lab Members/Former members/Megan Frederick/MAF Screen Data <br/>
