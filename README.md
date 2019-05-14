@@ -14,10 +14,10 @@
 [Drop box link](https://www.dropbox.com/sh/8vgdzzyc4w94z5q/AACK0rPymadt8TE3ot2Z0rzBa?dl=0)
 * __Raw data__: <br/>
   * In vitro: <br/>
-  /Volumes/pipkinlab/Lab Members/Former members/Megan Frederick/MAF Screen Data <br/>
+  [Ishtar folder](/Volumes/pipkinlab/Lab Members/Former members/Megan Frederick/MAF Screen Data) <br/>
   * In vivo: <br/>
-  /Volumes/pipkinNGS/exp035 <br/>
-  /Volumes/pipkinNGS/exp056 
+  [Ishtar folder](/Volumes/pipkinNGS/exp035) <br/>
+  [Ishtar folder](/Volumes/pipkinNGS/exp056) 
 
 ## Experiment design </br>
 * __In vitro screen__: <br/>
