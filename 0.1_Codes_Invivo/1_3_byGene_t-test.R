@@ -91,9 +91,23 @@ if (FALSE) {
 
 
 ###----- Calculate p-value of each gene
-tByGene("/Volumes/Yolanda/CRF_Screen/InVivo/1_1_Norm/4_gate_comparisons_combined/byConstruct/InputMinusAvg.csv")
-tByGene("/Volumes/Yolanda/CRF_Screen/InVivo/1_1_Norm/4_gate_comparisons_combined/byConstruct/Q3minusOther.csv")
-tByGene("/Volumes/Yolanda/CRF_Screen/InVivo/1_1_Norm/4_gate_comparisons_combined/byConstruct/Q4minusQ1.csv")
+if (FALSE){
+  tByGene("/Volumes/Yolanda/CRF_Screen/InVivo/1_1_Norm/4_gate_comparisons_combined/byConstruct/InputMinusAvg.csv")
+  tByGene("/Volumes/Yolanda/CRF_Screen/InVivo/1_1_Norm/4_gate_comparisons_combined/byConstruct/Q3minusOther.csv")
+  tByGene("/Volumes/Yolanda/CRF_Screen/InVivo/1_1_Norm/4_gate_comparisons_combined/byConstruct/Q4minusQ1.csv")
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
