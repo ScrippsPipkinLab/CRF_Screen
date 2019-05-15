@@ -21,6 +21,7 @@ Created on Thu May  2 19:48:57 2019
 import glob
 import os
 from astropy.io import ascii
+from astropy.table import Table, Column, join   # For using astropy table functions
 import statistics as st
 
 
@@ -92,6 +93,83 @@ for file in glob.glob("*byGene.csv"):
 os.chdir("/Volumes/Yolanda/CRF_Screen/InVivo/1_1_Norm/20190513_Exp35Exp56_nbPctl-All/4_gate_comparisons_combined")
 for file in glob.glob("*avg.csv"):
     ZScore(file)
+
+#####---------- Compile percentile shift z-score files
+os.chdir("/Volumes/Yolanda/CRF_Screen/InVivo/1_1_Norm/4_gate_comparisons_combined")
+
+i_a = ascii.read("InputMinusAvg_byGene_ctrl_avg_Z.csv")
+q3_o = ascii.read("Q3minusOther_byGene_ctrl_avg_Z.csv")
+q4_q1 = ascii.read("Q4minusQ1_byGene_ctrl_avg_Z.csv")
+
+del i_a['nbPctgShift']
+del q3_o['nbPctgShift']
+del q4_q1['nbPctgShift']
+i_a.columns[1].name = "InputMinusAvg"
+q3_o.columns[1].name = "Q3minusOther"
+q4_q1.columns[1].name = "Q4minusQ1"
+
+cb_tab = join(i_a, q3_o, keys = "Gene")
+cb_tab = join(cb_tab, q4_q1, keys = "Gene")
+cb_tab.columns[0].name = "gene_name"
+cb_tab.colnames
+
+ascii.write(cb_tab, "all_z-score.csv", format="csv", overwrite=True)
+
+#####---------- Adjust z score table to make p > 0.9 genes into zscore=0
+os.chdir("/Volumes/Yolanda/CRF_Screen/InVivo/1_1_Norm/4_gate_comparisons_combined")
+
+i_a = ascii.read("InputMinusAvg_byGene_ctrl_avg_Z.csv")
+q3_o = ascii.read("Q3minusOther_byGene_ctrl_avg_Z.csv")
+q4_q1 = ascii.read("Q4minusQ1_byGene_ctrl_avg_Z.csv")
+i_a_p = ascii.read("/Volumes/Yolanda/CRF_Screen/InVivo/1_1_Norm/5_p-val_byGene/InputMinusAvg_t-test.by.gene.csv")
+q3_o_p = ascii.read("/Volumes/Yolanda/CRF_Screen/InVivo/1_1_Norm/5_p-val_byGene/Q3minusOther_t-test.by.gene.csv")
+q4_q1_p = ascii.read("/Volumes/Yolanda/CRF_Screen/InVivo/1_1_Norm/5_p-val_byGene/Q4minusQ1_t-test.by.gene.csv")
+
+
+del i_a['nbPctgShift']
+del q3_o['nbPctgShift']
+del q4_q1['nbPctgShift']
+del i_a_p['avg_percentile']
+del q3_o_p['avg_percentile']
+del q4_q1_p['avg_percentile']
+i_a_p.columns[0].name = "Gene"
+q3_o_p.columns[0].name = "Gene"
+q4_q1_p.columns[0].name = "Gene"
+
+i_a = join(i_a, i_a_p, keys = "Gene")
+q3_o = join(q3_o, q3_o_p, keys = "Gene")
+q4_q1 = join(q4_q1, q4_q1_p, keys = "Gene")
+
+
+def p_cutoff(intab, cutoff):
+    for x in range(0, len(intab)):
+        if intab[x][2] > cutoff:
+            intab[x][1] = 0
+    return(intab)
+
+i_a = p_cutoff(i_a, 0.6)
+q3_o = p_cutoff(q3_o, 0.6)
+q4_q1 = p_cutoff(q4_q1, 0.6)
+
+
+
+i_a.columns[1].name = "InputMinusAvg_z"
+q3_o.columns[1].name = "Q3minusOther_z"
+q4_q1.columns[1].name = "Q4minusQ1_z"
+i_a.columns[2].name = "InputMinusAvg_p"
+q3_o.columns[2].name = "Q3minusOther_p"
+q4_q1.columns[2].name = "Q4minusQ1_p"
+
+cb_tab = join(i_a, q3_o, keys = "Gene")
+cb_tab = join(cb_tab, q4_q1, keys = "Gene")
+cb_tab.columns[0].name = "gene_name"
+cb_tab.colnames
+
+ascii.write(cb_tab, "all_z-score_p-ct0.6.csv", format="csv", overwrite=True)
+
+
+
+
 
 
 
