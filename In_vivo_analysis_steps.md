@@ -32,5 +32,21 @@ __Output files__: <br/>
 [3. Gate comparisons - seperated each pool](InVivo/1_1_Norm/20190513_Exp35Exp56_nbPctl-All/3_gate_comparisons_bypool) <br/>
 [4. Gate comparisons - compiled + Z-Score](InVivo/1_1_Norm/20190513_Exp35Exp56_nbPctl-All/4_gate_comparisons_combined)
 
+### 2. Target ranking & processing <br/>
+* __2.1__ Adjust gene RNAi z-score (gate comparison) by p-value <br/>
+* __2.2__ Plot adjusted RNAi z-score of genes <br/>
+>__Script__: [z-score adjustment and plotting](0.1_Codes_Invivo/1_4_zscore-div-sqrtP_heatmap.R)
+__Source files__: [Compiled z-score and p-value data](InVivo/1_1_Norm/5_p-val_byGene/all_z-score_p.csv)
+__Output files__: <br/>
+[1 Adjusted z-score](InVivo/1_1_Norm/6_zscore_div_sqrt-pval/all_z-score_div_sqrt-p.csv) <br/>
+[1_Sqrt adjusted z-score](InVivo/1_1_Norm/6_zscore_div_sqrt-pval/all_z-score_div_sqrt-p_sqrt.csv) <br/>
+[2_Heatmap with gene names](/Volumes/Yolanda/CRF_Screen/InVivo/1_1_Norm/6_zscore_div_sqrt-pval/zscore_div_sqrt-pval_rownames.pdf) <br/>
+[2_Heatmap without gene names](/Volumes/Yolanda/CRF_Screen/InVivo/1_1_Norm/6_zscore_div_sqrt-pval/zscore_div_sqrt-pval.pdf)
+
+### 3. Target gene interaction
+
+
+
+
 
     
