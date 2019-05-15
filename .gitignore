@@ -1,1 +1,5 @@
+# Ignore large raw count data
 /InVivo/1_0_Raw/CRF_Screen_raw/
+
+# Ignore Mac generated resource fork files
+._*
