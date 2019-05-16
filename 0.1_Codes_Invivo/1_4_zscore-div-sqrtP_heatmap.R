@@ -111,8 +111,9 @@ if (FALSE) {
   
   #####---------- Genes to annotate
   anno.vec <- c("Tbx21", "Prdm1", "Id2", "Runx3", "Ncor1", "Tet2", "Mbd2", 
-                "Ezh2", "Suv39h1", "Dnmt3a", "Klf2", "Kdm2b", "Rpa3", "Runx3", 
-                "Ing2", "Ing3", "Ing4", "Ing5", "Bop1")
+                "Ezh2", "Suv39h1", "Dnmt3a", "Kdm2b", "Rpa3", "Runx3", 
+                "Ing2", "Ing3", "Ing4", "Ing5", "Bop1",
+                "Cd4", "Cd14")
   
   
   #####---------- Q4 minus Q1
@@ -204,7 +205,6 @@ if (FALSE) {
   z.p.tb$color_use <- col.vec
   
   # Select annotations
-  anno.vec <- c("Ing3", "Bop1", "Bcl6", "Rpa3", "Mll1")
   z.p.tb <- z.p.tb %>% 
     mutate(pointsize = in_vec(anno.vec, gene_name)) %>%
     mutate(annoname = in_vec_name(anno.vec, gene_name))
