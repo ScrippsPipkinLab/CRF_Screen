@@ -86,11 +86,11 @@ def ZScore(inFile):
 
 ########## Main ##########
 # Calculate mean of duplicated controls for each file
-os.chdir("/Volumes/Yolanda/CRF_Screen/InVivo/1_1_Norm/20190513_Exp35Exp56_nbPctl-All/4_gate_comparisons_combined")
+os.chdir("/Volumes/Yolanda/CRF_Screen/InVivo/1_1_Norm/20190516/3_Gate_comparisons_compiled")
 for file in glob.glob("*byGene.csv"):
     avg_ctrl(file)
 
-os.chdir("/Volumes/Yolanda/CRF_Screen/InVivo/1_1_Norm/20190513_Exp35Exp56_nbPctl-All/4_gate_comparisons_combined")
+os.chdir("/Volumes/Yolanda/CRF_Screen/InVivo/1_1_Norm/20190516/3_Gate_comparisons_compiled")
 for file in glob.glob("*avg.csv"):
     ZScore(file)
 
@@ -116,14 +116,14 @@ cb_tab.colnames
 ascii.write(cb_tab, "all_z-score.csv", format="csv", overwrite=True)
 
 #####---------- Adjust z score table to make p > 0.9 genes into zscore=0
-os.chdir("/Volumes/Yolanda/CRF_Screen/InVivo/1_1_Norm/4_gate_comparisons_combined")
+os.chdir("/Volumes/Yolanda/CRF_Screen/InVivo/1_1_Norm/20190516/4_t-test_by_gene")
 
-i_a = ascii.read("InputMinusAvg_byGene_ctrl_avg_Z.csv")
-q3_o = ascii.read("Q3minusOther_byGene_ctrl_avg_Z.csv")
-q4_q1 = ascii.read("Q4minusQ1_byGene_ctrl_avg_Z.csv")
-i_a_p = ascii.read("/Volumes/Yolanda/CRF_Screen/InVivo/1_1_Norm/5_p-val_byGene/InputMinusAvg_t-test.by.gene.csv")
-q3_o_p = ascii.read("/Volumes/Yolanda/CRF_Screen/InVivo/1_1_Norm/5_p-val_byGene/Q3minusOther_t-test.by.gene.csv")
-q4_q1_p = ascii.read("/Volumes/Yolanda/CRF_Screen/InVivo/1_1_Norm/5_p-val_byGene/Q4minusQ1_t-test.by.gene.csv")
+i_a = ascii.read("/Volumes/Yolanda/CRF_Screen/InVivo/1_1_Norm/20190516/3_Gate_comparisons_compiled/InputMinusAvg_byGene_ctrl_avg_Z.csv")
+q3_o = ascii.read("/Volumes/Yolanda/CRF_Screen/InVivo/1_1_Norm/20190516/3_Gate_comparisons_compiled/Q3minusOther_byGene_ctrl_avg_Z.csv")
+q4_q1 = ascii.read("/Volumes/Yolanda/CRF_Screen/InVivo/1_1_Norm/20190516/3_Gate_comparisons_compiled/Q4minusQ1_byGene_ctrl_avg_Z.csv")
+i_a_p = ascii.read("InputMinusAvg_t-test.by.gene.csv")
+q3_o_p = ascii.read("Q3minusOther_t-test.by.gene.csv")
+q4_q1_p = ascii.read("Q4minusQ1_t-test.by.gene.csv")
 
 
 del i_a['nbPctgShift']
@@ -165,7 +165,7 @@ cb_tab = join(cb_tab, q4_q1, keys = "Gene")
 cb_tab.columns[0].name = "gene_name"
 cb_tab.colnames
 
-ascii.write(cb_tab, "all_z-score_p-ct0.6.csv", format="csv", overwrite=True)
+ascii.write(cb_tab, "all_z-score_p.csv", format="csv", overwrite=True)
 
 
 

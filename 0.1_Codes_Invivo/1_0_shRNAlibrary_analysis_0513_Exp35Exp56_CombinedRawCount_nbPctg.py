@@ -172,25 +172,30 @@ def nbRawCount(inFile):
 
 ########## Main ##########
 #----- Directory
-wk_dir = "/Volumes/Yolanda/CRF_Screen/InVivo/1_1_Norm/20190513_Exp35Exp56_nbPctl-All"
+wk_dir = "/Volumes/Yolanda/CRF_Screen/InVivo/1_1_Norm/20190516"
 os.chdir(wk_dir)
 
 #----- Calculate Z-Score, filter outliers
+'''
 for file in glob.glob("/Volumes/Yolanda/CRF_Screen/InVivo/1_0_Raw/2_flt/Exp56/*.csv"):
     ZScore(file)
 for file in glob.glob("/Volumes/Yolanda/CRF_Screen/InVivo/1_0_Raw/2_flt/Exp35/combined/*.csv"):
     ZScore(file)    
 for file in glob.glob("*ZScore.csv"):
     fltOutlier(file)
+'''
 
 #----- Add up raw reads from Exp35 and Exp56
-wk_dir = "/Volumes/Yolanda/CRF_Screen/InVivo/1_1_Norm/20190513_Exp35Exp56_nbPctl-All/0_fltOutlier"
+wk_dir = "/Volumes/Yolanda/CRF_Screen/InVivo/1_1_Norm/20190516"
 os.chdir(wk_dir)
 
 filelist = []
-for file in glob.glob("*fltOutlier.csv"):
+for file in glob.glob("/Volumes/Yolanda/CRF_Screen/InVivo/1_0_Raw/2_flt/Exp56/*.csv"):
     filelist.append(file)
-typelist = [x.replace("_combined", "").replace("_flt", "").replace("Outlier.csv","") for x in filelist]
+for file in glob.glob("/Volumes/Yolanda/CRF_Screen/InVivo/1_0_Raw/2_flt/Exp35/combined/*.csv"):
+    filelist.append(file)
+
+typelist = [x.split("/")[-1].replace("_combined", "").replace("_flt", "").replace(".csv","") for x in filelist]
 typelist = list(set(typelist))
 
 type_dict = {}
@@ -216,7 +221,7 @@ for typex, filex in type_dict.items():
     ascii.write(newtab, outname, format="csv", overwrite=True)
 
 #----- Filter out bench contaminants
-wk_dir = "/Volumes/Yolanda/CRF_Screen/InVivo/1_1_Norm/20190513_Exp35Exp56_nbPctl-All/1_Exp35Exp56_combined"
+wk_dir = "/Volumes/Yolanda/CRF_Screen/InVivo/1_1_Norm/20190516/Exp35Exp56Combined"
 os.chdir(wk_dir)
 # Contaminant: CDK9, Ccnt1
 # Off target shRNA: Cd19
@@ -235,7 +240,7 @@ for file in glob.glob("*_Exp35Exp56.csv"):
 
 
 #----- Calculate percentages of counts in each groups
-wk_dir = "/Volumes/Yolanda/CRF_Screen/InVivo/1_1_Norm/20190513_Exp35Exp56_nbPctl-All/2_flt_comtaminants"
+wk_dir = "/Volumes/Yolanda/CRF_Screen/InVivo/1_1_Norm/20190516/1_flt_ct"
 os.chdir(wk_dir)
 for file in glob.glob("*Exp35Exp56flt-ct.csv"):
     pctgTotal(file)
@@ -415,7 +420,7 @@ def avgByGene(inFile):
             newRow = [nameX, groupXAvg]
             wfout.writerow(newRow)
 
-os.chdir("/Volumes/Yolanda/CRF_Screen/InVivo/1_1_Norm/20190513_Exp35Exp56_nbPctl-All/3_gate_comparisons")
+os.chdir("/Volumes/Yolanda/CRF_Screen/InVivo/1_1_Norm/20190516/2_Gate_comparisons")
 for file in glob.glob("*.csv"):
     avgByGene(file)
 

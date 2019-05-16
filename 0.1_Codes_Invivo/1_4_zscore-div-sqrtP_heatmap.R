@@ -52,10 +52,10 @@ in_vec_name <- function(refvec, vecx){
 ########## Main ##########
 ###----- Calculate z-score divided by p-value
 if (FALSE){
-  wk.dir <- "/Volumes/Yolanda/CRF_Screen/InVivo/1_1_Norm/6_zscore_div_sqrt-pval"
+  wk.dir <- "/Volumes/Yolanda/CRF_Screen/InVivo/1_1_Norm/20190516/5_zscore_div_sqrt_pval"
   setwd(wk.dir)
   
-  z.p.file <- "/Volumes/Yolanda/CRF_Screen/InVivo/1_1_Norm/5_p-val_byGene/all_z-score_p.csv"
+  z.p.file <- "/Volumes/Yolanda/CRF_Screen/InVivo/1_1_Norm/20190516/4_t-test_by_gene/all_z-score_p.csv"
   z.p.tb <- read_csv(z.p.file)
   colnames(z.p.tb)
   
@@ -76,7 +76,7 @@ if (FALSE){
 
 ###----- Heatmap
 if (FALSE) {
-  wk.dir <- "/Volumes/Yolanda/CRF_Screen/InVivo/1_1_Norm/6_zscore_div_sqrt-pval"
+  wk.dir <- "/Volumes/Yolanda/CRF_Screen/InVivo/1_1_Norm/20190516/5_zscore_div_sqrt_pval"
   setwd(wk.dir)
   
   z.p.file <- "all_z-score_div_sqrt-p.csv"
@@ -102,12 +102,18 @@ if (FALSE) {
 
 ##########-------------------- Bar plot
 if (FALSE) {
-  wk.dir <- "/Volumes/Yolanda/CRF_Screen/InVivo/1_1_Norm/6_zscore_div_sqrt-pval"
+  wk.dir <- "/Volumes/Yolanda/CRF_Screen/InVivo/1_1_Norm/20190516/5_zscore_div_sqrt_pval"
   setwd(wk.dir)
   
   z.p.file <- "all_z-score_div_sqrt-p_sqrt.csv"
   z.p.tb <- read_csv(z.p.file)
   #z.p.tb <- z.p.tb %>% column_to_rownames("gene_name")
+  
+  #####---------- Genes to annotate
+  anno.vec <- c("Tbx21", "Prdm1", "Id2", "Runx3", "Ncor1", "Tet2", "Mbd2", 
+                "Ezh2", "Suv39h1", "Dnmt3a", "Klf2", "Kdm2b", "Rpa3", "Runx3", 
+                "Ing2", "Ing3", "Ing4", "Ing5", "Bop1")
+  
   
   #####---------- Q4 minus Q1
   out.name <- "Q4minusQ1.bar.pdf"
@@ -117,22 +123,20 @@ if (FALSE) {
   
   # Set color for top and bottom quarter
   col_panel <- c("steelblue1", "lightgrey", "indianred1")
-  qt <- as.integer(floor(nrow(z.p.tb)/8))
+  qt <- as.integer(floor(nrow(z.p.tb)/4))
   col.vec <- rep(col_panel[1], qt)
   col.vec <- c(col.vec, rep(col_panel[2], nrow(z.p.tb)-2*qt))
   col.vec <- c(col.vec, rep(col_panel[3], qt))
   z.p.tb$color_use <- col.vec
   
   # Select annotations
-  anno.vec <- c("Chd7", "Tbx21", "Brd4", "Id2", "Bcl6","Smarca4",
-                "Mll1", "Runx3")
   z.p.tb <- z.p.tb %>% 
     mutate(pointsize = in_vec(anno.vec, gene_name)) %>%
     mutate(annoname = in_vec_name(anno.vec, gene_name))
   
   # Plot
   bar.plot <- ggplot(z.p.tb, aes(z.p.tb$gene_name, z.p.tb$Q4minusQ1, fill=col.vec)) +
-    geom_col() +
+    geom_col(alpha=0.7) +
     geom_point(size=z.p.tb$pointsize, stroke = 0) +
     scale_fill_manual(values=col_panel) +
     geom_text_repel(aes(label=annoname), force=5, min.segment.length=0) +
@@ -146,7 +150,7 @@ if (FALSE) {
           legend.position = "none")
   bar.plot
 
-  ggsave(out.name, width=6, height=20, units="cm")
+  ggsave(out.name, width=6, height=9, units="cm")
   
   #####---------- Q3 minus other
   out.name <- "Q3minusOther.bar.pdf"
@@ -156,22 +160,20 @@ if (FALSE) {
   
   # Set color for top and bottom quarter
   col_panel <- c("steelblue1", "lightgrey", "indianred1")
-  qt <- as.integer(floor(nrow(z.p.tb)/8))
+  qt <- as.integer(floor(nrow(z.p.tb)/4))
   col.vec <- rep(col_panel[1], qt)
   col.vec <- c(col.vec, rep(col_panel[2], nrow(z.p.tb)-2*qt))
   col.vec <- c(col.vec, rep(col_panel[3], qt))
   z.p.tb$color_use <- col.vec
   
   # Select annotations
-  anno.vec <- c("Chd7", "Tbx21","Id2", "Bcl6","Smarca4",
-                "Mll1")
   z.p.tb <- z.p.tb %>% 
     mutate(pointsize = in_vec(anno.vec, gene_name)) %>%
     mutate(annoname = in_vec_name(anno.vec, gene_name))
   
   # Plot
   bar.plot <- ggplot(z.p.tb, aes(z.p.tb$gene_name, z.p.tb$Q3minusOther, fill=col.vec)) +
-    geom_col() +
+    geom_col(alpha=0.7) +
     geom_point(size=z.p.tb$pointsize, stroke = 0) +
     scale_fill_manual(values=col_panel) +
     geom_text_repel(aes(label=annoname), force=5, min.segment.length=0) +
@@ -185,7 +187,7 @@ if (FALSE) {
           legend.position = "none")
   bar.plot
   
-  ggsave(out.name, width=6, height=20, units="cm")
+  ggsave(out.name, width=6, height=9, units="cm")
   
   #####---------- Input v.s. output
   out.name <- "InputMinusAvg.bar.pdf"
@@ -195,7 +197,7 @@ if (FALSE) {
   
   # Set color for top and bottom quarter
   col_panel <- c("steelblue1", "lightgrey", "indianred1")
-  qt <- as.integer(floor(nrow(z.p.tb)/8))
+  qt <- as.integer(floor(nrow(z.p.tb)/4))
   col.vec <- rep(col_panel[1], qt)
   col.vec <- c(col.vec, rep(col_panel[2], nrow(z.p.tb)-2*qt))
   col.vec <- c(col.vec, rep(col_panel[3], qt))
@@ -209,7 +211,7 @@ if (FALSE) {
   
   # Plot
   bar.plot <- ggplot(z.p.tb, aes(z.p.tb$gene_name, z.p.tb$InputMinusAvg, fill=col.vec)) +
-    geom_col() +
+    geom_col(alpha=0.7) +
     geom_point(size=z.p.tb$pointsize, stroke = 0) +
     scale_fill_manual(values=col_panel) +
     geom_text_repel(aes(label=annoname), force=5, min.segment.length=0) +
@@ -223,9 +225,7 @@ if (FALSE) {
           legend.position = "none")
   bar.plot
   
-  ggsave(out.name, width=6, height=20, units="cm")
-  
-  
+  ggsave(out.name, width=6, height=9, units="cm")
   
 }
 

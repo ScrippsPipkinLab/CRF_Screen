@@ -54,25 +54,25 @@ tByGene <- function(file.x){
 ########## Main ##########
 ###----- Combine pools
 if (FALSE) {
-  wk.dir <- "/Volumes/Yolanda/CRF_Screen/InVivo/1_1_Norm/4_gate_comparisons_combined/byConstruct"
+  wk.dir <- "/Volumes/Yolanda/CRF_Screen/InVivo/1_1_Norm/20190516/2_Gate_comparisons/byConstruct"
   setwd(wk.dir)
-  p1_inputAvg <- read_csv("/Volumes/Yolanda/CRF_Screen/InVivo/1_1_Norm/3_gate_comparisons_bypool/P1-7_InputMinusAvg.csv")
-  p1_q3_other <- read_csv("/Volumes/Yolanda/CRF_Screen/InVivo/1_1_Norm/3_gate_comparisons_bypool/P1-7_Q3minusOther.csv")
-  p1_q4_q1 <- read_csv("/Volumes/Yolanda/CRF_Screen/InVivo/1_1_Norm/3_gate_comparisons_bypool/P1-7_Q4minusQ1.csv")
+  p1_inputAvg <- read_csv("/Volumes/Yolanda/CRF_Screen/InVivo/1_1_Norm/20190516/2_Gate_comparisons/byConstruct/P1-7_InputMinusAvg.csv")
+  p1_q3_other <- read_csv("/Volumes/Yolanda/CRF_Screen/InVivo/1_1_Norm/20190516/2_Gate_comparisons/byConstruct/P1-7_Q3minusOther.csv")
+  p1_q4_q1 <- read_csv("/Volumes/Yolanda/CRF_Screen/InVivo/1_1_Norm/20190516/2_Gate_comparisons/byConstruct/P1-7_Q4minusQ1.csv")
   p1_inputAvg <- p1_inputAvg %>% mutate(pool="p1")
   p1_q3_other <- p1_q3_other %>% mutate(pool="p1")
   p1_q4_q1 <- p1_q4_q1 %>% mutate(pool="p1")
   
-  p2_inputAvg <- read_csv("/Volumes/Yolanda/CRF_Screen/InVivo/1_1_Norm/3_gate_comparisons_bypool/P8-14_InputMinusAvg.csv")
-  p2_q3_other <- read_csv("/Volumes/Yolanda/CRF_Screen/InVivo/1_1_Norm/3_gate_comparisons_bypool/P8-14_Q3minusOther.csv")
-  p2_q4_q1 <- read_csv("/Volumes/Yolanda/CRF_Screen/InVivo/1_1_Norm/3_gate_comparisons_bypool/P8-14_Q4minusQ1.csv")
+  p2_inputAvg <- read_csv("/Volumes/Yolanda/CRF_Screen/InVivo/1_1_Norm/20190516/2_Gate_comparisons/byConstruct/P8-14_InputMinusAvg.csv")
+  p2_q3_other <- read_csv("/Volumes/Yolanda/CRF_Screen/InVivo/1_1_Norm/20190516/2_Gate_comparisons/byConstruct/P8-14_Q3minusOther.csv")
+  p2_q4_q1 <- read_csv("/Volumes/Yolanda/CRF_Screen/InVivo/1_1_Norm/20190516/2_Gate_comparisons/byConstruct/P8-14_Q4minusQ1.csv")
   p2_inputAvg <- p2_inputAvg %>% mutate(pool="p2")
   p2_q3_other <- p2_q3_other %>% mutate(pool="p2")
   p2_q4_q1 <- p2_q4_q1 %>% mutate(pool="p2")
   
-  p3_inputAvg <- read_csv("/Volumes/Yolanda/CRF_Screen/InVivo/1_1_Norm/3_gate_comparisons_bypool/P15-21_InputMinusAvg.csv")
-  p3_q3_other <- read_csv("/Volumes/Yolanda/CRF_Screen/InVivo/1_1_Norm/3_gate_comparisons_bypool/P15-21_Q3minusOther.csv")
-  p3_q4_q1 <- read_csv("/Volumes/Yolanda/CRF_Screen/InVivo/1_1_Norm/3_gate_comparisons_bypool/P15-21_Q4minusQ1.csv")
+  p3_inputAvg <- read_csv("/Volumes/Yolanda/CRF_Screen/InVivo/1_1_Norm/20190516/2_Gate_comparisons/byConstruct/P15-21_InputMinusAvg.csv")
+  p3_q3_other <- read_csv("/Volumes/Yolanda/CRF_Screen/InVivo/1_1_Norm/20190516/2_Gate_comparisons/byConstruct/P15-21_Q3minusOther.csv")
+  p3_q4_q1 <- read_csv("/Volumes/Yolanda/CRF_Screen/InVivo/1_1_Norm/20190516/2_Gate_comparisons/byConstruct/P15-21_Q4minusQ1.csv")
   p3_inputAvg <- p3_inputAvg %>% mutate(pool="p3")
   p3_q3_other <- p3_q3_other %>% mutate(pool="p3")
   p3_q4_q1 <- p3_q4_q1 %>% mutate(pool="p3")
@@ -92,9 +92,11 @@ if (FALSE) {
 
 ###----- Calculate p-value of each gene
 if (FALSE){
-  tByGene("/Volumes/Yolanda/CRF_Screen/InVivo/1_1_Norm/4_gate_comparisons_combined/byConstruct/InputMinusAvg.csv")
-  tByGene("/Volumes/Yolanda/CRF_Screen/InVivo/1_1_Norm/4_gate_comparisons_combined/byConstruct/Q3minusOther.csv")
-  tByGene("/Volumes/Yolanda/CRF_Screen/InVivo/1_1_Norm/4_gate_comparisons_combined/byConstruct/Q4minusQ1.csv")
+  wk.dir <- "/Volumes/Yolanda/CRF_Screen/InVivo/1_1_Norm/20190516/2_Gate_comparisons/byConstruct"
+  setwd(wk.dir)
+  tByGene("InputMinusAvg.csv")
+  tByGene("Q3minusOther.csv")
+  tByGene("Q4minusQ1.csv")
 }
 
 
