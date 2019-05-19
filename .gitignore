@@ -3,3 +3,8 @@
 
 # Ignore Mac generated resource fork files
 ._*
+
+# Ignore larger biogrid reference file
+/Ref/BIOGRID-ALL-3.5.172_simplify.tab.txt
+/Ref/BIOGRID-ALL-3.5.172.tab.txt
+/CRF_Screen/Ref/BIOGRID.use.txt

@@ -57,5 +57,14 @@ __Incorrect refrence:__  <br/>
 __Correct refrence:__  <br/>
 [Dropbox folder](https://www.dropbox.com/sh/nukl01bprlml2e9/AABasCVaJv_7AodnUUD2h6r3a?dl=0)
 
+## References:
+1. [BioGrid protein interaction](https://downloads.thebiogrid.org/BioGRID/Release-Archive/BIOGRID-3.5.172/)
+
+| Species | Taxonomy ID |
+| --- | --- |
+| Homo sapiens | 9606 |
+| Mus musculus | 10090 |
+| Rattus norvegicus | 10116 |
+
 
 
