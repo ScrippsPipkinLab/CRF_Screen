@@ -32,16 +32,16 @@ tgt.tb <- read_csv(tgt.file)
 crf.gn.alt.file <- "/Volumes/Yolanda/CRF_Screen/Ref/CRF_alternative_gn.csv"
 crf.gn.alt.tb <- read_csv(crf.gn.alt.file)
 
-biogrid.ref <- "/Volumes/Yolanda/CRF_Screen/Ref/BIOGRID.use_simp.txt"
-biogrid.tb <- read_delim(biogrid.ref, "\t")
+biogrid.ref <- "/Volumes/Yolanda/CRF_Screen/Ref/BIOGRID.use_simp.dupR.csv"
+biogrid.tb <- read_csv(biogrid.ref)
 
 ###----- Convert mouse gene names to all upper case (match with human)
 tgt.tb <- tgt.tb %>% 
   mutate(gene_name = convertGN(gene_name, crf.gn.alt.tb$Alternative, crf.gn.alt.tb$gene_name)) %>%
   mutate(gene_name = toupper(gene_name))
 biogrid.tb <- biogrid.tb %>% 
-  mutate(gene_name = toupper(OFFICIAL_SYMBOL_A)) %>%
-  mutate(gene_name2 = toupper(OFFICIAL_SYMBOL_B)) %>%
+  mutate(gene_name = toupper(gene1)) %>%
+  mutate(gene_name2 = toupper(gene2)) %>%
   select(gene_name, gene_name2)
 
 ###----- Select mouse / human genes from biogrid spreadsheet
