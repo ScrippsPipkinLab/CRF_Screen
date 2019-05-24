@@ -1,0 +1,71 @@
+GO_ID	namespace	name
+GO:0000122	biological_process	negative regulation of transcription by RNA polymerase II
+GO:0000083	biological_process	regulation of transcription involved in G1/S transition of mitotic cell cycle
+GO:0033613	molecular_function	activating transcription factor binding
+GO:0043044	biological_process	ATP-dependent chromatin remodeling
+GO:0000785	cellular_component	chromatin
+GO:0031497	biological_process	chromatin assembly
+GO:0006333	biological_process	chromatin assembly or disassembly
+GO:0003682	molecular_function	chromatin binding
+GO:0031490	molecular_function	chromatin DNA binding
+GO:0006325	biological_process	chromatin organization
+GO:0048096	biological_process	chromatin-mediated maintenance of transcription
+GO:0005694	cellular_component	chromosome
+GO:0051276	biological_process	chromosome organization
+GO:0070192	biological_process	chromosome organization involved in meiotic cell cycle
+GO:0000775	cellular_component	chromosome, centromeric region
+GO:0000781	cellular_component	chromosome, telomeric region
+GO:0000794	cellular_component	condensed nuclear chromosome
+GO:0000780	cellular_component	condensed nuclear chromosome, centromeric region
+GO:0008340	biological_process	determination of adult lifespan
+GO:0003700	molecular_function	DNA-binding transcription factor activity
+GO:0000792	cellular_component	heterochromatin
+GO:0042393	molecular_function	histone binding
+GO:0000122	biological_process	negative regulation of transcription by RNA polymerase II
+GO:0045892	biological_process	negative regulation of transcription, DNA-templated
+GO:0016604	cellular_component	nuclear body
+GO:0000790	cellular_component	nuclear chromatin
+GO:0008134	molecular_function	transcription factor binding
+GO:0016740	molecular_function	transferase activity
+GO:0006338	biological_process	chromatin remodeling
+GO:0006342	biological_process	chromatin silencing
+GO:0000793	cellular_component	condensed chromosome
+GO:0000940	cellular_component	condensed chromosome outer kinetochore
+GO:0000779	cellular_component	condensed chromosome, centromeric region
+GO:0007059	biological_process	chromosome segregation
+GO:0044727	biological_process	DNA demethylation of male pronucleus
+GO:0006335	biological_process	DNA replication-dependent nucleosome assembly
+GO:0006302	biological_process	double-strand break repair
+GO:0006303	biological_process	double-strand break repair via nonhomologous end joining
+GO:0000791	cellular_component	euchromatin
+GO:0007143	biological_process	female meiotic nuclear division
+GO:0007403	biological_process	glial cell fate determination
+GO:0006344	biological_process	maintenance of chromatin silencing
+GO:0007140	biological_process	male meiotic nuclear division
+GO:0006346	biological_process	methylation-dependent chromatin silencing
+GO:0043922	biological_process	negative regulation by host of viral transcription
+GO:0035562	biological_process	negative regulation of chromatin binding
+GO:0005635	cellular_component	nuclear envelope
+GO:0005719	cellular_component	nuclear euchromatin
+GO:0005720	cellular_component	nuclear heterochromatin
+GO:0035257	molecular_function	nuclear hormone receptor binding
+GO:0005637	cellular_component	nuclear inner membrane
+GO:0016363	cellular_component	nuclear matrix
+GO:0031965	cellular_component	nuclear membrane
+GO:0016607	cellular_component	nuclear speck
+GO:0031493	molecular_function	nucleosomal histone binding
+GO:0000786	cellular_component	nucleosome
+GO:0005721	cellular_component	pericentric heterochromatin
+GO:0005726	cellular_component	perichromatin fibrils
+GO:0048471	cellular_component	perinuclear region of cytoplasm
+GO:0043923	biological_process	positive regulation by host of viral transcription
+GO:0035563	biological_process	positive regulation of chromatin binding
+GO:0045944	biological_process	positive regulation of transcription by RNA polymerase II
+GO:0045893	biological_process	positive regulation of transcription, DNA-templated
+GO:0006355	biological_process	regulation of transcription, DNA-templated
+GO:0003713	molecular_function	transcription coactivator activity
+GO:0003714	molecular_function	transcription corepressor activity
+GO:0005667	cellular_component	transcription factor complex
+GO:0044212	molecular_function	transcription regulatory region DNA binding
+GO:0000805	cellular_component	X chromosome
+GO:0000806	cellular_component	Y chromosome

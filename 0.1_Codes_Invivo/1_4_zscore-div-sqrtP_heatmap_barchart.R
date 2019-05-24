@@ -5,9 +5,10 @@
 # Reference: https://bioconductor.statistik.tu-dortmund.de/packages/3.1/bioc/vignettes/ComplexHeatmap/inst/doc/ComplexHeatmap.html
 
 ########## Libraries ##########
-library(BSDA)
 library(dplyr)
 library(tidyverse)
+
+library(BSDA)
 library(magrittr)
 library(pheatmap)
 library(RColorBrewer)
@@ -17,6 +18,12 @@ library(ComplexHeatmap)
 library(circlize)
 library(colorspace)
 library(GetoptLong)
+
+#BiocManager::install("org.Mm.eg.db")
+library("org.Mm.eg.db")
+library(clusterProfiler)
+library(ggplot2)
+
 
 ########## Self-defined functions ##########
 save_pheatmap_pdf <- function(x, filename, width=7, height=7) {
@@ -312,6 +319,92 @@ if (FALSE) {
   ###----- Save dendrogram clusters
   k_means_save(target.heatmap, target.tb, "target_cluster.csv")
   write_csv(target.tb, "target.tb.csv")
+  
+}
+
+##########-------------------- Pathway
+if (FALSE){
+  wk.dir <- "/Volumes/Yolanda/CRF_Screen/InVivo/1_1_Norm/20190516/5_zscore_div_sqrt_pval"
+  setwd(wk.dir)
+  
+  if (FALSE){
+    z.p.file <- "all_z-score_div_sqrt-p_sqrt.csv"
+    z.p.tb <- read_csv(z.p.file)
+    qt <- as.integer(floor(nrow(z.p.tb)/4))
+    
+    #####---------- Q3 minus other
+    z.p.tb <- z.p.tb %>% arrange(Q3minusOther)
+    z.p.tb <- within(z.p.tb, z.p.tb$gene_name <- factor(z.p.tb$gene_name, levels=z.p.tb$gene_name))
+    
+    q3_o_dn <- z.p.tb$gene_name[1:qt]
+    q3_o_up <- z.p.tb$gene_name[(nrow(z.p.tb)-qt+1): nrow(z.p.tb)]
+    
+    #####---------- Q4 minus Q1
+    z.p.tb <- z.p.tb %>% arrange(Q4minusQ1)
+    z.p.tb <- within(z.p.tb, z.p.tb$gene_name <- factor(z.p.tb$gene_name, levels=z.p.tb$gene_name))
+    
+    q4_q1_dn <- z.p.tb$gene_name[1:qt]
+    q4_q1_up <- z.p.tb$gene_name[(nrow(z.p.tb)-qt+1): nrow(z.p.tb)]
+    
+    #####---------- Input v.s. output
+    z.p.tb <- z.p.tb %>% arrange(z.p.tb$InputMinusAvg)
+    z.p.tb <- within(z.p.tb, z.p.tb$gene_name <- factor(z.p.tb$gene_name, levels=z.p.tb$gene_name))
+    
+    in_a_dn <- z.p.tb$gene_name[1:qt]
+    in_a_up <- z.p.tb$gene_name[(nrow(z.p.tb)-qt+1): nrow(z.p.tb)]
+    
+    out.tb <- tibble(q3_o_dn=q3_o_dn, q3_o_up=q3_o_up, 
+                     q4_q1_dn=q4_q1_dn, q4_q1_up=q4_q1_up, 
+                     in_a_dn=in_a_dn, in_a_up=in_a_up)
+    write_csv(out.tb, "topQuarter.csv")
+  }
+  
+  in.df <- read.csv("topQuarter.csv")
+  gn_list_names <- colnames(in.df)
+  q3_o_dn <- in.df$q3_o_dn
+  q3_o_up <- in.df$q3_o_up
+  q4_q1_dn <- in.df$q4_q1_dn
+  q4_q1_up <- in.df$q4_q1_up
+  in_a_dn <- in.df$in_a_dn
+  in_a_up <- in.df$in_a_up
+  gn_list <- list(q3_o_dn, q3_o_up, q4_q1_dn, q4_q1_up, in_a_dn, in_a_up)
+  
+  for (x in c(1:6)){
+    #x <- 1
+    i <- paste(gn_list_names[x], sep="")
+    genes.i <- as.character(unlist(gn_list[x]))
+    
+    genes.i.id <- select(org.Mm.eg.db, genes.i, c("ENTREZID"), "ALIAS")
+    #genes.i.id$ENTREZID
+    
+    egoBP <- enrichGO(gene = genes.i.id$ENTREZID, keyType = 'ENTREZID', OrgDb = org.Mm.eg.db, ont = "BP", pAdjustMethod = "none", pvalueCutoff = 0.05, readable = TRUE)
+    egoCC <- enrichGO(gene = genes.i.id$ENTREZID, keyType = 'ENTREZID', OrgDb = org.Mm.eg.db, ont = "CC", pAdjustMethod = "none", pvalueCutoff = 0.05, readable = TRUE)
+    egoMF <- enrichGO(gene = genes.i.id$ENTREZID, keyType = 'ENTREZID', OrgDb = org.Mm.eg.db, ont = "MF", pAdjustMethod = "none", pvalueCutoff = 0.05, readable = TRUE)
+    
+    # Dotplot visualization
+    if (!is.null(egoBP)){
+      pdf.name <- paste(i,"_BP_dotplot.pdf",sep="")
+      csv.name <- paste(i,"_BP_dotplot.csv",sep="")
+      write.csv(egoBP@result, file=csv.name, row.names=FALSE)
+      egoBP.dotplot <- dotplot(egoBP, x="count", showCategory=25)
+      ggsave(pdf.name, egoBP.dotplot, device = "pdf", width = 30, height = 20, units = "cm")  
+      
+    }
+    if(!is.null(egoCC)){
+      csv.name <- paste(i,"_CC_dotplot.csv",sep="")
+      pdf.name <- paste(i,"_CC_dotplot.pdf",sep="")
+      write.csv(egoCC@result, file=csv.name, row.names=FALSE)
+      egoCC.dotplot <- dotplot(egoCC, x="count", showCategory=25)
+      ggsave(pdf.name, egoCC.dotplot, device = "pdf", width = 30, height = 20, units = "cm")  
+    }
+    if(!is.null(egoMF)){
+      csv.name <- paste(i,"_MF_dotplot.csv",sep="")
+      pdf.name <- paste(i,"_MF_dotplot.pdf",sep="")
+      write.csv(egoMF@result, file=csv.name, row.names=FALSE)
+      egoMF.dotplot <- dotplot(egoMF, x="count", showCategory=25)
+      ggsave(paste(i,"_MF_dotplot.pdf",sep=""), egoMF.dotplot, device = "pdf", width = 30, height = 20, units = "cm")  
+    }
+  }
   
 }
 

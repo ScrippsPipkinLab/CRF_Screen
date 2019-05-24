@@ -55,7 +55,7 @@ def select_int_or(inFile, selectList, out_apdx):
             header = next(rfin)
             wfout.writerow(header)
             for row in rfin:
-                if row[0] in selectList or row[1] in selectList:
+                if (row[0] in selectList) or (row[1] in selectList):
                     wfout.writerow(row)
     
 def convertGN(listX, inNames, outNames):
@@ -68,31 +68,31 @@ def convertGN(listX, inNames, outNames):
 ######################################## Main ########################################
 
 ##########-------------------- Create cytoscape source file with biogrid data
-'''
+
 wk_dir = "/Volumes/Yolanda/CRF_Screen/InVivo/2_Protein"
 os.chdir(wk_dir)
 
 in_file = "/Volumes/Yolanda/CRF_Screen/InVivo/2_Protein/CRF_target_biogrid.csv"
 in_tab = ascii.read(in_file)
-'''
+
 
 ###----- Delete self interactions
-'''
+
 del_rows = []
 for x in range(0, len(in_tab)):
     if in_tab[x][0] == in_tab[x][1]:
         del_rows.append(x)
 in_tab.remove_rows(del_rows)
 ascii.write(in_tab, "CRF_target_biogrid_rmself.csv", format="csv", overwrite=True)
-'''
+
 
 ###----- Calculate appearance
-'''
+
 in_tab_all_genes = list(in_tab["gene_name"]) + list(in_tab["gene_name2"])
 in_tab['source_appearance'] = [in_tab_all_genes.count(i) for i in list(in_tab["gene_name"])]
 in_tab['source_appearance_sqrt'] = [math.sqrt(i) for i in list(in_tab['source_appearance'])]
 ascii.write(in_tab, "CRF_target_biogrid_rmself_count.csv", format="csv", overwrite=True)
-'''
+
 
 ###----- Count numbers of appearance
 '''
@@ -157,12 +157,12 @@ select_int_and(int_file, in_a_dn, "in_a_dn")
 select_int_and(int_file, in_a_up, "in_a_up")
 
 
-select_int_and(int_file, q4_q1_dn, "q4_q1_dn_or")
-select_int_and(int_file, q4_q1_up, "q4_q1_up_or")
-select_int_and(int_file, q3_o_dn, "q3_o_dn_or")
-select_int_and(int_file, q3_o_up, "q3_o_up_or")
-select_int_and(int_file, in_a_dn, "in_a_dn_or")
-select_int_and(int_file, in_a_up, "in_a_up_or")
+select_int_or(int_file, q4_q1_dn, "q4_q1_dn_or")
+select_int_or(int_file, q4_q1_up, "q4_q1_up_or")
+select_int_or(int_file, q3_o_dn, "q3_o_dn_or")
+select_int_or(int_file, q3_o_up, "q3_o_up_or")
+select_int_or(int_file, in_a_dn, "in_a_dn_or")
+select_int_or(int_file, in_a_up, "in_a_up_or")
 
 
 

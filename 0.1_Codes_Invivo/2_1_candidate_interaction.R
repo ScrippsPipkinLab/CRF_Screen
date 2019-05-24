@@ -29,8 +29,8 @@ setwd(wk.dir)
 tgt.file <- "/Volumes/Yolanda/CRF_Screen/InVivo/1_1_Norm/20190516/5_zscore_div_sqrt_pval/target.heatmap.clusters.csv"
 tgt.tb <- read_csv(tgt.file)
 
-crf.gn.alt.file <- "/Volumes/Yolanda/CRF_Screen/Ref/CRF_alternative_gn.csv"
-crf.gn.alt.tb <- read_csv(crf.gn.alt.file)
+crf.gn.file <- "/Volumes/Yolanda/RNAseq_Compilation/CRM_analysis_2/Info/CRM.csv"
+crf.gn.tb <- read_csv(crf.gn.file)
 
 biogrid.ref <- "/Volumes/Yolanda/CRF_Screen/Ref/BIOGRID.use_simp.dupR.csv"
 biogrid.tb <- read_csv(biogrid.ref)
@@ -43,15 +43,35 @@ biogrid.tb <- biogrid.tb %>%
   mutate(gene_name = toupper(gene1)) %>%
   mutate(gene_name2 = toupper(gene2)) %>%
   select(gene_name, gene_name2)
+crf.gn.tb <- crf.gn.tb %>%
+  mutate(gene_name = toupper(gene_name))
 
 ###----- Select mouse / human genes from biogrid spreadsheet
-biogrid.tb.tgt <- biogrid.tb %>%
-  filter(gene_name %in% tgt.tb$gene_name) %>%
-  filter(gene_name2 %in% tgt.tb$gene_name) %>%
-  distinct() %>%
-  left_join(tgt.tb, by="gene_name") %>%
-  mutate(interation="pp")
+if (FALSE){
+  biogrid.tb.tgt.1 <- biogrid.tb %>%
+    filter(gene_name %in% tgt.tb$gene_name) %>%
+    distinct() %>%
+    left_join(tgt.tb, by="gene_name") %>%
+    mutate(interation="pp")
+  
+  biogrid.tb.tgt.2 <- biogrid.tb %>%
+    filter(gene_name2 %in% tgt.tb$gene_name) %>%
+    distinct() %>%
+    left_join(tgt.tb, by="gene_name") %>%
+    mutate(interation="pp")
+  
+  biogrid.tb.tgt <- biogrid.tb.tgt.1 %>% 
+    bind_rows(biogrid.tb.tgt.2) %>%
+    unique()
+  
+  write_csv(biogrid.tb.tgt, "CRF_target_biogrid_incluedenonCRF.csv")
+}
 
+biogrid.tb.tgt <- biogrid.tb %>% 
+  filter(gene_name %in% crf.gn.tb$gene_name) %>%
+  filter(gene_name2 %in% crf.gn.tb$gene_name) %>%
+  mutate(interation="pp") %>%
+  unique()
 
 write_csv(biogrid.tb.tgt, "CRF_target_biogrid.csv")
 
