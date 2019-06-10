@@ -1,0 +1,42 @@
+histone H3 acetylation
+,pctg,BRD1,BRPF1,BRPF3,ING4,ING5,KAT7,KAT6A,KAT6B,PHF17
+histone H3 acetylation,88.88888888888889,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Non
+""
+ESC/E(Z) complex
+,pctg,EZH1,EZH2,JARID2,MTF2,PHF1,PHF19,SUX12,EED2
+ESC/E(Z) complex,75.0,Yes,Yes,Yes,Yes,Yes,Yes,Non,Non
+""
+PcG protein complex
+,pctg,BMI1,CBX2,CBX6,CBX8,KDM2B,PCGF1,PCGF2,PCGF5,PHC1,PHC2,RING1,RNF2,SCMH1,SCML2
+PcG protein complex,85.71428571428571,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,--,--
+""
+histone-lysine N-methyltransferase activity; histone lysine methylation
+,pctg,PRDM9,PRMT5,SETD7,SIRT2,WHSC1
+histone-lysine N-methyltransferase activity,40.0,Yes,--,Yes,--,Non
+histone lysine methylation,40.0,Yes,--,Yes,--,Non
+""
+methylated histone binding
+,pctg,L3MBTL1,L3MBTL3,L3MBTL4
+methylated histone binding,33.33333333333333,Yes,--,--
+""
+RNA polymerase II proximal promoter sequence-specific DNA binding; histone deacetylase binding; histone deacetylation; histone deacetylase activity; histone deacetylase complex; protein deacetylase activity; NAD-dependent histone deacetylase activity (H3-K14 specific); NuRD complex; histone H3 deacetylation; protein deacetylation; transcriptional repressor complex; histone H4 deacetylation; RNA polymerase II repressing transcription factor binding; deacetylase activity; Sin3 complex; negative regulation of peptidyl-lysine acetylation; positive regulation of tyrosine phosphorylation of STAT protein; Sin3-type complex
+,pctg,HDAC1,HDAC2
+RNA polymerase II proximal promoter sequence-specific DNA binding,100.0,Yes,Yes
+histone deacetylase binding,100.0,Yes,Yes
+histone deacetylation,100.0,Yes,Yes
+histone deacetylase activity,100.0,Yes,Yes
+histone deacetylase complex,100.0,Yes,Yes
+protein deacetylase activity,100.0,Yes,Yes
+NAD-dependent histone deacetylase activity (H3-K14 specific),100.0,Yes,Yes
+NuRD complex,100.0,Yes,Yes
+histone H3 deacetylation,100.0,Yes,Yes
+protein deacetylation,100.0,Yes,Yes
+transcriptional repressor complex,100.0,Yes,Yes
+histone H4 deacetylation,100.0,Yes,Yes
+RNA polymerase II repressing transcription factor binding,100.0,Yes,Yes
+deacetylase activity,100.0,Yes,Yes
+Sin3 complex,100.0,Yes,Yes
+negative regulation of peptidyl-lysine acetylation,100.0,Yes,Yes
+positive regulation of tyrosine phosphorylation of STAT protein,100.0,Yes,Yes
+Sin3-type complex,100.0,Yes,Yes
+""
