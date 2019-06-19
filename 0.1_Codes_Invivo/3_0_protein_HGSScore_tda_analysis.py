@@ -73,8 +73,8 @@ plt.savefig("N_epoches-500_random_state-1234.png")
 
 ####################  Find edges ####################
 def umap_and_edges(nn, mdist):
-    nn = 12
-    mdist = 0.5
+    nn = 10
+    mdist = 0.4
     dist_file = "HGSCore_only-CRF_sq_dist.csv"
     dist_df = pd.read_csv(dist_file, sep=",", header=0, index_col=0)
     gns = dist_df.index.values # al row names

@@ -19,10 +19,10 @@ library(circlize)
 library(colorspace)
 library(GetoptLong)
 
-#BiocManager::install("org.Mm.eg.db")
-library("org.Mm.eg.db")
-library(clusterProfiler)
-library(ggplot2)
+###BiocManager::install("org.Mm.eg.db")
+#library("org.Mm.eg.db")
+#library(clusterProfiler)
+#library(ggplot2)
 
 
 ########## Self-defined functions ##########
@@ -140,7 +140,7 @@ if (FALSE) {
 
 
 ##########-------------------- Bar plot
-if (FALSE) {
+if (TRUE) {
   wk.dir <- "/Volumes/Yolanda/CRF_Screen/InVivo/1_1_Norm/20190516/5_zscore_div_sqrt_pval"
   setwd(wk.dir)
   
@@ -149,25 +149,31 @@ if (FALSE) {
   #z.p.tb <- z.p.tb %>% column_to_rownames("gene_name")
   
   #####---------- Genes to annotate
-  anno.vec <- c("Tbx21", "Prdm1", "Id2", "Runx3", "Ncor1", "Tet2", "Mbd2", 
-                "Ezh2", "Suv39h1", "Dnmt3a", "Kdm2b", "Rpa3", "Runx3", 
-                "Ing2", "Ing3", "Ing4", "Ing5", "Bop1",
-                "Cd4", "Cd14")
+  #anno.vec <- c("Tbx21", "Prdm1", "Id2", "Runx3", "Ncor1", "Tet2", "Mbd2", 
+  #              "Ezh2", "Suv39h1", "Dnmt3a", "Kdm2b", "Rpa3", "Runx3", 
+  #              "Ing2", "Ing3", "Ing4", "Ing5", "Bop1",
+  #              "Cd4", "Cd14")
+  anno.vec <- c("Myst3", "Myst4", "Brpf1", "Ing5", "Ing4", "Ing3", 
+                "Mll1", "Wdr5", "Rbbp5", "Ash2l", "Dpy30",
+                "Cd4", "Runx3", "Tbx21",
+                "Cxxc1", "Paf1")
   
   
   #####---------- Q4 minus Q1
-  out.name <- "Q4minusQ1.bar.pdf"
+  out.name <- "mll-mozmorf_Q4minusQ1.bar.pdf"
+  
   # Rank order
   z.p.tb <- z.p.tb %>% arrange(Q4minusQ1)
   z.p.tb <- within(z.p.tb, z.p.tb$gene_name <- factor(z.p.tb$gene_name, levels=z.p.tb$gene_name))
   
   # Set color for top and bottom quarter
-  col_panel <- c("steelblue1", "lightgrey", "indianred1")
+  col_panel <- c( "deepskyblue", "snow2", "tomato")
   qt <- as.integer(floor(nrow(z.p.tb)/4))
   col.vec <- rep(col_panel[1], qt)
   col.vec <- c(col.vec, rep(col_panel[2], nrow(z.p.tb)-2*qt))
   col.vec <- c(col.vec, rep(col_panel[3], qt))
   z.p.tb$color_use <- col.vec
+
   
   # Select annotations
   z.p.tb <- z.p.tb %>% 
@@ -193,13 +199,13 @@ if (FALSE) {
   ggsave(out.name, width=6, height=9, units="cm")
   
   #####---------- Q3 minus other
-  out.name <- "Q3minusOther.bar.pdf"
+  out.name <- "mll-mozmorf_Q3minusOther.bar.pdf"
   # Rank order
   z.p.tb <- z.p.tb %>% arrange(Q3minusOther)
   z.p.tb <- within(z.p.tb, z.p.tb$gene_name <- factor(z.p.tb$gene_name, levels=z.p.tb$gene_name))
   
   # Set color for top and bottom quarter
-  col_panel <- c("steelblue1", "lightgrey", "indianred1")
+  col_panel <- c("deepskyblue", "snow2", "tomato")
   qt <- as.integer(floor(nrow(z.p.tb)/4))
   col.vec <- rep(col_panel[1], qt)
   col.vec <- c(col.vec, rep(col_panel[2], nrow(z.p.tb)-2*qt))
@@ -230,13 +236,13 @@ if (FALSE) {
   ggsave(out.name, width=6, height=9, units="cm")
   
   #####---------- Input v.s. output
-  out.name <- "InputMinusAvg.bar.pdf"
+  out.name <- "mll-mozmorf_InputMinusAvg.bar.pdf"
   # Rank order
   z.p.tb <- z.p.tb %>% arrange(z.p.tb$InputMinusAvg)
   z.p.tb <- within(z.p.tb, z.p.tb$gene_name <- factor(z.p.tb$gene_name, levels=z.p.tb$gene_name))
   
   # Set color for top and bottom quarter
-  col_panel <- c("steelblue1", "lightgrey", "indianred1")
+  col_panel <- c("deepskyblue", "snow2", "tomato")
   qt <- as.integer(floor(nrow(z.p.tb)/4))
   col.vec <- rep(col_panel[1], qt)
   col.vec <- c(col.vec, rep(col_panel[2], nrow(z.p.tb)-2*qt))
