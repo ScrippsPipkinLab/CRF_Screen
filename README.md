@@ -8,8 +8,9 @@
 > Matthew Pipkin: Advisor
 
 ## Manuscript progress
-[Chromatin remodeling atlas - GSuite](https://drive.google.com/drive/folders/1lQkHaRpWIaQ0S_ir95EF-ODGVYXxwww4?usp=sharing)
-[Chromatin remodeling atlas - Dropbox](https://www.dropbox.com/sh/lrswxf2msgenqcj/AADE3R-FuQcxOk59wkrtzQ5Ja?dl=0)
+1. Chromatin remodeling atlas
+	[GSuite](https://drive.google.com/drive/folders/1lQkHaRpWIaQ0S_ir95EF-ODGVYXxwww4?usp=sharing)
+	[Dropbox](https://www.dropbox.com/sh/lrswxf2msgenqcj/AADE3R-FuQcxOk59wkrtzQ5Ja?dl=0)
 
 ## Data analysis description <br/>
 * [In vitro analysis](In_vitro_analysis_steps.md)
