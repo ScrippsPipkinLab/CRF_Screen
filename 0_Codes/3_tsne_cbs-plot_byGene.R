@@ -20,7 +20,7 @@ build_df <- function(tsne.file, z.score.file, p.value.file, key.col){
   new.df$zScore <- unlist(z.score.df[key.col])
   new.df$pValue <- unlist(p.value.df[key.col])
   
-  out.name <- paste(key.col, "_tsnf-z-p.csv")
+  out.name <- paste(key.col, "_tsne-z-p.csv", sep="")
   write.csv(new.df, out.name, row.names = FALSE)
 }
 
@@ -49,23 +49,26 @@ cbs_plot <- function(in.file){
   out.csv.name <- gsub(".csv", "_cbs.csv", in.file)
   write.csv(in.df, out.csv.name, row.names = FALSE)
   
-  cbs.plot <- ggplot(in.df, aes(x=in.df$t1, y=in.df$t2, color=in.df$zScore, size=in.df$nlog10p)) +
-    geom_point(alpha = 0.8, shape = 19) +
-    scale_color_gradient2(midpoint=0, limits = c(-6,6), low="dodgerblue4", mid="white", high="firebrick4", space ="Lab" ) +
-    scale_x_continuous(limits = c(-100, 100)) +
-    scale_y_continuous(limits = c(-100, 100)) +
-    theme(panel.background = element_rect(fill = "white", colour = "white",size = 0.5, linetype = "solid"),
-          panel.grid.major = element_line(size = 0.25, linetype = 'solid', colour = "grey"), 
-          panel.grid.minor = element_line(size = 0.15, linetype = 'solid',colour = "grey"),
+  nlog10pval <- in.df$nlog10p
+  sqrt_Z <- sqrt(abs(in.df$zScore)) * in.df$zScore / abs(in.df$zScore)
+  cbs.plot <- ggplot(in.df, aes(x=in.df$t1, y=in.df$t2, color=sqrt_Z)) +
+    geom_point(size=5, stroke=0, ) +
+    scale_color_gradient2(midpoint=0, limits = c(-2,2), low="dodgerblue3", mid="white", high="firebrick3", space ="Lab") +
+    scale_x_continuous(limits = c(-80, 80)) +
+    scale_y_continuous(limits = c(-80, 80)) +
+    labs(x ="t1", y = "t2") +
+    theme(panel.background = element_rect(fill = "gray50"),
+          panel.grid.major = element_line(size = 0.1, linetype = 'solid', colour = "black"), 
+          panel.grid.minor = element_line(size = 0.05, linetype = 'solid',colour = "black"),
           text = element_text(size=10))
   # Save without annotation
   out.name <- gsub(".csv", ".pdf", in.file)
-  ggsave(out.name, plot = cbs.plot, device = "pdf", units = "cm", width = 25, height = 25)
+  ggsave(out.name, plot = cbs.plot, device = "pdf", units = "cm", width = 22, height = 20)
   # Save with annotation
   cbs.plot <- cbs.plot +
     geom_text_repel(aes(label = in.df$gene_name_anno), size = 6)
   out.name <- gsub(".csv", "_anno.pdf", in.file)
-  ggsave(out.name, plot = cbs.plot, device = "pdf", units = "cm", width = 25, height = 25)
+  ggsave(out.name, plot = cbs.plot, device = "pdf", units = "cm", width = 22, height = 20)
 }
 
 ########## Main ##########
@@ -73,7 +76,7 @@ cbs_plot <- function(in.file){
 ###----- Build dataframes
 #--- perplexity = 5
 if (FALSE){
-  wk.dir <- "/Volumes/Yolanda/CRF_Screen/InVitro/2_0_t-test_by_gene/2_Amt_compile_cluster/0_bbplot"
+  wk.dir <- "/Volumes/Yolanda/CRF_Screen/InVitro/2_0_t-test_by_gene/2_Amt_compile_cluster/0_bbplot_source"
   setwd(wk.dir)
   
   tsne <- "/Volumes/Yolanda/CRF_Screen/InVitro/2_0_t-test_by_gene/1_Amt_compile/Amt_normbycontrolZP_t-test.by.geneavg_z-score_tsne_per5.csv"
@@ -92,16 +95,8 @@ if (FALSE){
 if (FALSE){
   wk.dir <- "/Volumes/Yolanda/CRF_Screen/InVitro/2_0_t-test_by_gene/2_Amt_compile_cluster/0_bbplot_source"
   setwd(wk.dir)  
-  files <- list.files(path = wk.dir, pattern = "tsnf-z-p.csv", full.name=FALSE, recursive=FALSE)
+  files <- list.files(path = wk.dir, pattern = "tsne-z-p.csv", full.name=FALSE, recursive=FALSE)
   for (file.x in files){
     cbs_plot(file.x)
   }
 }
-
-
-#--- Save as pdf
-#file.x <- '/Volumes/Yolanda/CRF_Screen/InVitro/2_0_t-test_by_gene/compiled_Amt/tsne-per5_cbs-plot/CD127GeoMean_100U _tsnf-z-p.csv'
-#cbs_plot(file.x)
-
-#file.x <- '/Volumes/Yolanda/CRF_Screen/InVitro/2_0_t-test_by_gene/compiled_Amt/per5/tsne-per5_cbs-plot/CD25GeoMean_100U _tsnf-z-p.csv'
-#cbs_plot(file.x)
