@@ -9,6 +9,7 @@
 
 ## Manuscript progress
 1. **Chromatin remodeling atlas:** [GSuite](https://drive.google.com/drive/folders/1lQkHaRpWIaQ0S_ir95EF-ODGVYXxwww4?usp=sharing); [Dropbox](https://www.dropbox.com/sh/lrswxf2msgenqcj/AADE3R-FuQcxOk59wkrtzQ5Ja?dl=0)
+2. **Adam's Mll manuscript:** [Dropbox](https://www.dropbox.com/l/scl/AAAngcbs1Eawrp3dMjDsQSjKHopEiSUMxz4)
 
 ## Data analysis description <br/>
 * [In vitro analysis](In_vitro_analysis_steps.md)
