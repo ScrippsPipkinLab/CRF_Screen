@@ -8,3 +8,6 @@
 /Ref/BIOGRID-ALL-3.5.172_simplify.tab.txt
 /Ref/BIOGRID-ALL-3.5.172.tab.txt
 /CRF_Screen/Ref/BIOGRID.use.txt
+
+# Ignore R studio files
+.R*

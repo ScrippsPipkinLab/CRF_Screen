@@ -173,7 +173,7 @@ if (TRUE) {
                 "Chd3", "Chd4", "Chd5", "Hdac1", "Hdac2", "Mbd3", "Mta1", "Mta2", 
                 "Mta3", "Rbbp4", "Rbbp7", 
                 
-                "Cd4", "Runx3", "Tbx21", "Chd7", )
+                "Cd4", "Runx3", "Tbx21", "Chd7")
   anno.vec <- tolower(anno.vec)
   anno.vec <- as.character(sapply(anno.vec, simpleCap))
   
