@@ -35,6 +35,12 @@ save_pheatmap_pdf <- function(x, filename, width=7, height=7) {
   dev.off()
 }
 
+simpleCap <- function(x) {
+  s <- strsplit(x, " ")[[1]]
+  paste(toupper(substring(s, 1,1)), substring(s, 2),
+        sep="", collapse=" ")
+}
+
 in_vec <- function(refvec, vecx){
   out_vec <- numeric(length(vecx))
   for (x in c(1:length(vecx))){
@@ -141,10 +147,10 @@ if (FALSE) {
 
 ##########-------------------- Bar plot
 if (TRUE) {
-  wk.dir <- "/Volumes/Yolanda/CRF_Screen/InVivo/1_1_Norm/20190516/5_zscore_div_sqrt_pval"
+  wk.dir <- "/Volumes/Yolanda/CRF_Screen/InVivo/1_1_Norm/20190516/5_zscore_div_sqrt_pval/grant_figures"
   setwd(wk.dir)
   
-  z.p.file <- "all_z-score_div_sqrt-p_sqrt.csv"
+  z.p.file <- "/Volumes/Yolanda/CRF_Screen/InVivo/1_1_Norm/20190516/5_zscore_div_sqrt_pval/all_z-score_div_sqrt-p_sqrt.csv"
   z.p.tb <- read_csv(z.p.file)
   #z.p.tb <- z.p.tb %>% column_to_rownames("gene_name")
   
@@ -153,14 +159,28 @@ if (TRUE) {
   #              "Ezh2", "Suv39h1", "Dnmt3a", "Kdm2b", "Rpa3", "Runx3", 
   #              "Ing2", "Ing3", "Ing4", "Ing5", "Bop1",
   #              "Cd4", "Cd14")
-  anno.vec <- c("Myst3", "Myst4", "Brpf1", "Ing5", "Ing4", "Ing3", 
-                "Mll1", "Wdr5", "Rbbp5", "Ash2l", "Dpy30",
-                "Cd4", "Runx3", "Tbx21",
-                "Cxxc1", "Paf1")
+  #anno.vec <- c("Myst3", "Myst4", "Brpf1", "Ing5", "Ing4", "Ing3", 
+  #              "Mll1", "Wdr5", "Rbbp5", "Ash2l", "Dpy30",
+  #              "Cd4", "Runx3", "Tbx21",
+  #              "Cxxc1", "Paf1")
+  anno.vec <- c("ACTL6A", "ARID1A", "ARID1B", "ARID2", "BRD7", "BRD9", "PBRM1", "PHF10", 
+                "SMARCA2", "SMARCA4", "SMARCB1", "SMARCC1", "SMARCC2", "SMARCD1", "SMARCD2", 
+                "SMARCD3", "SMARCE1", "Actl6a", "Actl6b", "Arid1a", "Arid1b", "Brd9", "Smarca2", 
+                "Smarca4", "Smarcb1", "Smarcc1", "Smarcc2", "Smarcd1", "Smarcd2", "Smarcd3", "Smarce1",
+                "CHD3", "CHD4", "CHD5", "HDAC1", "HDAC2", "KDM1A", 
+                
+                "MBD2", "MBD3", "MTA1", "MTA2", "MTA3", "RBBP4", "RBBP7", "SIN3A", "SIN3B",
+                "Chd3", "Chd4", "Chd5", "Hdac1", "Hdac2", "Mbd3", "Mta1", "Mta2", 
+                "Mta3", "Rbbp4", "Rbbp7", 
+                
+                "Cd4", "Runx3", "Tbx21", "Chd7", )
+  anno.vec <- tolower(anno.vec)
+  anno.vec <- as.character(sapply(anno.vec, simpleCap))
   
+  name.root <- "Baf-HDAC"
   
   #####---------- Q4 minus Q1
-  out.name <- "mll-mozmorf_Q4minusQ1.bar.pdf"
+  out.name <- paste(name.root, "Q4minusQ1.bar.pdf", sep="_")
   
   # Rank order
   z.p.tb <- z.p.tb %>% arrange(Q4minusQ1)
@@ -199,7 +219,8 @@ if (TRUE) {
   ggsave(out.name, width=6, height=9, units="cm")
   
   #####---------- Q3 minus other
-  out.name <- "mll-mozmorf_Q3minusOther.bar.pdf"
+  out.name <- paste(name.root, "Q3minusOther.bar.pdf", sep="_")
+  
   # Rank order
   z.p.tb <- z.p.tb %>% arrange(Q3minusOther)
   z.p.tb <- within(z.p.tb, z.p.tb$gene_name <- factor(z.p.tb$gene_name, levels=z.p.tb$gene_name))
@@ -236,7 +257,8 @@ if (TRUE) {
   ggsave(out.name, width=6, height=9, units="cm")
   
   #####---------- Input v.s. output
-  out.name <- "mll-mozmorf_InputMinusAvg.bar.pdf"
+  out.name <- paste(name.root, "InputMinusAvg.bar.pdf", sep="_")
+  
   # Rank order
   z.p.tb <- z.p.tb %>% arrange(z.p.tb$InputMinusAvg)
   z.p.tb <- within(z.p.tb, z.p.tb$gene_name <- factor(z.p.tb$gene_name, levels=z.p.tb$gene_name))
