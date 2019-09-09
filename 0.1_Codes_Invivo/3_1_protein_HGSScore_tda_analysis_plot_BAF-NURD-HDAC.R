@@ -100,69 +100,13 @@ cvtGNames <- function(gnList){
 }
 
 ######################################## Main ########################################
-scPlotAnno <- function(coorFile, edgeFile, edgeFilter, annoFile, highlightTerms, termNames, termCols, outName){
-  coorFile <- "HGSCore_only-CRF_sq_dist_nn12-mdist0.5_coor.csv"
-  edgeFile <- "HGSCore_only-CRF_sq_dist_nn12-mdist0.5_nn_dupr.csv"
-  annoFile <- "/Volumes/Yolanda/CRF_Screen/InVivo/2_Protein/3_CRM_protein_HGSScore/1_umap/HGSCore_only-CRF_anno.csv"
-  edgeFilter <- 0.6
-  highlightTerms <- c("BAF")
-  termNames <- c("PRC1", "BAF", "SET-MLL", "PRC2", "FACT", 
-                 "HDAC", "E2F6_COM-1", "NU4A", "L3MBTL", "ISWI", 
-                 "HBO1", "MOZ-MORF", "CAF1", "SAGA", "SEC", "unknown")
-  termCols <- c("aquamarine1", "indianred", "forestgreen", "goldenrod1", "gray0",
-                "deeppink", "darkorange", "darkturquoise", "darkslateblue","darkseagreen4",
-                "chartreuse1", "firebrick4", "burlywood", "purple", "seagreen3", "gray")
-  outName <- "networkplot.anno.pdf"
-  
-  # Set transparency
-  tspEdge <- 0.5
-  tspDot <- 0.9
-  outName2 <- gsub(".pdf", "_ref.csv", outName)
-  
-  # Read coordinates and edge files
-  coor.tab <- read_csv(coorFile)
-  edge.tab <- read_csv(edgeFile) %>% filter(val > edgeFilter)
-  anno.tab <- read_csv(annoFile)
-  
-  # Annotate genes by complexes
-  coor.tab <- coor.tab %>% left_join(anno.tab, by="gene_name") %>% mutate(complexNames = replace_na(complexNames, "unknown"))
-  coor.tab$tsp <- tspGene(coor.tab$complexNames, highlightTerms, tspDot)
-  coor.tab$complexNames <- factor(coor.tab$complexNames, levels=c(termNames))
-  coor.tab$bd <- rep(0, nrow(coor.tab))
-  coor.tab$annonames <- sltAnno(coor.tab$gene_name, coor.tab$complexNames, highlightTerms)
-  
-  # Annotate edge tibble, add coordiate and transparency
-  edge.tab <- edgeCoor(edge.tab, coor.tab, tspEdge)
-  
-  # Plot
-  sc.plot <- ggplot() +
-    geom_segment(data=edge.tab, aes(x = idx1x, y = idx1y, xend = idx2x, yend = idx2y, alpha=tsp)) +
-    geom_point(data=coor.tab, aes(x=x, y=y, color=complexNames, size=5, alpha=tsp, stroke=coor.tab$bd)) + 
-    scale_color_manual(values=termCols) +
-    geom_text_repel() +
-    scale_x_continuous(limits = c(-2, 7)) +
-    geom_text_repel(data=coor.tab, aes(x=x, y=y, label=coor.tab$annonames), segment.alpha=0.5, force=1, max.iter=50000, seed=123) +
-    theme(panel.border = element_blank(),
-          panel.background = element_rect(fill = "white"),
-          panel.grid.major = element_blank(),
-          panel.grid.minor = element_blank(),
-          axis.text.x=element_blank(),
-          axis.text.y=element_blank(),
-          axis.title.x=element_blank(),
-          axis.title.y=element_blank(), 
-          axis.ticks.x=element_blank(),
-          axis.ticks.y=element_blank())
-  sc.plot
-  ggsave(outName, sc.plot, device = 'pdf', width = 18, height = 12, units = "cm")
-}
-
-scPlotZScoreOverlay <- function(coorFile, edgeFile, edgeFilter, annoFile, highlighTerms, ZScoreFile, outName){
-  coorFile <- "HGSCore_only-CRF_sq_dist_nn12-mdist0.5_coor.csv"
-  edgeFile <- "HGSCore_only-CRF_sq_dist_nn12-mdist0.5_nn_dupr.csv"
-  annoFile <- "/Volumes/Yolanda/CRF_Screen/InVivo/2_Protein/3_CRM_protein_HGSScore/1_umap/HGSCore_only-CRF_anno.csv"
-  ZScoreFile<- "/Volumes/Yolanda/CRF_Screen/InVivo/1_1_Norm/20190516/5_zscore_div_sqrt_pval/all_z-score_div_sqrt-p_sqrt.csv"
-  edgeFilter <- 0.6
-  highlightTerms <- c("BAF")
+scPlotZScoreOverlay <- function(coorFile, edgeFile, edgeFilter, highlightTerms, annoFile, ZScoreFile){
+  #coorFile <- "HGSCore_only-CRF_sq_dist_nn12-mdist0.5_coor.csv"
+  #edgeFile <- "HGSCore_only-CRF_sq_dist_nn12-mdist0.5_nn_dupr.csv"
+  #annoFile <- "/Volumes/Yolanda/CRF_Screen/InVivo/2_Protein/3_CRM_protein_HGSScore/1_umap/HGSCore_only-CRF_anno.csv"
+  #ZScoreFile<- "/Volumes/Yolanda/CRF_Screen/InVivo/1_1_Norm/20190516/5_zscore_div_sqrt_pval/all_z-score_div_sqrt-p_sqrt.csv"
+  #edgeFilter <- 0.6
+  #highlightTerms <- c("BAF")
   outName <- "networkplot.anno.pdf"
   
   # Set transparency
@@ -279,62 +223,17 @@ scPlotZScoreOverlay <- function(coorFile, edgeFile, edgeFilter, annoFile, highli
 }
 
 #################### Plotting ####################
-wk.dir <- "/Volumes/Yolanda/CRF_Screen/InVivo/2_Protein/3_CRM_protein_HGSScore/1_umap"
+wk.dir <- "/Volumes/Yolanda/CRF_Screen/InVivo/2_Protein/3_CRM_protein_HGSScore/1_umap/HGSCore_only-CRF_sq_dist_nn12-mdist0.5/2_ZScore-Overlay_scatterplots/BAF-NURD-HDAC"
 setwd(wk.dir)
 
-### Generate all annotated reference plot
-if(FALSE){
-  coor.file <- "HGSCore_only-CRF_sq_dist_nn10-mdist0.4_coor.csv"
-  coor.tab <- read_csv(coor.file)
-  sc.plot <- ggplot(data=coor.tab, aes(x=x, y=y, size=8, stroke=0, label = coor.tab$gene_name)) +
-    geom_point(alpha=0.3) + 
-    geom_text_repel()
-  ggsave("Anno_scplot.pdf", sc.plot, device = 'pdf', width = 35, height = 35, units = "cm")
-}
+coor.file <- "/Volumes/Yolanda/CRF_Screen/InVivo/2_Protein/3_CRM_protein_HGSScore/1_umap/HGSCore_only-CRF_sq_dist_nn12-mdist0.5/HGSCore_only-CRF_sq_dist_nn12-mdist0.5_coor.csv"
+edge.file <- "/Volumes/Yolanda/CRF_Screen/InVivo/2_Protein/3_CRM_protein_HGSScore/1_umap/HGSCore_only-CRF_sq_dist_nn12-mdist0.5/HGSCore_only-CRF_sq_dist_nn12-mdist0.5_nn_dupr.csv"
+edge.filter <- 0.6
+terms.names <- c("HDAC", "BAF")
+anno.file <- "/Volumes/Yolanda/CRF_Screen/InVivo/2_Protein/3_CRM_protein_HGSScore/1_umap/HGSCore_only-CRF_anno.csv"
+ZScore.file<- "/Volumes/Yolanda/CRF_Screen/InVivo/1_1_Norm/20190516/5_zscore_div_sqrt_pval/all_z-score_div_sqrt-p_sqrt.csv"
 
-### Genreate annotated plot for each complex
-wk.dir <- "/Volumes/Yolanda/CRF_Screen/InVivo/2_Protein/3_CRM_protein_HGSScore/1_umap/HGSCore_only-CRF_sq_dist_nn12-mdist0.5"
-setwd(wk.dir)
-
-if (FALSE){
-  count.file <- "/Volumes/Yolanda/CRF_Screen/InVivo/2_Protein/2_GO_terms/complex_count_rank_use_true.txt"
-  count.tb <- read_tsv(count.file)
-  for (i in c(1:nrow(count.tb))){
-    complexi <- count.tb$complex[i]
-    if (count.tb$count[i] >= 3) {
-      coor.file <- "/Volumes/Yolanda/CRF_Screen/InVivo/2_Protein/3_CRM_protein_HGSScore/1_umap/HGSCore_only-CRF_sq_dist_nn10-mdist0.4/HGSCore_only-CRF_sq_dist_nn10-mdist0.4_coor.csv"
-      edge.file <- "/Volumes/Yolanda/CRF_Screen/InVivo/2_Protein/3_CRM_protein_HGSScore/1_umap/HGSCore_only-CRF_sq_dist_nn10-mdist0.4/HGSCore_only-CRF_sq_dist_nn10-mdist0.4_nn_dupr.csv"
-      edge.filter <- 0.7
-      terms.anno <- c(complexi)
-      terms.names <- c("complex")
-      terms.cols <- c("deepskyblue")
-      out.name <- paste(complexi, ".pdf", sep="")
-      out.name <- gsub("/", "", out.name)
-      out.name <- gsub(" ", "_", out.name)
-      scPlot(coor.file, edge.file, edge.filter, terms.anno, terms.names, terms.cols, out.name)
-    }
-  }
-}
-
-
-if(FALSE) {
-  coor.file <- "HGSCore_only-CRF_sq_dist_nn10-mdist0.4_coor.csv"
-  edge.file <- "HGSCore_only-CRF_sq_dist_nn10-mdist0.4_nn_dupr.csv"
-  edge.filter <- 0.7
-  terms.anno <- c("SWI/SNF complex", "NuRD complex", "Set1C/COMPASS complex", "MOZ/MORF histone acetyltransferase complex", 
-                  "ESC/E(Z) complex", "PcG protein complex", "NURF complex","ELL-EAF complex",
-                  "thiol-dependent ubiquitinyl hydrolase activity")
-  terms.names <- c("SWISNF", "NuRD", "Set1cCompass", "MOZMORFHistoneAcetyltransferaseComplex", 
-                   "ESCEZComplex", "PcGProteinComplex", "NURFComplex", "ELL-EAFComplex",
-                   "Thiol-dependentUbiquitinylHydrolaseActivity")
-  terms.cols <- c("firebrick1","deepskyblue", "limegreen", "orange", 
-                  "purple", "aquamarine", "royalblue4", "yellow",
-                  "palevioletred1")
-  out.name <- "networkplot.label.pdf"
-  
-  scPlot(coor.file, edge.file, edge.filter, terms.anno, terms.names, terms.cols, out.name)
-  
-}
+scPlotZScoreOverlay(coor.file, edge.file, edge.filter, terms.names, anno.file, ZScore.file)
 
 
 
