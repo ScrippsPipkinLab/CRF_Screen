@@ -147,7 +147,7 @@ if (FALSE) {
 
 ##########-------------------- Bar plot
 if (TRUE) {
-  wk.dir <- "/Volumes/Yolanda/CRF_Screen/InVivo/1_1_Norm/20190516/5_zscore_div_sqrt_pval/grant_figures"
+  wk.dir <- "/Volumes/Yolanda/CRF_Screen/InVivo/1_1_Norm/20190516/5_zscore_div_sqrt_pval/Baf"
   setwd(wk.dir)
   
   z.p.file <- "/Volumes/Yolanda/CRF_Screen/InVivo/1_1_Norm/20190516/5_zscore_div_sqrt_pval/all_z-score_div_sqrt-p_sqrt.csv"
@@ -163,21 +163,23 @@ if (TRUE) {
   #              "Mll1", "Wdr5", "Rbbp5", "Ash2l", "Dpy30",
   #              "Cd4", "Runx3", "Tbx21",
   #              "Cxxc1", "Paf1")
-  anno.vec <- c("ACTL6A", "ARID1A", "ARID1B", "ARID2", "BRD7", "BRD9", "PBRM1", "PHF10", 
-                "SMARCA2", "SMARCA4", "SMARCB1", "SMARCC1", "SMARCC2", "SMARCD1", "SMARCD2", 
-                "SMARCD3", "SMARCE1", "Actl6a", "Actl6b", "Arid1a", "Arid1b", "Brd9", "Smarca2", 
-                "Smarca4", "Smarcb1", "Smarcc1", "Smarcc2", "Smarcd1", "Smarcd2", "Smarcd3", "Smarce1",
-                "CHD3", "CHD4", "CHD5", "HDAC1", "HDAC2", "KDM1A", 
-                
-                "MBD2", "MBD3", "MTA1", "MTA2", "MTA3", "RBBP4", "RBBP7", "SIN3A", "SIN3B",
-                "Chd3", "Chd4", "Chd5", "Hdac1", "Hdac2", "Mbd3", "Mta1", "Mta2", 
-                "Mta3", "Rbbp4", "Rbbp7", 
-                
-                "Cd4", "Runx3", "Tbx21", "Chd7")
-  anno.vec <- tolower(anno.vec)
-  anno.vec <- as.character(sapply(anno.vec, simpleCap))
+  #anno.vec <- c("ACTL6A", "ARID1A", "ARID1B", "ARID2", "BRD7", "BRD9", "PBRM1", "PHF10", 
+  #              "SMARCA2", "SMARCA4", "SMARCB1", "SMARCC1", "SMARCC2", "SMARCD1", "SMARCD2", 
+  #              "SMARCD3", "SMARCE1", "Actl6a", "Actl6b", "Arid1a", "Arid1b", "Brd9", "Smarca2", 
+  #              "Smarca4", "Smarcb1", "Smarcc1", "Smarcc2", "Smarcd1", "Smarcd2", "Smarcd3", "Smarce1",
+  #              "CHD3", "CHD4", "CHD5", "HDAC1", "HDAC2", "KDM1A", 
+  #              
+  #              "MBD2", "MBD3", "MTA1", "MTA2", "MTA3", "RBBP4", "RBBP7", "SIN3A", "SIN3B",
+  #              "Chd3", "Chd4", "Chd5", "Hdac1", "Hdac2", "Mbd3", "Mta1", "Mta2", 
+  #              "Mta3", "Rbbp4", "Rbbp7", 
+  #              
+  #              "Cd4", "Runx3", "Tbx21", "Chd7")
+  #anno.vec <- tolower(anno.vec)
+  #anno.vec <- as.character(sapply(anno.vec, simpleCap))
   
-  name.root <- "Baf-HDAC"
+  anno.vec <- c("Smarca4", "Smarcb1", "Smarcc1", "Smarcc2", "Smarcd1", "Smarcd2", "Smarcd3", "Smarce1", 
+                "Actl6a", "Actl6b", "Arid1a", "Arid1b", "Brd9", "Smarca2")
+  name.root <- "Baf"
   
   #####---------- Q4 minus Q1
   out.name <- paste(name.root, "Q4minusQ1.bar.pdf", sep="_")
