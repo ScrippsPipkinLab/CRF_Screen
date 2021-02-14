@@ -2,7 +2,7 @@
 /InVivo/1_0_Raw/CRF_Screen_raw/
 
 # Ignore Mac generated resource fork files
-._*
+*._*
 
 # Ignore larger biogrid reference file
 /Ref/BIOGRID-ALL-3.5.172_simplify.tab.txt

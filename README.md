@@ -63,6 +63,7 @@ __Correct refrence:__  <br/>
 
 ## References:
 1. [BioGrid protein interaction](https://downloads.thebiogrid.org/BioGRID/Release-Archive/BIOGRID-3.5.172/)
+2. [Human-Chromatin-Related Protein Interactions Identify a Demethylase Complex Required for Chromosome Segregation](https://www.sciencedirect.com/science/article/pii/S2211124714004446)
 
 | Species | Taxonomy ID |
 | --- | --- |
