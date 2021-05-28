@@ -22,7 +22,7 @@ helicase activity,17,,
 PcG protein complex,16,,
 lysine-acetylated histone binding,14,yes,Chromodomain
 histone methyltransferase activity (H3-K4 specific),14,,
-DNA methylation,14,yes,DNA Methylation / Demethylation
+DNA methylation,14,yes,DNA Methylation - Demethylation
 SWI/SNF complex,14,,
 histone H3 acetylation,14,,
 PRC1 complex,14,,
@@ -66,7 +66,7 @@ peptidyl-lysine monomethylation,8,,
 RNA polymerase II transcription factor binding,8,,
 peptidyl-lysine deacetylation,8,,
 histone arginine methylation,8,yes,Arginine Methylation
-regulation of DNA methylation,8,yes,DNA Methylation / Demethylation
+regulation of DNA methylation,8,yes,DNA Methylation - Demethylation
 MLL3/4 complex,8,,
 RNA polymerase II complex binding,8,,
 ubiquitin ligase complex,8,,
@@ -116,11 +116,11 @@ histone H4-K12 acetylation,5,,
 positive regulation of histone H3-K27 methylation,4,,
 histone acetyltransferase activity (H4-K16 specific),4,,
 positive regulation of protein ubiquitination,4,,
-DNA demethylation,4,yes,DNA Methylation / Demethylation
+DNA demethylation,4,yes,DNA Methylation - Demethylation
 positive regulation of histone H3-K9 methylation,4,,
 histone methyltransferase activity (H4-R3 specific),4,,
 peptidyl-serine phosphorylation,4,,
-maintenance of DNA methylation,4,yes,DNA Methylation / Demethylation
+maintenance of DNA methylation,4,yes,DNA Methylation - Demethylation
 peptidyl-lysine acetylation,4,,
 histone H4-K20 methylation,4,,
 histone acetyltransferase activity (H4-K5 specific),4,,
