@@ -3,7 +3,7 @@ methylation,58,,
 methyltransferase activity,57,,
 protein-containing complex,40,,
 histone-lysine N-methyltransferase activity,33,,
-methylated histone binding,32,yes,Bromodomain
+methylated histone binding,32,yes,Chromodomain
 histone methyltransferase complex,30,,
 RNA polymerase II proximal promoter sequence-specific DNA binding,30,,
 histone deacetylase binding,25,,
@@ -20,7 +20,7 @@ histone deacetylase complex,17,,
 histone acetyltransferase complex,17,,
 helicase activity,17,,
 PcG protein complex,16,,
-lysine-acetylated histone binding,14,yes,Chromodomain
+lysine-acetylated histone binding,14,yes,Bromodomain
 histone methyltransferase activity (H3-K4 specific),14,,
 DNA methylation,14,yes,DNA Methylation - Demethylation
 SWI/SNF complex,14,,
